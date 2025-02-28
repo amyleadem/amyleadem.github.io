@@ -1,0 +1,22 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "bundle exec jekyll build",
+    "serve": "bundle exec jekyll serve",
+    "start": "concurrently 'bundle exec jekyll serve --drafts --future --livereload --incremental --host=localhost' 'npx gulp watch'",
+    "watch": "npx gulp watch"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "esm": "^3.2.25",
+    "gulp": "^5.0.0",
+    "gulp-sass": "^6.0.0",
+    "sass": "^1.85.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
