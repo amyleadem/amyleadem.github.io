@@ -1,38 +1,106 @@
 @use "normalize";
 @use "vars" as *;
 
+$row-0-height: 85vh;
+$row-1-height: auto;
+$row-2-height: auto;
+$row-3-height: auto;
+$row-4-height: auto;
+
+$base-font-size: 16px;
+
 @mixin grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: $spacing-unit;
 }
 
-$hero-height: 85vh;
-.hero {
-  @include grid;
-  align-items: center;
-  background: $color-base-dark;
-  height: $hero-height;
-  left: 0;
-  position: absolute;
-  top: 0;
-
-  h1 {
-    text-shadow: $color-red 6px 6px;
-    font-family: $font-headline;
-    font-size: 8vw;
-    color: $color-accent-light;
-    grid-column: 3 / 11;
-  }
+@mixin row {
+  grid-column: 1 / 13;
 }
 
-.banner {
-  background: $color-yellow;
+@mixin banner-base {
   font-family: $font-subheadline;
   margin-block: 0;
   padding-block: $spacing-unit;
-  padding-inline: $spacing-unit;
+  padding-inline: calc(#{$spacing-unit} * 4);
+}
+
+.grid-container {
+  @include grid;
+  grid-template-rows:
+    [row-0-start] $row-0-height
+    [row-1-start] $row-1-height
+    [row-2-start] $row-2-height
+    [row-3-start] $row-3-height
+    [row-4-start] $row-4-height;
+}
+
+.row-0 {
+  @include row;
+  @include grid;
   position: fixed;
+}
+
+.row-1 {
+  @include grid;
+  @include row;
+  align-items: center;
+  background: $color-base-dark;
+}
+
+.row-2 {
+  @include row;
+  display: flex;
+  justify-content: center;
+}
+
+.row-3 {
+  @include row;
+  margin-block: calc(#{$spacing-unit} * 10);
+}
+
+.sticky-banner {
+  @include banner-base;
+  background: $color-red;
+  box-shadow: 3px 3px $color-gray;
+  grid-column: 1 / 2;
+  margin-right: calc(#{$spacing-unit} * 2);
   top: 0;
   z-index: 1;
+}
+
+h1 {
+  text-shadow: $color-red 6px 6px;
+  font-family: $font-headline;
+  font-size: 8vw;
+  color: $color-yellow-light;
+  grid-column: 3 / 11;
+}
+
+$summary-padding-y: $spacing-unit * 1.5;
+
+.summary-banner {
+  @include banner-base;
+  background: $color-yellow;
+  box-shadow: 3px 3px white;
+  display: inline;
+  font-size: 1.25rem;
+  margin-top: calc(-#{$summary-padding-y} - (#{$base-font-size} / 2));
+  padding-block: $summary-padding-y;
+}
+
+.job-card {
+  @include grid;
+  background: $color-yellow;
+
+  &__image {
+    background: pink;
+    grid-column: 2 / 5;
+  }
+
+  &__body {
+    background: green;
+    grid-column: 5 / 9;
+  }
 }

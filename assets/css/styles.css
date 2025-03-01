@@ -180,18 +180,55 @@ summary {
   display: list-item;
 }
 
-.hero {
+.grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 8px;
+  grid-template-rows: [row-0-start] 85vh [row-1-start] auto [row-2-start] auto [row-3-start] auto [row-4-start] auto;
+}
+
+.row-0 {
+  grid-column: 1/13;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 8px;
+  position: fixed;
+}
+
+.row-1 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 8px;
+  grid-column: 1/13;
   align-items: center;
   background: #1a1b37;
-  height: 85vh;
-  left: 0;
-  position: absolute;
-  top: 0;
 }
-.hero h1 {
+
+.row-2 {
+  grid-column: 1/13;
+  display: flex;
+  justify-content: center;
+}
+
+.row-3 {
+  grid-column: 1/13;
+  margin-block: calc(8px * 10);
+}
+
+.sticky-banner {
+  font-family: "Bricolage Grotesque", sans-serif;
+  margin-block: 0;
+  padding-block: 8px;
+  padding-inline: calc(8px * 4);
+  background: #e82822;
+  box-shadow: 3px 3px #424242;
+  grid-column: 1/2;
+  margin-right: calc(8px * 2);
+  top: 0;
+  z-index: 1;
+}
+
+h1 {
   text-shadow: #e82822 6px 6px;
   font-family: "Rammetto One", sans-serif;
   font-size: 8vw;
@@ -199,13 +236,30 @@ summary {
   grid-column: 3/11;
 }
 
-.banner {
-  background: #ffbb32;
+.summary-banner {
   font-family: "Bricolage Grotesque", sans-serif;
   margin-block: 0;
   padding-block: 8px;
-  padding-inline: 8px;
-  position: fixed;
-  top: 0;
-  z-index: 1;
+  padding-inline: calc(8px * 4);
+  background: #ffbb32;
+  box-shadow: 3px 3px white;
+  display: inline;
+  font-size: 1.25rem;
+  margin-top: calc(-12px - 16px / 2);
+  padding-block: 12px;
+}
+
+.job-card {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 8px;
+  background: #ffbb32;
+}
+.job-card__image {
+  background: pink;
+  grid-column: 2/5;
+}
+.job-card__body {
+  background: green;
+  grid-column: 5/9;
 }

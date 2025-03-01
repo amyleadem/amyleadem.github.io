@@ -1,9 +1,32 @@
 ---
 title: My First Page
 layout: default
+headline: Delivering front-end code at scale
 ---
 
-<div class="hero">
-  <h1>Delivering front-end code at scale</h1>
-  <p class="banner">AmyLeadem/README.md</p>
+{:.sticky-banner}
+
+<div class="grid-container">
+  <div class="row-0">
+    <p class="sticky-banner">AMY_LEADEM README.md</p>
+  </div>
+  <div class="row-1">
+    <h1>{{page.headline}}</h1>
+  </div>
+
+  <div class="row-2">
+    <p class="summary-banner">
+      Senior front-end developer specializing in design systems and accessibility
+    </p>
+  </div>
+
+  <div class="row-3">
+    <article class="job-card">
+      <div class="job-card__image">
+      </div>
+      <div class="job-card__body">
+        <h2>Senior developer on the U.S. Web Design System core team</h2>
+      </div>
+    </article>
+  </div>
 </div>
