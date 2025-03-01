@@ -1,18 +1,19 @@
-import gulp from 'gulp';
-import * as dartSass from 'sass';
-import gulpSass from 'gulp-sass';
+import gulp from "gulp";
+import * as dartSass from "sass";
+import gulpSass from "gulp-sass";
 
 const { watch: gulpWatch } = gulp;
 const sass = gulpSass(dartSass);
 
-const compiler = () => {
-  return gulp.src('src/_styles/styles.scss')
+const compiler = async () => {
+  return gulp
+    .src("_styles/styles.scss")
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest("assets/css"));
 };
 
 const watcher = () => {
-  gulpWatch('src/**/*.scss', compiler);
+  gulpWatch("_styles/**/*.scss", compiler);
 };
 
 export const compile = compiler;

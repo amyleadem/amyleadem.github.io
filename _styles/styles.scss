@@ -1,3 +1,38 @@
-.hamburger {
-  background: aqua;
+@use "normalize";
+@use "vars" as *;
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: $spacing-unit;
+}
+
+$hero-height: 85vh;
+.hero {
+  @include grid;
+  align-items: center;
+  background: $color-base-dark;
+  height: $hero-height;
+  left: 0;
+  position: absolute;
+  top: 0;
+
+  h1 {
+    text-shadow: $color-red 6px 6px;
+    font-family: $font-headline;
+    font-size: 8vw;
+    color: $color-accent-light;
+    grid-column: 3 / 11;
+  }
+}
+
+.banner {
+  background: $color-yellow;
+  font-family: $font-subheadline;
+  margin-block: 0;
+  padding-block: $spacing-unit;
+  padding-inline: $spacing-unit;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }

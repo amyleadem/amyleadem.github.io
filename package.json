@@ -6,16 +6,20 @@
   "type": "module",
   "scripts": {
     "build": "bundle exec jekyll build",
+    "compile": "npx gulp compile",
+    "prettier": "npx prettier . --write",
     "serve": "bundle exec jekyll serve",
     "start": "concurrently 'bundle exec jekyll serve --drafts --future --livereload --incremental --host=localhost' 'npx gulp watch'",
     "watch": "npx gulp watch"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2",
-    "esm": "^3.2.25",
-    "gulp": "^5.0.0",
-    "gulp-sass": "^6.0.0",
-    "sass": "^1.85.1"
+    "concurrently": "9.1.2",
+    "esm": "3.2.25",
+    "gulp": "5.0.0",
+    "gulp-sass": "6.0.0",
+    "modern-normalize": "3.0.1",
+    "prettier": "3.5.2",
+    "sass": "1.85.1"
   },
   "author": "",
   "license": "ISC"
