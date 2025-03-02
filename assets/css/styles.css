@@ -177,11 +177,19 @@ summary {
   display: list-item;
 }
 
+body {
+  background: #fcf7f3;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 8px;
-  grid-template-rows: 85vh auto auto auto auto;
+  grid-template-rows: 85vh auto auto auto auto 65vh;
+}
+
+.grid-row {
+  grid-column: 1/13;
 }
 
 section:nth-of-type(1) {
@@ -215,21 +223,55 @@ section:nth-of-type(4) {
   margin-block: calc(8px * 8);
 }
 
+section:nth-of-type(5) {
+  grid-column: 1/13;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 8px;
+}
+
+section > h2 {
+  grid-column: 1/13;
+  grid-column: 3/12;
+  margin-top: calc(8px * 8);
+  margin-bottom: 0;
+}
+
 .sticky-banner {
   font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.125rem;
   margin-block: 0;
-  padding-block: 8px;
+  padding-block: calc(8px * 2);
   padding-inline: calc(8px * 4);
   background: #e82822;
   box-shadow: 3px 3px #424242;
-  grid-column: 1/2;
+  grid-column: 1/13;
+  line-height: 1.2;
   margin-right: calc(8px * 2);
   top: 0;
   z-index: 1;
 }
 
+@media (min-width: 1200px) {
+  .sticky-banner {
+    grid-column: 1/2;
+  }
+}
+p,
+li {
+  max-width: 80ch;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  max-width: 44ch;
+}
+
 p {
-  font-size: 1.1rem;
   line-height: 1.4;
   max-width: 80ch;
 }
@@ -246,34 +288,112 @@ h2 {
   color: #1a1b37;
   font-family: "Bricolage Grotesque", sans-serif;
   font-size: 1.75rem;
+  font-weight: 200;
+  line-height: 1.3;
+}
+
+h3 {
+  color: #1a1b37;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.3;
 }
 
+h4 {
+  color: #1a1b37;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.font-size-xl {
+  text-shadow: #1a1b37 6px 6px;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 4vw;
+  color: #e82822;
+}
+
+.font-size-2xl {
+  color: #fbd59f;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 5vw;
+  margin-block: 8px;
+  text-shadow: #1a1b37 6px 6px;
+}
+
+.font-size-3xl {
+  text-shadow: #e82822 6px 6px;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 8vw;
+  color: #fbd59f;
+}
+
+.button {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.125rem;
+  margin-block: 0;
+  padding-block: calc(8px * 2);
+  padding-inline: calc(8px * 4);
+  color: white;
+  background-color: #383b85;
+  text-decoration: none;
+}
+
+@media (max-height: 600px) {
+  h1 {
+    font-size: 6vw;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 10vw;
+    text-shadow: #e82822 4px 4px;
+  }
+}
+@media (min-width: 600px) and (max-width: 800px) {
+  h1 {
+    text-shadow: #e82822 4px 4px;
+  }
+}
+@media (max-width: 600px) and (max-height: 400px) {
+  h1 {
+    font-size: 7vw;
+    text-shadow: #e82822 2px 2px;
+  }
+}
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 7vw;
+  }
+}
 .summary-banner {
   font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.125rem;
   margin-block: 0;
-  padding-block: 8px;
+  padding-block: calc(8px * 2);
   padding-inline: calc(8px * 4);
   background: #ffbb32;
-  box-shadow: 3px 3px white;
+  box-shadow: 3px 3px #fcf7f3;
   display: inline;
   font-size: 1.25rem;
-  margin-top: calc(-12px - 16px / 2);
+  margin-top: calc(-12px - 1.25rem / 2);
   padding-block: 12px;
 }
 
 .job-card {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 8px;
   grid-template-columns: repeat(11, 1fr);
-  background: #EDEAE6;
-  padding-block: calc(8px * 4);
-  margin-block: calc(8px * 6);
+  grid-column-gap: 8px;
+  background: white;
+  margin-top: calc(8px * 2);
+  margin-bottom: calc(8px * 8);
+  padding-block: calc(8px * 8);
 }
 .job-card__tag {
-  background: #e82822;
+  background: #383b85;
+  color: #fcf7f3;
   display: inline-block;
   padding: calc(8px * 0.5) calc(8px * 2);
 }
@@ -283,23 +403,95 @@ h2 {
 .job-card__image {
   width: 100%;
 }
-.job-card__left-image {
+.job-card:nth-of-type(1) {
+  box-shadow: 10px 10px #fbd59f;
   grid-column: 1/12;
+  z-index: 1;
 }
-.job-card__left-image .job-card__image {
-  grid-column: 3/6;
+.job-card:nth-of-type(1) .job-card__image {
+  grid-column: 3/span 3;
 }
-.job-card__left-image .job-card__body {
-  grid-column: 6/11;
+.job-card:nth-of-type(1) .job-card__body {
+  grid-column: 6/span 5;
   padding-left: calc(8px * 4);
 }
-.job-card__right-image {
+.job-card:nth-of-type(2) {
+  box-shadow: -10px 10px #fbd59f;
   grid-column: 2/13;
 }
-.job-card__right-image .job-card__image {
-  grid-column: 7/10;
+.job-card:nth-of-type(2) .job-card__headline {
+  grid-column: 2/10;
 }
-.job-card__right-image .job-card__body {
-  grid-column: 2/7;
+.job-card:nth-of-type(2) .job-card__headline h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+.job-card:nth-of-type(2) .job-card__headline,
+.job-card:nth-of-type(2) .job-card__subheadline {
+  margin-block: 8px;
+}
+.job-card:nth-of-type(2) .job-card__body {
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  grid-column-gap: 24px;
+  grid-column: 1/13;
+}
+.job-card:nth-of-type(2) .job-card__body div {
+  border: 1px solid #424242;
+  box-shadow: #424242 6px 6px;
+  padding: calc(8px * 4);
+}
+.job-card:nth-of-type(2) .job-card__body div:first-of-type {
+  grid-column: 2/span 4;
+}
+.job-card:nth-of-type(2) .job-card__body div:nth-of-type(2) {
+  grid-column: 6/span 4;
+}
+.job-card:nth-of-type(2) .job-card__body div > *:first-child {
+  margin-top: 0;
+}
+.job-card:nth-of-type(2) .job-card__body div > *:last-child {
+  margin-bottom: 0;
+}
+
+.resume-link {
+  grid-column: 1/13;
+  margin-block: calc(8px * 4);
+  display: flex;
+  justify-content: center;
+}
+
+.practice-area {
+  background: white;
+}
+.practice-area li {
+  color: #1a1b37;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 2.25rem;
+  list-style: none;
+  padding-bottom: 0;
+}
+.practice-area li img {
+  height: calc(8px * 7);
+  display: block;
+}
+.practice-area > * {
+  padding-block: calc(8px * 8);
+}
+.practice-area > *:first-child {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 8px;
+  background: #e82822;
+  grid-column: 1/span 6;
+  text-align: right;
+}
+.practice-area > *:first-child > * {
+  grid-column: 2/span 6;
   padding-right: calc(8px * 4);
+}
+.practice-area > *:nth-child(2) {
+  align-items: center;
+  display: flex;
+  grid-column: 7/span 4;
 }

@@ -5,38 +5,85 @@ headline: Delivering front-end code at scale
 ---
 
 <div class="grid-container">
-  <section class="row-0">
-    <p class="sticky-banner">AMY_LEADEM README.md</p>
+  <section class="row-0" aria-label="Page title">
+    <p class="sticky-banner">AMY_LEADEM/ README.md</p>
   </section>
 
-  <section>
-    <h1>{{page.headline}}</h1>
+  <section aria-label="hero">
+    <h1 class="text-3xl">{{page.headline}}</h1>
   </section>
 
-  <section>
+  <section aria-label="personal summary">
     <p class="summary-banner">
       Senior front-end developer specializing in design systems and accessibility
     </p>
   </section>
 
-  <section>
-    <article class="job-card job-card__left-image">
+  <section aria-label="key projects and resume">
+    <h2>Experience highlights</h2>
+    <article class="job-card">
       <img class="job-card__image" src="./assets/img/uswds.png" alt="United States Web Design System logo">
       <div class="job-card__body">
         <p class="job-card__tag">2021-2025</p>
-        <h2>Senior developer on the U.S. Web Design System core team</h2>
-        <p>USWDS is an open source design system for the federal government that makes it easier to build accessible, mobile-friendly government websites.</p>
-        <p>See my contributions on GitHub</p>
+        <h3 class="job-card__headline">Senior developer on the U.S. Web Design System core team</h3>
+        <p>USWDS is the open source design system for the federal government that makes it easier to build accessible, mobile-friendly government websites.</p>
+        <p>See my USWDS contributions on GitHub</p>
       </div>
     </article>
-
-    <article class="job-card job-card__right-image">
+    <article class="job-card">
+      <div class="job-card__headline">
+        <p class="job-card__tag">2019-2021</p>
+        <h3>Led design and development of Fortune 50 design systems</h3>
+      </div>
       <div class="job-card__body">
-        <p class="job-card__tag">2020-2021</p>
-        <h2>Led the development of Raytheon Technologies’ intranet design system </h2>
-        <p>Project lead and primary front-end developer for the redesign of Raytheon’s intranet system reaching 60,000 end users daily. This new design was developed to streamline hundreds of one-off designs into a single system reflecting the new company brand. </p>
+        <div>
+          <h4 class="job-card__subheadline">Created Raytheon Technologies' intranet design system</h4>
+          <p>Served as project lead and primary front-end developer for the redesign of Raytheon’s intranet system reaching 60,000 end users daily. </p>
+          <p>This new design was developed to streamline hundreds of one-off designs into a single system reflecting the new company brand. </p>
+        </div>
+        <div>
+          <h4 class="job-card__subheadline">Created a design system for Raytheon's public-facing websites</h4>
+          <p>Lead front-end developer for a new design system and component library to be shared across multiple public-facing websites.</p>
+          <p>Developed a front-end code base from the ground up. Replaced a layered, cluttered code base with one that was lean and future-friendly.</p>
+        </div>
       </div>
-      <img class="job-card__image" src="./assets/img/uswds.png" alt="United States Web Design System logo">
     </article>
+    <div class="resume-link">
+      <a class="button" href="./resume">See my resume for more experience highlights</a>
+    </div>
   </section>
+
+  <section class="practice-area" aria-label="breaking down silos">
+    <div>
+      <h2 class="font-size-2xl">Connecting practice areas</h2>
+      <p>All web project work eventually finds its way into code. Bringing technical knowledge to content, accessibility, and UX/UI conversations reduces friction as work moves across practice areas.</p>
+    </div>
+    <div>
+      <ul>
+        <li>
+          Accessibility
+          <img src="./assets/img/handshake.png">
+        </li>
+        <li>
+          Content
+           <img src="./assets/img/handshake.png">
+        </li>
+        <li>
+          UX/UI
+          <img src="./assets/img/handshake.png">
+        </li>
+        <li>
+          Development
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+
+  </section>
+
+  <footer>
+
+  </footer>
 </div>

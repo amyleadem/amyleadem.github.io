@@ -1,18 +1,19 @@
 @use "normalize";
 @use "vars" as *;
+@use "mixins";
 
 $row-0-height: 85vh;
 $row-1-height: auto;
 $row-2-height: auto;
 $row-3-height: auto;
 $row-4-height: auto;
+$row-5-height: 65vh;
+$spacing-vertical-section: $spacing-unit-8;
 
-
-
-@mixin grid {
+@mixin grid($col-count: 12, $col-gap: 1) {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: $spacing-unit;
+  grid-template-columns: repeat($col-count, 1fr);
+  grid-column-gap: $spacing-unit * $col-gap;
 }
 
 @mixin row {
@@ -21,27 +22,84 @@ $row-4-height: auto;
 
 @mixin banner-base {
   font-family: $font-subheadline;
+  font-size: 1.125rem;
   margin-block: 0;
-  padding-block: $spacing-unit;
-  padding-inline: calc(#{$spacing-unit} * 4);
+  padding-block: $spacing-unit-2;
+  padding-inline: $spacing-unit-4;
+}
+
+@mixin font-size-xl(
+  $shadow-color: $color-blue-dark,
+  $shadow-size: 6px,
+  $font-color: $color-red,
+  $font-size: 4vw
+) {
+  text-shadow: $shadow-color $shadow-size $shadow-size;
+  font-family: $font-headline;
+  font-size: $font-size;
+  color: $font-color;
+}
+
+@mixin font-size-2xl(
+  $shadow-color: $color-blue-dark,
+  $shadow-size: 6px,
+  $font-color: $color-yellow-light,
+  $font-size: 5vw
+) {
+  color: $font-color;
+  font-family: $font-headline;
+  font-size: $font-size;
+  margin-block: $spacing-unit;
+  text-shadow: $shadow-color $shadow-size $shadow-size;
+}
+
+@mixin font-size-3xl(
+  $shadow-color: $color-red,
+  $shadow-size: 6px,
+  $font-color: $color-yellow-light,
+  $font-size: 8vw
+) {
+  text-shadow: $shadow-color $shadow-size $shadow-size;
+  font-family: $font-headline;
+  font-size: $font-size;
+  color: $font-color;
+}
+
+@mixin button($text-color: white, $background-color: $color-blue-medium) {
+  @include banner-base;
+  color: $text-color;
+  background-color: $background-color;
+  text-decoration: none;
+}
+
+body {
+  background: $color-gray-light;
 }
 
 .grid-container {
   @include grid;
+
   grid-template-rows:
     $row-0-height
     $row-1-height
     $row-2-height
     $row-3-height
     $row-4-height
+    $row-5-height;
 }
 
+.grid-row {
+  @include row;
+}
+
+// sticky banner
 section:nth-of-type(1) {
   @include row;
   @include grid;
   position: absolute;
 }
 
+//hero
 section:nth-of-type(2) {
   @include grid;
   @include row;
@@ -49,39 +107,72 @@ section:nth-of-type(2) {
   background: $color-blue-dark;
 }
 
+// summary banner
 section:nth-of-type(3) {
   @include row;
   display: flex;
   justify-content: center;
 }
 
+// job experience
 section:nth-of-type(4) {
   @include row;
   @include grid;
-  margin-block: calc(#{$spacing-unit} * 8);
+  margin-block: $spacing-vertical-section;
+}
+
+// connecting practice areas
+section:nth-of-type(5) {
+  @include row;
+  @include grid;
+}
+
+section > h2 {
+  @include row;
+  grid-column: 3 / 12;
+  margin-top: $spacing-vertical-section;
+  margin-bottom: 0;
 }
 
 .sticky-banner {
   @include banner-base;
   background: $color-red;
   box-shadow: 3px 3px $color-gray;
-  grid-column: 1 / 2;
+  grid-column: 1 / 13;
+  line-height: 1.2;
   margin-right: $spacing-unit-2;
   top: 0;
   z-index: 1;
 }
 
+@media (min-width: 1200px) {
+  .sticky-banner {
+    grid-column: 1 / 2;
+  }
+}
+
+p,
+li {
+  max-width: 80ch;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  max-width:44ch;
+}
+
 p {
-  font-size: 1.1rem;
   line-height: 1.4;
   max-width: 80ch;
 }
 
+
 h1 {
-  text-shadow: $color-red 6px 6px;
-  font-family: $font-headline;
-  font-size: 8vw;
-  color: $color-yellow-light;
+  @include font-size-3xl;
   grid-column: 3 / 11;
 }
 
@@ -89,31 +180,96 @@ h2 {
   color: $color-blue-dark;
   font-family: $font-subheadline;
   font-size: 1.75rem;
+  font-weight: 200;
+  line-height: 1.3;
+}
+
+h3 {
+  color: $color-blue-dark;
+  font-family: $font-subheadline;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.3;
 }
 
-$summary-padding-y: $spacing-unit * 1.5;
+h4 {
+  color: $color-blue-dark;
+  font-family: $font-subheadline;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
 
+.font-size-xl {
+  @include font-size-xl;
+}
+
+.font-size-2xl {
+  @include font-size-2xl;
+}
+
+.font-size-3xl {
+  @include font-size-3xl;
+}
+
+.button {
+  @include button;
+}
+
+@media (max-height: 600px) {
+  h1 {
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 10vw;
+    text-shadow: $color-red 4px 4px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+  h1 {
+    text-shadow: $color-red 4px 4px;
+  }
+}
+
+@media (max-width: 600px) and (max-height: 400px) {
+  h1 {
+    font-size: 7vw;
+    text-shadow: $color-red 2px 2px;
+  }
+}
+
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 7vw;
+  }
+}
+
+$summary-padding-y: $spacing-unit * 1.5;
+$summary-font-size: 1.25rem;
 .summary-banner {
   @include banner-base;
   background: $color-yellow;
-  box-shadow: 3px 3px white;
+  box-shadow: 3px 3px $color-gray-light;
   display: inline;
-  font-size: 1.25rem;
-  margin-top: calc(-#{$summary-padding-y} - (#{$font-size-base} / 2));
+  font-size: $summary-font-size;
+  margin-top: calc(-#{$summary-padding-y} - (#{$summary-font-size} / 2));
   padding-block: $summary-padding-y;
 }
 
 .job-card {
-  @include grid;
-  grid-template-columns: repeat(11, 1fr);
-  background: $color-gray-light;
-  padding-block: $spacing-unit-4;
-  margin-block: calc(#{$spacing-unit} * 6);
+  @include grid(11);
+  background: white;
+  margin-top: $spacing-unit-2;
+  margin-bottom: $spacing-vertical-section;
+  padding-block: $spacing-vertical-section;
 
   &__tag {
-    background: $color-red;
+    background: $color-blue-medium;
+    color: $color-gray-light;
     display: inline-block;
     padding: $spacing-unit-05 $spacing-unit-2;
   }
@@ -128,31 +284,110 @@ $summary-padding-y: $spacing-unit * 1.5;
     width: 100%;
   }
 
-  &__left-image {
+  &:nth-of-type(1)  {
+    box-shadow: 10px 10px $color-yellow-light;
     grid-column: 1 / 12;
+    z-index: 1;
 
     .job-card__image {
-      grid-column: 3 / 6;
+      grid-column: 3 / span 3;
     }
 
     .job-card__body {
-      grid-column: 6 / 11;
+      grid-column: 6 / span 5;
       padding-left: $spacing-unit-4;
     }
   }
 
-  &__right-image {
+  &:nth-of-type(2) {
+    box-shadow: -10px 10px $color-yellow-light;
     grid-column: 2 / 13;
 
+    .job-card__headline {
+      grid-column: 2/10;
 
-    .job-card__image {
-      grid-column: 7 / 10;
+      h3 {
+        margin-top: 0;
+        margin-bottom: $spacing-unit;
+      }
+    }
+
+    .job-card__headline,
+    .job-card__subheadline {
+      margin-block: $spacing-unit;
     }
 
     .job-card__body {
-      grid-column: 2 / 7;
+      @include grid(11, 3);
+      @include row;
+    }
+
+    .job-card__body div {
+      border: 1px solid $color-gray;
+      box-shadow: $color-gray 6px 6px;
+      padding: $spacing-unit-4;
+
+      &:first-of-type {
+        grid-column: 2 / span 4;
+      }
+
+      &:nth-of-type(2) {
+        grid-column: 6 / span 4;
+      }
+
+      & > *:first-child {
+        margin-top: 0;
+      }
+
+      & > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.resume-link {
+  @include row;
+  margin-block: $spacing-unit-4;
+  display: flex;
+  justify-content: center;
+}
+
+.practice-area {
+  background: white;
+
+  li {
+    color: $color-blue-dark;
+    font-family: $font-headline;
+    font-size: 2.25rem;
+    list-style: none;
+    padding-bottom: 0;
+  }
+
+  li img {
+    height: $spacing-unit-7;
+    display: block;
+  }
+
+  & > * {
+    padding-block: $spacing-vertical-section;
+  }
+
+  & > *:first-child {
+    @include grid(6);
+    background: $color-red;
+    grid-column: 1/ span 6;
+    text-align: right;
+
+    & > * {
+      grid-column: 2/ span 6;
       padding-right: $spacing-unit-4;
     }
   }
 
+  & > *:nth-child(2) {
+    align-items: center;
+    display: flex;
+    grid-column: 7 /span 4;
+  }
 }
