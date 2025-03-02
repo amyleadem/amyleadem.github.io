@@ -15,9 +15,7 @@ Use a better box model (opinionated).
 
 html {
   /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
-  font-family:
-    system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.15; /* 1. Correct the line height in all browsers. */
   -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
   tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
@@ -51,8 +49,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family:
-    ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -116,9 +113,9 @@ textarea {
 Correct the inability to style clickable types in iOS and Safari.
 */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
@@ -148,7 +145,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -184,18 +181,18 @@ summary {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 8px;
-  grid-template-rows: [row-0-start] 85vh [row-1-start] auto [row-2-start] auto [row-3-start] auto [row-4-start] auto;
+  grid-template-rows: 85vh auto auto auto auto;
 }
 
-.row-0 {
+section:nth-of-type(1) {
   grid-column: 1/13;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 8px;
-  position: fixed;
+  position: absolute;
 }
 
-.row-1 {
+section:nth-of-type(2) {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 8px;
@@ -204,15 +201,18 @@ summary {
   background: #1a1b37;
 }
 
-.row-2 {
+section:nth-of-type(3) {
   grid-column: 1/13;
   display: flex;
   justify-content: center;
 }
 
-.row-3 {
+section:nth-of-type(4) {
   grid-column: 1/13;
-  margin-block: calc(8px * 10);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 8px;
+  margin-block: calc(8px * 8);
 }
 
 .sticky-banner {
@@ -228,12 +228,26 @@ summary {
   z-index: 1;
 }
 
+p {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  max-width: 80ch;
+}
+
 h1 {
   text-shadow: #e82822 6px 6px;
   font-family: "Rammetto One", sans-serif;
   font-size: 8vw;
   color: #fbd59f;
   grid-column: 3/11;
+}
+
+h2 {
+  color: #1a1b37;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .summary-banner {
@@ -253,13 +267,39 @@ h1 {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 8px;
-  background: #ffbb32;
+  grid-template-columns: repeat(11, 1fr);
+  background: #EDEAE6;
+  padding-block: calc(8px * 4);
+  margin-block: calc(8px * 6);
+}
+.job-card__tag {
+  background: #e82822;
+  display: inline-block;
+  padding: calc(8px * 0.5) calc(8px * 2);
+}
+.job-card__body > * {
+  margin-block: 8px;
 }
 .job-card__image {
-  background: pink;
-  grid-column: 2/5;
+  width: 100%;
 }
-.job-card__body {
-  background: green;
-  grid-column: 5/9;
+.job-card__left-image {
+  grid-column: 1/12;
+}
+.job-card__left-image .job-card__image {
+  grid-column: 3/6;
+}
+.job-card__left-image .job-card__body {
+  grid-column: 6/11;
+  padding-left: calc(8px * 4);
+}
+.job-card__right-image {
+  grid-column: 2/13;
+}
+.job-card__right-image .job-card__image {
+  grid-column: 7/10;
+}
+.job-card__right-image .job-card__body {
+  grid-column: 2/7;
+  padding-right: calc(8px * 4);
 }

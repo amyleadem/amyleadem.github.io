@@ -1,9 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Rammetto+One&display=swap");
 
+$color-blue-dark: #1a1b37;
 $color-red: #e82822;
 $color-yellow: #ffbb32;
 $color-yellow-light: #fbd59f;
 $color-gray: #424242;
+$color-gray-light: #EDEAE6;
 
 $color-base-dark: #1a1b37;
 $color-accent-light: #fbd59f;
@@ -13,3 +15,9 @@ $font-subheadline: "Bricolage Grotesque", sans-serif;
 
 // spacing
 $spacing-unit: 8px;
+$spacing-unit-05:  calc(#{$spacing-unit} * 0.5);
+$spacing-unit-1:  calc(#{$spacing-unit} * 2);
+$spacing-unit-105:  calc(#{$spacing-unit} * 1.5);
+$spacing-unit-2:  calc(#{$spacing-unit} * 2);
+$spacing-unit-3:  calc(#{$spacing-unit} * 3);
+$spacing-unit-4:  calc(#{$spacing-unit} * 4);
