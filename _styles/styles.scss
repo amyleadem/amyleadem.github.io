@@ -7,7 +7,7 @@ $row-2-height: auto;
 $row-3-height: auto;
 $row-4-height: auto;
 
-$base-font-size: 16px;
+
 
 @mixin grid {
   display: grid;
@@ -46,7 +46,7 @@ section:nth-of-type(2) {
   @include grid;
   @include row;
   align-items: center;
-  background: $color-base-dark;
+  background: $color-blue-dark;
 }
 
 section:nth-of-type(3) {
@@ -101,7 +101,7 @@ $summary-padding-y: $spacing-unit * 1.5;
   box-shadow: 3px 3px white;
   display: inline;
   font-size: 1.25rem;
-  margin-top: calc(-#{$summary-padding-y} - (#{$base-font-size} / 2));
+  margin-top: calc(-#{$summary-padding-y} - (#{$font-size-base} / 2));
   padding-block: $summary-padding-y;
 }
 
