@@ -1,0 +1,28 @@
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: $spacing-unit;
+}
+
+@mixin row {
+  grid-column: 1 / 13;
+}
+
+@mixin banner-base {
+  font-family: $font-subheadline;
+  margin-block: 0;
+  padding-block: $spacing-unit;
+  padding-inline: calc(#{$spacing-unit} * 2);
+}
+
+@mixin big-text(
+  $shadow-color: $color-blue-dark,
+  $shadow-size: 6px,
+  $font-color: $color-yellow-light,
+  $font-size: 5vw
+) {
+  text-shadow: $shadow-color $shadow-size $shadow-size;
+  font-family: $font-headline;
+  font-size: $font-size;
+  color: $font-color;
+}

@@ -185,7 +185,6 @@ body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 8px;
-  grid-template-rows: 85vh auto auto auto auto 65vh;
 }
 
 .grid-row {
@@ -207,6 +206,17 @@ section:nth-of-type(2) {
   grid-column: 1/13;
   align-items: center;
   background: #1a1b37;
+  height: 60vh;
+}
+@media (min-width: 900px) {
+  section:nth-of-type(2) {
+    height: 75vh;
+  }
+}
+@media (min-width: 1200px) {
+  section:nth-of-type(2) {
+    height: 85vh;
+  }
 }
 
 section:nth-of-type(3) {
@@ -231,10 +241,17 @@ section:nth-of-type(5) {
 }
 
 section > h2 {
-  grid-column: 1/13;
-  grid-column: 3/12;
   margin-top: calc(8px * 8);
-  margin-bottom: 0;
+  margin-bottom: calc(8px * 2);
+}
+
+section > * {
+  grid-column: 2/12;
+}
+@media (min-width: 900px) {
+  section > * {
+    grid-column: 3/12;
+  }
 }
 
 .sticky-banner {
@@ -274,6 +291,10 @@ h6 {
 p {
   line-height: 1.4;
   max-width: 80ch;
+}
+
+ul li {
+  padding-block: calc(8px * 0.5);
 }
 
 h1 {
@@ -379,12 +400,14 @@ h4 {
   display: inline;
   font-size: 1.25rem;
   margin-top: calc(-12px - 1.25rem / 2);
+  max-width: 64%;
   padding-block: 12px;
+  text-align: center;
 }
 
 .job-card {
   display: grid;
-  grid-template-columns: repeat(11, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 8px;
   background: white;
   margin-top: calc(8px * 2);
@@ -401,57 +424,86 @@ h4 {
   margin-block: 8px;
 }
 .job-card__image {
+  display: none;
   width: 100%;
 }
-.job-card:nth-of-type(1) {
-  box-shadow: 10px 10px #fbd59f;
-  grid-column: 1/12;
-  z-index: 1;
+.job-card > * {
+  grid-column: 2/12;
 }
-.job-card:nth-of-type(1) .job-card__image {
-  grid-column: 3/span 3;
-}
-.job-card:nth-of-type(1) .job-card__body {
-  grid-column: 6/span 5;
-  padding-left: calc(8px * 4);
-}
-.job-card:nth-of-type(2) {
-  box-shadow: -10px 10px #fbd59f;
-  grid-column: 2/13;
-}
-.job-card:nth-of-type(2) .job-card__headline {
-  grid-column: 2/10;
-}
-.job-card:nth-of-type(2) .job-card__headline h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
-}
-.job-card:nth-of-type(2) .job-card__headline,
-.job-card:nth-of-type(2) .job-card__subheadline {
-  margin-block: 8px;
-}
-.job-card:nth-of-type(2) .job-card__body {
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  grid-column-gap: 24px;
+.job-card--one-item {
   grid-column: 1/13;
+  box-shadow: 10px 10px #fbd59f;
 }
-.job-card:nth-of-type(2) .job-card__body div {
+@media (max-width: 900px) {
+  .job-card--one-item .job-card__body {
+    border: 1px solid #424242;
+    box-shadow: #424242 6px 6px;
+    padding: calc(8px * 4);
+  }
+}
+.job-card--two-items {
+  grid-column: 1/13;
+  box-shadow: -10px 10px #fbd59f;
+}
+.job-card--two-items .job-card__body div {
   border: 1px solid #424242;
   box-shadow: #424242 6px 6px;
   padding: calc(8px * 4);
 }
-.job-card:nth-of-type(2) .job-card__body div:first-of-type {
-  grid-column: 2/span 4;
-}
-.job-card:nth-of-type(2) .job-card__body div:nth-of-type(2) {
-  grid-column: 6/span 4;
-}
-.job-card:nth-of-type(2) .job-card__body div > *:first-child {
+.job-card--two-items .job-card__body div > *:first-child {
   margin-top: 0;
 }
-.job-card:nth-of-type(2) .job-card__body div > *:last-child {
+.job-card--two-items .job-card__body div > *:last-child {
   margin-bottom: 0;
+}
+@media (min-width: 900px) {
+  .job-card {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-column-gap: 8px;
+  }
+  .job-card__image {
+    display: block;
+  }
+  .job-card:nth-of-type(1) {
+    box-shadow: 10px 10px #fbd59f;
+    grid-column: 1/12;
+    z-index: 1;
+  }
+  .job-card:nth-of-type(1) .job-card__image {
+    grid-column: 3/span 3;
+  }
+  .job-card:nth-of-type(1) .job-card__body {
+    grid-column: 6/span 5;
+    padding-left: calc(8px * 4);
+  }
+  .job-card:nth-of-type(2) {
+    box-shadow: -10px 10px #fbd59f;
+    grid-column: 2/13;
+  }
+  .job-card:nth-of-type(2) .job-card__headline {
+    grid-column: 2/10;
+  }
+  .job-card:nth-of-type(2) .job-card__headline h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  .job-card:nth-of-type(2) .job-card__headline,
+  .job-card:nth-of-type(2) .job-card__subheadline {
+    margin-block: 8px;
+  }
+  .job-card:nth-of-type(2) .job-card__body {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-column-gap: 24px;
+    grid-column: 1/13;
+  }
+  .job-card:nth-of-type(2):nth-of-type(2) .job-card__body div:first-of-type {
+    grid-column: 2/span 4;
+  }
+  .job-card:nth-of-type(2):nth-of-type(2) .job-card__body div:nth-of-type(2) {
+    grid-column: 6/span 4;
+  }
 }
 
 .resume-link {
@@ -464,8 +516,14 @@ h4 {
 .practice-area {
   background: white;
 }
+.practice-area ul {
+  padding-left: 0;
+  margin: 0;
+}
 .practice-area li {
+  align-items: center;
   color: #1a1b37;
+  display: inline-flex;
   font-family: "Rammetto One", sans-serif;
   font-size: 2.25rem;
   list-style: none;
@@ -473,25 +531,70 @@ h4 {
 }
 .practice-area li img {
   height: calc(8px * 7);
-  display: block;
+  margin-inline: 8px;
 }
 .practice-area > * {
   padding-block: calc(8px * 8);
 }
 .practice-area > *:first-child {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 8px;
+  grid-column: 1/13;
   background: #e82822;
-  grid-column: 1/span 6;
-  text-align: right;
 }
 .practice-area > *:first-child > * {
-  grid-column: 2/span 6;
-  padding-right: calc(8px * 4);
+  grid-column: 2/12;
 }
 .practice-area > *:nth-child(2) {
   align-items: center;
+  background: white;
   display: flex;
-  grid-column: 7/span 4;
+  grid-column: 2/span 10;
+}
+@media (min-width: 900px) {
+  .practice-area > *:nth-child(2) {
+    grid-column: 7/span 4;
+  }
+}
+@media (min-width: 900px) {
+  .practice-area li {
+    display: list-item;
+    padding-left: calc(8px * 4);
+  }
+  .practice-area li img {
+    display: block;
+  }
+  .practice-area > *:first-child {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 8px;
+    grid-column: 1/span 6;
+    text-align: right;
+  }
+  .practice-area > *:first-child > * {
+    grid-column: 2/span 6;
+    padding-right: calc(8px * 4);
+  }
+  .practice-area > *:nth-child(2) {
+    grid-column: 7/span 4;
+  }
+}
+
+footer {
+  grid-column: 1/13;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 8px;
+  background: #383b85;
+  margin-top: calc(8px * 8);
+  padding-top: calc(8px * 8);
+}
+footer > * {
+  grid-column: 3/11;
+}
+footer ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }

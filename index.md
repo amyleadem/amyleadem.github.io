@@ -21,16 +21,28 @@ headline: Delivering front-end code at scale
 
   <section aria-label="key projects and resume">
     <h2>Experience highlights</h2>
-    <article class="job-card">
+    <article class="job-card job-card--one-item">
       <img class="job-card__image" src="./assets/img/uswds.png" alt="United States Web Design System logo">
       <div class="job-card__body">
         <p class="job-card__tag">2021-2025</p>
         <h3 class="job-card__headline">Senior developer on the U.S. Web Design System core team</h3>
         <p>USWDS is the open source design system for the federal government that makes it easier to build accessible, mobile-friendly government websites.</p>
-        <p>See my USWDS contributions on GitHub</p>
+        <p>See my merged contributions on GitHub:</p>
+        <ul>
+          <li>
+            <a href="https://github.com/uswds/uswds/pulls?q=is%3Apr+is%3Amerged+author%3Aamyleadem">
+              USWDS component library contributions
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/uswds/uswds-site/pulls?q=is%3Apr+is%3Amerged+author%3Aamyleadem">
+              USWDS documentation website contributions
+            </a>
+          </li>
+        </ul>
       </div>
     </article>
-    <article class="job-card">
+    <article class="job-card job-card--two-items">
       <div class="job-card__headline">
         <p class="job-card__tag">2019-2021</p>
         <h3>Led design and development of Fortune 50 design systems</h3>
@@ -49,41 +61,40 @@ headline: Delivering front-end code at scale
       </div>
     </article>
     <div class="resume-link">
-      <a class="button" href="./resume">See my resume for more experience highlights</a>
+      <a class="button" href="./resume">Download resume</a>
     </div>
   </section>
 
   <section class="practice-area" aria-label="breaking down silos">
     <div>
       <h2 class="font-size-2xl">Connecting practice areas</h2>
-      <p>All web project work eventually finds its way into code. Bringing technical knowledge to content, accessibility, and UX/UI conversations reduces friction as work moves across practice areas.</p>
+      <p>All web project work eventually finds its way into code. Bringing technical knowledge to conversations with content, accessibility, and UX/UI teams reduces friction as work moves through the project. </p>
     </div>
     <div>
       <ul>
         <li>
           Accessibility
-          <img src="./assets/img/handshake.png">
+          <img src="./assets/img/handshake.png" alt="handshake emoji">
         </li>
         <li>
           Content
-           <img src="./assets/img/handshake.png">
-        </li>
-        <li>
-          UX/UI
-          <img src="./assets/img/handshake.png">
+           <img src="./assets/img/handshake.png" alt="handshake emoji">
         </li>
         <li>
           Development
+          <img src="./assets/img/handshake.png" alt="handshake emoji">
+        </li>
+        <li>
+          UX/UI
         </li>
       </ul>
     </div>
   </section>
 
-  <section>
-
-  </section>
-
   <footer>
-
+    <ul>
+      <li>LinkedIn</li>
+      <li>Github</li>
+    </ul>
   </footer>
 </div>

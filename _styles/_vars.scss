@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Rammetto+One&display=swap");
 
+// breakpoints
+$breakpoint-mobile: 600px;
+$breakpoint-tablet: 900px;
+$breakpoint-desktop: 1200px;
+
 // colors
 $color-blue-medium: #383b85;
 $color-blue-dark: #1a1b37;
@@ -20,7 +25,7 @@ $font-size-base: 16px;
 // spacing
 $spacing-unit: 8px;
 $spacing-unit-05: calc(#{$spacing-unit} * 0.5);
-$spacing-unit-1: calc(#{$spacing-unit} * 2);
+$spacing-unit-1: calc(#{$spacing-unit} * 1);
 $spacing-unit-105: calc(#{$spacing-unit} * 1.5);
 $spacing-unit-2: calc(#{$spacing-unit} * 2);
 $spacing-unit-3: calc(#{$spacing-unit} * 3);
@@ -29,3 +34,4 @@ $spacing-unit-5: calc(#{$spacing-unit} * 5);
 $spacing-unit-6: calc(#{$spacing-unit} * 6);
 $spacing-unit-7: calc(#{$spacing-unit} * 7);
 $spacing-unit-8: calc(#{$spacing-unit} * 8);
+

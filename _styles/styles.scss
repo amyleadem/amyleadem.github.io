@@ -2,12 +2,6 @@
 @use "vars" as *;
 @use "mixins";
 
-$row-0-height: 85vh;
-$row-1-height: auto;
-$row-2-height: auto;
-$row-3-height: auto;
-$row-4-height: auto;
-$row-5-height: 65vh;
 $spacing-vertical-section: $spacing-unit-8;
 
 @mixin grid($col-count: 12, $col-gap: 1) {
@@ -72,20 +66,24 @@ $spacing-vertical-section: $spacing-unit-8;
   text-decoration: none;
 }
 
+@mixin shadow-box {
+  border: 1px solid $color-gray;
+  box-shadow: $color-gray 6px 6px;
+  padding: $spacing-unit-4;
+}
+
+@mixin unstyled-list {
+  padding: 0;
+  margin: 0;
+  list-style: none
+}
+
 body {
   background: $color-gray-light;
 }
 
 .grid-container {
   @include grid;
-
-  grid-template-rows:
-    $row-0-height
-    $row-1-height
-    $row-2-height
-    $row-3-height
-    $row-4-height
-    $row-5-height;
 }
 
 .grid-row {
@@ -105,6 +103,15 @@ section:nth-of-type(2) {
   @include row;
   align-items: center;
   background: $color-blue-dark;
+  height: 60vh;
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 75vh;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    height: 85vh;
+  }
 }
 
 // summary banner
@@ -128,10 +135,16 @@ section:nth-of-type(5) {
 }
 
 section > h2 {
-  @include row;
-  grid-column: 3 / 12;
   margin-top: $spacing-vertical-section;
-  margin-bottom: 0;
+  margin-bottom: $spacing-unit-2;
+}
+
+section > * {
+  grid-column: 2 / 12;
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-column: 3 / 12;
+  }
 }
 
 .sticky-banner {
@@ -145,7 +158,7 @@ section > h2 {
   z-index: 1;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $breakpoint-desktop) {
   .sticky-banner {
     grid-column: 1 / 2;
   }
@@ -162,7 +175,7 @@ h3,
 h4,
 h5,
 h6 {
-  max-width:44ch;
+  max-width: 44ch;
 }
 
 p {
@@ -170,6 +183,9 @@ p {
   max-width: 80ch;
 }
 
+ul li {
+  padding-block: $spacing-unit-05;
+}
 
 h1 {
   @include font-size-3xl;
@@ -242,7 +258,7 @@ h4 {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $breakpoint-desktop) {
   h1 {
     font-size: 7vw;
   }
@@ -257,11 +273,13 @@ $summary-font-size: 1.25rem;
   display: inline;
   font-size: $summary-font-size;
   margin-top: calc(-#{$summary-padding-y} - (#{$summary-font-size} / 2));
+  max-width: 64%;
   padding-block: $summary-padding-y;
+  text-align: center;
 }
 
 .job-card {
-  @include grid(11);
+  @include grid(12);
   background: white;
   margin-top: $spacing-unit-2;
   margin-bottom: $spacing-vertical-section;
@@ -281,59 +299,31 @@ $summary-font-size: 1.25rem;
   }
 
   &__image {
+    display: none;
     width: 100%;
   }
 
-  &:nth-of-type(1)  {
+  & > * {
+    grid-column: 2/12;
+  }
+
+  &--one-item {
+    @include row;
     box-shadow: 10px 10px $color-yellow-light;
-    grid-column: 1 / 12;
-    z-index: 1;
 
-    .job-card__image {
-      grid-column: 3 / span 3;
-    }
-
-    .job-card__body {
-      grid-column: 6 / span 5;
-      padding-left: $spacing-unit-4;
+    @media (max-width: $breakpoint-tablet) {
+      .job-card__body {
+        @include shadow-box;
+      }
     }
   }
 
-  &:nth-of-type(2) {
+  &--two-items {
+    @include row;
     box-shadow: -10px 10px $color-yellow-light;
-    grid-column: 2 / 13;
-
-    .job-card__headline {
-      grid-column: 2/10;
-
-      h3 {
-        margin-top: 0;
-        margin-bottom: $spacing-unit;
-      }
-    }
-
-    .job-card__headline,
-    .job-card__subheadline {
-      margin-block: $spacing-unit;
-    }
-
-    .job-card__body {
-      @include grid(11, 3);
-      @include row;
-    }
 
     .job-card__body div {
-      border: 1px solid $color-gray;
-      box-shadow: $color-gray 6px 6px;
-      padding: $spacing-unit-4;
-
-      &:first-of-type {
-        grid-column: 2 / span 4;
-      }
-
-      &:nth-of-type(2) {
-        grid-column: 6 / span 4;
-      }
+      @include shadow-box;
 
       & > *:first-child {
         margin-top: 0;
@@ -342,6 +332,66 @@ $summary-font-size: 1.25rem;
       & > *:last-child {
         margin-bottom: 0;
       }
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    @include grid(11);
+
+    &__image {
+      display: block;
+    }
+
+    &:nth-of-type(1) {
+      box-shadow: 10px 10px $color-yellow-light;
+      grid-column: 1 / 12;
+      z-index: 1;
+
+      .job-card__image {
+        grid-column: 3 / span 3;
+      }
+
+      .job-card__body {
+        grid-column: 6 / span 5;
+        padding-left: $spacing-unit-4;
+      }
+    }
+
+    &:nth-of-type(2) {
+      box-shadow: -10px 10px $color-yellow-light;
+      grid-column: 2 / 13;
+
+      .job-card__headline {
+        grid-column: 2/10;
+
+        h3 {
+          margin-top: 0;
+          margin-bottom: $spacing-unit;
+        }
+      }
+
+      .job-card__headline,
+      .job-card__subheadline {
+        margin-block: $spacing-unit;
+      }
+
+      .job-card__body {
+        @include grid(11, 3);
+        @include row;
+      }
+
+      &:nth-of-type(2) {
+        .job-card__body div {
+          &:first-of-type {
+            grid-column: 2 / span 4;
+          }
+
+          &:nth-of-type(2) {
+            grid-column: 6 / span 4;
+          }
+        }
+      }
+
     }
   }
 }
@@ -356,8 +406,15 @@ $summary-font-size: 1.25rem;
 .practice-area {
   background: white;
 
+  ul {
+    padding-left: 0;
+    margin: 0;
+  }
+
   li {
+    align-items: center;
     color: $color-blue-dark;
+    display: inline-flex;
     font-family: $font-headline;
     font-size: 2.25rem;
     list-style: none;
@@ -366,7 +423,7 @@ $summary-font-size: 1.25rem;
 
   li img {
     height: $spacing-unit-7;
-    display: block;
+    margin-inline: $spacing-unit;
   }
 
   & > * {
@@ -374,20 +431,65 @@ $summary-font-size: 1.25rem;
   }
 
   & > *:first-child {
-    @include grid(6);
+    @include grid;
+    @include row;
     background: $color-red;
-    grid-column: 1/ span 6;
-    text-align: right;
 
     & > * {
-      grid-column: 2/ span 6;
-      padding-right: $spacing-unit-4;
+      grid-column: 2/12;
     }
   }
 
   & > *:nth-child(2) {
     align-items: center;
+    background: white;
     display: flex;
-    grid-column: 7 /span 4;
+    grid-column: 2 / span 10;
+
+    @media (min-width: $breakpoint-tablet) {
+      grid-column: 7 / span 4;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    li {
+      display: list-item;
+      padding-left: $spacing-unit-4;
+    }
+
+    li img {
+      display: block;
+    }
+
+    & > *:first-child {
+      @include grid(6);
+      grid-column: 1 / span 6;
+      text-align: right;
+
+      & > * {
+        grid-column: 2 / span 6;
+        padding-right: $spacing-unit-4;
+      }
+    }
+
+    & > *:nth-child(2) {
+      grid-column: 7 / span 4;
+    }
+  }
+}
+
+footer {
+  @include row;
+  @include grid;
+  background: $color-blue-medium;
+  margin-top: $spacing-vertical-section;
+  padding-top: $spacing-vertical-section;
+
+  & > * {
+    grid-column: 3/11;
+  }
+
+  ul {
+    @include unstyled-list;
   }
 }
