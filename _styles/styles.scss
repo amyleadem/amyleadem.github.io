@@ -27,10 +27,7 @@ $spacing-vertical-section: $spacing-unit-8;
   }
 }
 
-@mixin font-size-lg (
-  $font-color: $color-blue-dark,
-  $font-size: 1.25rem
-){
+@mixin font-size-lg($font-color: $color-blue-dark, $font-size: 1.25rem) {
   color: $font-color;
   font-family: $font-subheadline;
   font-size: $font-size;
@@ -38,10 +35,7 @@ $spacing-vertical-section: $spacing-unit-8;
   line-height: 1.3;
 }
 
-@mixin font-size-xl (
-  $font-color: $color-blue-dark,
-  $font-size: 1.75rem
-){
+@mixin font-size-xl($font-color: $color-blue-dark, $font-size: 1.75rem) {
   color: $font-color;
   font-family: $font-subheadline;
   font-size: $font-size;
@@ -74,10 +68,9 @@ $spacing-vertical-section: $spacing-unit-8;
   color: $font-color;
   grid-column: 2 / 12;
 
-
   @media (max-width: $breakpoint-tablet) {
     font-size: 3rem;
-    text-shadow:  $shadow-color $shadow-size / 2 $shadow-size / 2;
+    text-shadow: $shadow-color $shadow-size / 2 $shadow-size / 2;
   }
 
   @media (min-width: $breakpoint-mobile) {
@@ -90,7 +83,6 @@ $spacing-vertical-section: $spacing-unit-8;
 
   @media (min-width: $breakpoint-tablet) {
     font-size: 8vw;
-
   }
 
   @media (min-width: $breakpoint-desktop) {
@@ -98,6 +90,12 @@ $spacing-vertical-section: $spacing-unit-8;
     grid-column: 3 / 11;
   }
 
+  @media (min-width: $breakpoint-widescreen) {
+    font-size: 6.5vw;
+    grid-column: 3 / 11;
+  }
+
+  // include height media queries
   @media (max-height: $breakpoint-mobile) and (min-width: $breakpoint-desktop) {
     font-size: 6vw;
   }
@@ -119,7 +117,7 @@ $spacing-vertical-section: $spacing-unit-8;
 @mixin unstyled-list {
   padding: 0;
   margin: 0;
-  list-style: none
+  list-style: none;
 }
 
 html {
@@ -138,7 +136,6 @@ body {
   background: $color-gray-light;
 }
 
-
 .grid-container {
   @include grid;
 }
@@ -150,7 +147,6 @@ body {
 // sticky banner
 section[aria-label="page title"] {
   @include row;
-  @include grid;
   position: absolute;
 }
 
@@ -186,7 +182,7 @@ section[aria-label="career highlights"] {
   @include grid;
   margin-block: 0;
 
-  @media (min-width:$breakpoint-mobile) {
+  @media (min-width: $breakpoint-mobile) {
     margin-block: $spacing-vertical-section;
   }
 
@@ -311,7 +307,6 @@ section[aria-label="career highlights"] {
             }
           }
         }
-
       }
     }
   }
@@ -344,10 +339,12 @@ section[aria-label="contact"] {
   }
 
   a {
+    @include button;
+    box-shadow: $color-gray 3px 3px;
     margin-inline: $spacing-unit;
   }
 
-  @media (min-width:$breakpoint-mobile) {
+  @media (min-width: $breakpoint-mobile) {
     ul {
       flex-direction: row;
     }
@@ -374,7 +371,8 @@ section[aria-label="resume"] {
     }
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     @include row;
   }
 
@@ -382,13 +380,15 @@ section[aria-label="resume"] {
     @include font-size-lg;
   }
 
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     margin-top: 0;
   }
 
-  @media (min-width:$breakpoint-desktop) {
+  @media (min-width: $breakpoint-desktop) {
     & > div {
-      @include grid(10,3);
+      @include grid(10, 3);
       @include shadow-box();
       background: white;
       grid-column: 3/11;
@@ -431,20 +431,15 @@ p,
 li,
 h4,
 h5,
-h6{
-  max-width: 80ch;
+h6 {
+  line-height: 1.4;
+  max-width: 80ex;
 }
 
 h1,
 h2,
 h3 {
-  max-width: 44ch;
-}
-
-p,
-ul li {
-  line-height: 1.4;
-  max-width: 80ch;
+  max-width: 44ex;
 }
 
 ul {
@@ -495,8 +490,6 @@ h4 {
   @include button;
 }
 
-
-
 $summary-padding-y: $spacing-unit * 1.5;
 $summary-font-size: 1.125rem;
 .summary-banner {
@@ -512,8 +505,6 @@ $summary-font-size: 1.125rem;
     margin-top: calc(-#{$summary-padding-y} - (#{$summary-font-size} / 2));
   }
 }
-
-
 
 .practice-area {
   background: white;
@@ -589,7 +580,6 @@ $summary-font-size: 1.125rem;
   //   }
   // }
 }
-
 
 footer {
   @include row;
