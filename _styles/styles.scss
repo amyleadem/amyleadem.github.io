@@ -16,22 +16,37 @@ $spacing-vertical-section: $spacing-unit-8;
 
 @mixin banner-base {
   font-family: $font-subheadline;
-  font-size: 1.125rem;
   margin-block: 0;
-  padding-block: $spacing-unit-2;
-  padding-inline: $spacing-unit-4;
+  padding-block: $spacing-unit-1;
+  padding-inline: $spacing-unit-2;
+
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 1.125rem;
+    padding-block: $spacing-unit-2;
+    padding-inline: $spacing-unit-4;
+  }
 }
 
-@mixin font-size-xl(
-  $shadow-color: $color-blue-dark,
-  $shadow-size: 6px,
-  $font-color: $color-red,
-  $font-size: 4vw
-) {
-  text-shadow: $shadow-color $shadow-size $shadow-size;
-  font-family: $font-headline;
-  font-size: $font-size;
+@mixin font-size-lg (
+  $font-color: $color-blue-dark,
+  $font-size: 1.25rem
+){
   color: $font-color;
+  font-family: $font-subheadline;
+  font-size: $font-size;
+  font-weight: 200;
+  line-height: 1.3;
+}
+
+@mixin font-size-xl (
+  $font-color: $color-blue-dark,
+  $font-size: 1.75rem
+){
+  color: $font-color;
+  font-family: $font-subheadline;
+  font-size: $font-size;
+  font-weight: 200;
+  line-height: 1.3;
 }
 
 @mixin font-size-2xl(
@@ -57,41 +72,34 @@ $spacing-vertical-section: $spacing-unit-8;
   font-family: $font-headline;
   font-size: $font-size;
   color: $font-color;
+  grid-column: 2 / 12;
+
 
   @media (max-width: $breakpoint-tablet) {
     font-size: 3rem;
     text-shadow:  $shadow-color $shadow-size / 2 $shadow-size / 2;
   }
 
+  @media (min-width: $breakpoint-mobile) {
+    font-size: 8.5vw;
+  }
+
   @media (max-height: $breakpoint-mobile) and (min-width: $breakpoint-tablet) {
     font-size: 7.5vw;
   }
 
-  // @media (max-width: 600px) {
-  //   h1 {
-  //     font-size: 10vw;
-  //     text-shadow: $color-red 4px 4px;
-  //   }
-  // }
+  @media (min-width: $breakpoint-tablet) {
+    font-size: 8vw;
+  }
 
-  // @media (min-width: 600px) and (max-width: 800px) {
-  //   h1 {
-  //     text-shadow: $color-red 4px 4px;
-  //   }
-  // }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 7vw;
+    grid-column: 3 / 11;
+  }
 
-  // @media (max-width: 600px) and (max-height: 400px) {
-  //   h1 {
-  //     font-size: 7vw;
-  //     text-shadow: $color-red 2px 2px;
-  //   }
-  // }
-
-  // @media (min-width: $breakpoint-desktop) {
-  //   h1 {
-  //     font-size: 7vw;
-  //   }
-  // }
+  @media (max-height: $breakpoint-mobile) and (min-width: $breakpoint-desktop) {
+    font-size: 6vw;
+  }
 }
 
 @mixin button($text-color: white, $background-color: $color-blue-medium) {
@@ -113,9 +121,22 @@ $spacing-vertical-section: $spacing-unit-8;
   list-style: none
 }
 
+html {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
 body {
   background: $color-gray-light;
 }
+
 
 .grid-container {
   @include grid;
@@ -126,14 +147,14 @@ body {
 }
 
 // sticky banner
-section:nth-of-type(1) {
+section[aria-label="page title"] {
   @include row;
   @include grid;
   position: absolute;
 }
 
 //hero
-section:nth-of-type(2) {
+section[aria-label="hero"] {
   @include grid;
   @include row;
   align-items: center;
@@ -152,23 +173,91 @@ section:nth-of-type(2) {
 }
 
 // summary banner
-section:nth-of-type(3) {
+section[aria-label="personal summary"] {
   @include row;
   display: flex;
   justify-content: center;
 }
 
 // job experience
-section:nth-of-type(4) {
+section[aria-label="career highlights"] {
   @include row;
   @include grid;
   margin-block: $spacing-vertical-section;
 }
 
 // connecting practice areas
-section:nth-of-type(5) {
+section[aria-label="breaking down silos"] {
   @include row;
   @include grid;
+}
+
+section[aria-label="contact"] {
+  @include row;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  ul {
+    @include unstyled-list;
+    display: flex;
+    justify-content: center;
+    margin-top: $spacing-unit-2;
+    margin-bottom: $spacing-vertical-section;
+  }
+
+  a {
+    margin-inline: $spacing-unit;
+  }
+}
+
+// full resume
+section[aria-label="resume"] {
+  @include row;
+  @include grid;
+
+  background: $color-red;
+  margin-top: $spacing-vertical-section;
+
+  & > div {
+    @include grid(10,3);
+    @include shadow-box();
+    background: white;
+    grid-column: 3/11;
+    margin-top: $spacing-vertical-section;
+    padding: $spacing-vertical-section;
+
+    article {
+      @include shadow-box;
+      @include row;
+      margin-bottom: $spacing-unit-4;
+    }
+  }
+
+  h2, h3 {
+    @include row;
+  }
+
+  h3 {
+    @include font-size-lg;
+  }
+
+  h2, h3, h4 {
+    margin-top: 0;
+  }
+
+  // .sidebar-left {
+  //   grid-column: 1/4;
+  // }
+
+  .main-content {
+
+  }
 }
 
 section > h2 {
@@ -177,10 +266,10 @@ section > h2 {
 }
 
 section > * {
-  grid-column: 2 / 12;
+  grid-column: 2 / 1;
 
   @media (min-width: $breakpoint-tablet) {
-    grid-column: 3 / 12;
+    grid-column: 3 / 11;
   }
 }
 
@@ -202,22 +291,27 @@ section > * {
 }
 
 p,
-li {
+li,
+h4,
+h5,
+h6{
   max-width: 80ch;
 }
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   max-width: 44ch;
 }
 
-p {
+p,
+ul li {
   line-height: 1.4;
   max-width: 80ch;
+}
+
+ul {
+  padding-left: $spacing-unit-3;
 }
 
 ul li {
@@ -226,15 +320,10 @@ ul li {
 
 h1 {
   @include font-size-3xl;
-  grid-column: 3 / 11;
 }
 
 h2 {
-  color: $color-blue-dark;
-  font-family: $font-subheadline;
-  font-size: 1.75rem;
-  font-weight: 200;
-  line-height: 1.3;
+  @include font-size-xl;
 }
 
 h3 {
@@ -272,17 +361,19 @@ h4 {
 
 
 $summary-padding-y: $spacing-unit * 1.5;
-$summary-font-size: 1.25rem;
+$summary-font-size: 1.125rem;
 .summary-banner {
   @include banner-base;
   background: $color-yellow;
   box-shadow: 3px 3px $color-gray-light;
   display: inline;
-  font-size: $summary-font-size;
-  margin-top: calc(-#{$summary-padding-y} - (#{$summary-font-size} / 2));
-  max-width: 64%;
   padding-block: $summary-padding-y;
   text-align: center;
+
+  @media (min-width: $breakpoint-mobile) {
+    font-size: $summary-font-size;
+    margin-top: calc(-#{$summary-padding-y} - (#{$summary-font-size} / 2));
+  }
 }
 
 .job-card {
@@ -458,32 +549,33 @@ $summary-font-size: 1.25rem;
     }
   }
 
-  @media (min-width: $breakpoint-tablet) {
-    li {
-      display: list-item;
-      padding-left: $spacing-unit-4;
-    }
+  // @media (min-width: $breakpoint-tablet) {
+  //   li {
+  //     display: list-item;
+  //     padding-left: $spacing-unit-4;
+  //   }
 
-    li img {
-      display: block;
-    }
+  //   li img {
+  //     display: block;
+  //   }
 
-    & > *:first-child {
-      @include grid(6);
-      grid-column: 1 / span 6;
-      text-align: right;
+  //   & > *:first-child {
+  //     @include grid(6);
+  //     grid-column: 1 / span 6;
+  //     text-align: right;
 
-      & > * {
-        grid-column: 2 / span 6;
-        padding-right: $spacing-unit-4;
-      }
-    }
+  //     & > * {
+  //       grid-column: 2 / span 6;
+  //       padding-right: $spacing-unit-4;
+  //     }
+  //   }
 
-    & > *:nth-child(2) {
-      grid-column: 7 / span 4;
-    }
-  }
+  //   & > *:nth-child(2) {
+  //     grid-column: 7 / span 4;
+  //   }
+  // }
 }
+
 
 footer {
   @include row;
