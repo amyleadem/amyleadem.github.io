@@ -57,6 +57,41 @@ $spacing-vertical-section: $spacing-unit-8;
   font-family: $font-headline;
   font-size: $font-size;
   color: $font-color;
+
+  @media (max-width: $breakpoint-tablet) {
+    font-size: 3rem;
+    text-shadow:  $shadow-color $shadow-size / 2 $shadow-size / 2;
+  }
+
+  @media (max-height: $breakpoint-mobile) and (min-width: $breakpoint-tablet) {
+    font-size: 7.5vw;
+  }
+
+  // @media (max-width: 600px) {
+  //   h1 {
+  //     font-size: 10vw;
+  //     text-shadow: $color-red 4px 4px;
+  //   }
+  // }
+
+  // @media (min-width: 600px) and (max-width: 800px) {
+  //   h1 {
+  //     text-shadow: $color-red 4px 4px;
+  //   }
+  // }
+
+  // @media (max-width: 600px) and (max-height: 400px) {
+  //   h1 {
+  //     font-size: 7vw;
+  //     text-shadow: $color-red 2px 2px;
+  //   }
+  // }
+
+  // @media (min-width: $breakpoint-desktop) {
+  //   h1 {
+  //     font-size: 7vw;
+  //   }
+  // }
 }
 
 @mixin button($text-color: white, $background-color: $color-blue-medium) {
@@ -104,9 +139,11 @@ section:nth-of-type(2) {
   align-items: center;
   background: $color-blue-dark;
   height: 60vh;
+  min-height: 400px;
 
   @media (min-width: $breakpoint-tablet) {
     height: 75vh;
+    min-height: 500px;
   }
 
   @media (min-width: $breakpoint-desktop) {
@@ -232,37 +269,7 @@ h4 {
   @include button;
 }
 
-@media (max-height: 600px) {
-  h1 {
-    font-size: 6vw;
-  }
-}
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 10vw;
-    text-shadow: $color-red 4px 4px;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 800px) {
-  h1 {
-    text-shadow: $color-red 4px 4px;
-  }
-}
-
-@media (max-width: 600px) and (max-height: 400px) {
-  h1 {
-    font-size: 7vw;
-    text-shadow: $color-red 2px 2px;
-  }
-}
-
-@media (min-width: $breakpoint-desktop) {
-  h1 {
-    font-size: 7vw;
-  }
-}
 
 $summary-padding-y: $spacing-unit * 1.5;
 $summary-font-size: 1.25rem;

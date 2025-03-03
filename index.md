@@ -10,7 +10,7 @@ headline: Delivering front-end code at scale
   </section>
 
   <section aria-label="hero">
-    <h1 class="text-3xl">{{page.headline}}</h1>
+    <h1 class="font-size-3xl">{{page.headline}}</h1>
   </section>
 
   <section aria-label="personal summary">
