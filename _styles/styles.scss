@@ -90,6 +90,7 @@ $spacing-vertical-section: $spacing-unit-8;
 
   @media (min-width: $breakpoint-tablet) {
     font-size: 8vw;
+
   }
 
   @media (min-width: $breakpoint-desktop) {
@@ -183,7 +184,137 @@ section[aria-label="personal summary"] {
 section[aria-label="career highlights"] {
   @include row;
   @include grid;
-  margin-block: $spacing-vertical-section;
+  margin-block: 0;
+
+  @media (min-width:$breakpoint-mobile) {
+    margin-block: $spacing-vertical-section;
+  }
+
+  .job-card {
+    @include grid(12);
+    background: white;
+    margin-top: $spacing-unit-2;
+    margin-bottom: $spacing-unit-6;
+    padding-block: $spacing-unit-6;
+
+    &__tag {
+      background: $color-blue-medium;
+      color: $color-gray-light;
+      display: inline-block;
+      padding: $spacing-unit-05 $spacing-unit-2;
+    }
+
+    &__body {
+      & > * {
+        margin-block: $spacing-unit;
+      }
+    }
+
+    &__image {
+      display: none;
+      width: 100%;
+    }
+
+    & > * {
+      grid-column: 2/12;
+    }
+
+    &--one-item {
+      @include row;
+      box-shadow: 10px 10px $color-yellow-light;
+
+      @media (max-width: $breakpoint-tablet) {
+        .job-card__body {
+          @include shadow-box;
+        }
+      }
+    }
+
+    &--two-items {
+      @include row;
+      box-shadow: -10px 10px $color-yellow-light;
+
+      .job-card__body div {
+        @include shadow-box;
+
+        & > *:first-child {
+          margin-top: 0;
+        }
+
+        & > *:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      &--two-items .job-card__body div:last-child {
+        margin-top: $spacing-unit-4;
+      }
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      @include grid(11);
+      margin-bottom: $spacing-vertical-section;
+      padding-block: $spacing-vertical-section;
+
+      &__image {
+        display: block;
+      }
+
+      &:nth-of-type(1) {
+        box-shadow: 10px 10px $color-yellow-light;
+        grid-column: 1 / 12;
+        z-index: 1;
+
+        .job-card__image {
+          grid-column: 3 / span 3;
+        }
+
+        .job-card__body {
+          grid-column: 6 / span 5;
+          padding-left: $spacing-unit-4;
+        }
+      }
+
+      &:nth-of-type(2) {
+        box-shadow: -10px 10px $color-yellow-light;
+        grid-column: 2 / 13;
+
+        .job-card__headline {
+          grid-column: 2/10;
+
+          h3 {
+            margin-top: 0;
+            margin-bottom: $spacing-unit;
+          }
+        }
+
+        .job-card__headline,
+        .job-card__subheadline {
+          margin-block: $spacing-unit;
+        }
+
+        .job-card__body {
+          @include grid(11, 3);
+          @include row;
+        }
+
+        &:nth-of-type(2) {
+          .job-card__body div {
+            &:first-of-type {
+              grid-column: 2 / span 4;
+            }
+
+            &:nth-of-type(2) {
+              grid-column: 6 / span 4;
+            }
+          }
+        }
+
+      }
+    }
+  }
 }
 
 // connecting practice areas
@@ -274,7 +405,7 @@ section > h2 {
 section > * {
   grid-column: 2 / 12;
 
-  @media (min-width: $breakpoint-tablet) {
+  @media (min-width: $breakpoint-desktop) {
     grid-column: 3 / 11;
   }
 }
@@ -382,131 +513,7 @@ $summary-font-size: 1.125rem;
   }
 }
 
-.job-card {
-  @include grid(12);
-  background: white;
-  margin-top: $spacing-unit-2;
-  margin-bottom: $spacing-unit-4;
-  padding-block: $spacing-unit-4;
 
-  &__tag {
-    background: $color-blue-medium;
-    color: $color-gray-light;
-    display: inline-block;
-    padding: $spacing-unit-05 $spacing-unit-2;
-  }
-
-  &__body {
-    & > * {
-      margin-block: $spacing-unit;
-    }
-  }
-
-  &__image {
-    display: none;
-    width: 100%;
-  }
-
-  & > * {
-    grid-column: 2/12;
-  }
-
-  &--one-item {
-    @include row;
-    box-shadow: 10px 10px $color-yellow-light;
-
-    @media (max-width: $breakpoint-tablet) {
-      .job-card__body {
-        @include shadow-box;
-      }
-    }
-  }
-
-  &--two-items {
-    @include row;
-    box-shadow: -10px 10px $color-yellow-light;
-
-    .job-card__body div {
-      @include shadow-box;
-
-      & > *:first-child {
-        margin-top: 0;
-      }
-
-      & > *:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  @media (max-width: $breakpoint-tablet) {
-    &--two-items .job-card__body div:last-child {
-      margin-top: $spacing-unit-4;
-    }
-  }
-
-  @media (min-width: $breakpoint-tablet) {
-    @include grid(11);
-    margin-bottom: $spacing-vertical-section;
-    padding-block: $spacing-vertical-section;
-
-    &__image {
-      display: block;
-    }
-
-    &:nth-of-type(1) {
-      box-shadow: 10px 10px $color-yellow-light;
-      grid-column: 1 / 12;
-      z-index: 1;
-
-      .job-card__image {
-        grid-column: 3 / span 3;
-      }
-
-      .job-card__body {
-        grid-column: 6 / span 5;
-        padding-left: $spacing-unit-4;
-      }
-    }
-
-    &:nth-of-type(2) {
-      box-shadow: -10px 10px $color-yellow-light;
-      grid-column: 2 / 13;
-
-      .job-card__headline {
-        grid-column: 2/10;
-
-        h3 {
-          margin-top: 0;
-          margin-bottom: $spacing-unit;
-        }
-      }
-
-      .job-card__headline,
-      .job-card__subheadline {
-        margin-block: $spacing-unit;
-      }
-
-      .job-card__body {
-        @include grid(11, 3);
-        @include row;
-      }
-
-      &:nth-of-type(2) {
-        .job-card__body div {
-          &:first-of-type {
-            grid-column: 2 / span 4;
-          }
-
-          &:nth-of-type(2) {
-            grid-column: 6 / span 4;
-          }
-        }
-      }
-
-    }
-  }
-}
 
 .practice-area {
   background: white;
