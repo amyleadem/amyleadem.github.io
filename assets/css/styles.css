@@ -266,12 +266,18 @@ section[aria-label=contact] ul {
   margin: 0;
   list-style: none;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-top: calc(8px * 2);
   margin-bottom: calc(8px * 8);
 }
 section[aria-label=contact] a {
   margin-inline: 8px;
+}
+@media (min-width: 600px) {
+  section[aria-label=contact] ul {
+    flex-direction: row;
+  }
 }
 
 section[aria-label=resume] {
@@ -283,22 +289,15 @@ section[aria-label=resume] {
   margin-top: calc(8px * 8);
 }
 section[aria-label=resume] > div {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-column-gap: 24px;
-  border: 1px solid #424242;
-  box-shadow: #424242 6px 6px;
-  padding: calc(8px * 4);
-  background: white;
-  grid-column: 3/11;
   margin-top: calc(8px * 8);
-  padding: calc(8px * 8);
+  grid-column: 2/12;
 }
 section[aria-label=resume] > div article {
   border: 1px solid #424242;
   box-shadow: #424242 6px 6px;
   padding: calc(8px * 4);
   grid-column: 1/13;
+  background: white;
   margin-bottom: calc(8px * 4);
 }
 section[aria-label=resume] h2, section[aria-label=resume] h3 {
@@ -314,13 +313,27 @@ section[aria-label=resume] h3 {
 section[aria-label=resume] h2, section[aria-label=resume] h3, section[aria-label=resume] h4 {
   margin-top: 0;
 }
+@media (min-width: 1200px) {
+  section[aria-label=resume] > div {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-column-gap: 24px;
+    border: 1px solid #424242;
+    box-shadow: #424242 6px 6px;
+    padding: calc(8px * 4);
+    background: white;
+    grid-column: 3/11;
+    padding: calc(8px * 8);
+  }
+}
+
 section > h2 {
   margin-top: calc(8px * 8);
   margin-bottom: calc(8px * 2);
 }
 
 section > * {
-  grid-column: 2/1;
+  grid-column: 2/12;
 }
 @media (min-width: 900px) {
   section > * {
@@ -550,8 +563,8 @@ h4 {
   grid-column-gap: 8px;
   background: white;
   margin-top: calc(8px * 2);
-  margin-bottom: calc(8px * 8);
-  padding-block: calc(8px * 8);
+  margin-bottom: calc(8px * 4);
+  padding-block: calc(8px * 4);
 }
 .job-card__tag {
   background: #383b85;
@@ -595,11 +608,18 @@ h4 {
 .job-card--two-items .job-card__body div > *:last-child {
   margin-bottom: 0;
 }
+@media (max-width: 900px) {
+  .job-card--two-items .job-card__body div:last-child {
+    margin-top: calc(8px * 4);
+  }
+}
 @media (min-width: 900px) {
   .job-card {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     grid-column-gap: 8px;
+    margin-bottom: calc(8px * 8);
+    padding-block: calc(8px * 8);
   }
   .job-card__image {
     display: block;
@@ -643,13 +663,6 @@ h4 {
   .job-card:nth-of-type(2):nth-of-type(2) .job-card__body div:nth-of-type(2) {
     grid-column: 6/span 4;
   }
-}
-
-.resume-link {
-  grid-column: 1/13;
-  margin-block: calc(8px * 4);
-  display: flex;
-  justify-content: center;
 }
 
 .practice-area {

@@ -206,6 +206,7 @@ section[aria-label="contact"] {
   ul {
     @include unstyled-list;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: $spacing-unit-2;
     margin-bottom: $spacing-vertical-section;
@@ -213,6 +214,12 @@ section[aria-label="contact"] {
 
   a {
     margin-inline: $spacing-unit;
+  }
+
+  @media (min-width:$breakpoint-mobile) {
+    ul {
+      flex-direction: row;
+    }
   }
 }
 
@@ -225,16 +232,13 @@ section[aria-label="resume"] {
   margin-top: $spacing-vertical-section;
 
   & > div {
-    @include grid(10,3);
-    @include shadow-box();
-    background: white;
-    grid-column: 3/11;
     margin-top: $spacing-vertical-section;
-    padding: $spacing-vertical-section;
+    grid-column: 2/12;
 
     article {
       @include shadow-box;
       @include row;
+      background: white;
       margin-bottom: $spacing-unit-4;
     }
   }
@@ -251,12 +255,14 @@ section[aria-label="resume"] {
     margin-top: 0;
   }
 
-  // .sidebar-left {
-  //   grid-column: 1/4;
-  // }
-
-  .main-content {
-
+  @media (min-width:$breakpoint-desktop) {
+    & > div {
+      @include grid(10,3);
+      @include shadow-box();
+      background: white;
+      grid-column: 3/11;
+      padding: $spacing-vertical-section;
+    }
   }
 }
 
@@ -266,7 +272,7 @@ section > h2 {
 }
 
 section > * {
-  grid-column: 2 / 1;
+  grid-column: 2 / 12;
 
   @media (min-width: $breakpoint-tablet) {
     grid-column: 3 / 11;
@@ -380,8 +386,8 @@ $summary-font-size: 1.125rem;
   @include grid(12);
   background: white;
   margin-top: $spacing-unit-2;
-  margin-bottom: $spacing-vertical-section;
-  padding-block: $spacing-vertical-section;
+  margin-bottom: $spacing-unit-4;
+  padding-block: $spacing-unit-4;
 
   &__tag {
     background: $color-blue-medium;
@@ -433,8 +439,16 @@ $summary-font-size: 1.125rem;
     }
   }
 
+  @media (max-width: $breakpoint-tablet) {
+    &--two-items .job-card__body div:last-child {
+      margin-top: $spacing-unit-4;
+    }
+  }
+
   @media (min-width: $breakpoint-tablet) {
     @include grid(11);
+    margin-bottom: $spacing-vertical-section;
+    padding-block: $spacing-vertical-section;
 
     &__image {
       display: block;
@@ -492,13 +506,6 @@ $summary-font-size: 1.125rem;
 
     }
   }
-}
-
-.resume-link {
-  @include row;
-  margin-block: $spacing-unit-4;
-  display: flex;
-  justify-content: center;
 }
 
 .practice-area {
