@@ -341,12 +341,13 @@ h4 {
   border: 1px solid #686765;
   box-shadow: #686765 3px 3px;
   display: inline-block;
+  font-weight: 500;
   margin-top: calc(8px * 2) !important;
   padding: calc(8px * 1) calc(8px * 3);
   text-decoration: none;
 }
 .button, .button:visited, .button:active {
-  color: black;
+  color: #1a1b37;
 }
 
 section > h2 {
@@ -560,7 +561,7 @@ section[aria-label="career highlights"] .job-card--two-items {
   grid-column: 1/13;
   box-shadow: -10px 10px #fbd59f;
 }
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   section[aria-label="career highlights"] .job-card--two-items .job-card__body div:last-child {
     margin-top: calc(8px * 4);
   }
@@ -620,6 +621,7 @@ section[aria-label=contact] a {
   border: 1px solid #424242;
   box-shadow: #424242 3px 3px;
   display: inline-block;
+  font-weight: 500;
   margin-top: calc(8px * 2) !important;
   padding: calc(8px * 1) calc(8px * 3);
   text-decoration: none;
