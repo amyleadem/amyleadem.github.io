@@ -254,6 +254,7 @@ section[aria-label="contact"] {
   ul {
     @include unstyled-list;
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
     margin-top: $spacing-unit-2;
@@ -261,12 +262,13 @@ section[aria-label="contact"] {
   }
 
   a {
-    @include button;
-    box-shadow: $color-gray 3px 3px;
+    @include button($color-blue-medium, $color-gray-light, $color-gray);
+    font-size: 1.25rem;
+    padding: $spacing-unit-2 $spacing-unit-4;
     margin-inline: $spacing-unit;
   }
 
-  @media (min-width: $breakpoint-mobile) {
+  @media (min-width: $breakpoint-tablet) {
     ul {
       flex-direction: row;
     }
@@ -298,8 +300,13 @@ section[aria-label="resume"] {
     @include row;
   }
 
+  h2 {
+    margin-bottom: $spacing-unit-1;
+  }
+
   h3 {
     @include font-size-lg;
+    margin-bottom: 0;
   }
 
   h2,
@@ -309,12 +316,23 @@ section[aria-label="resume"] {
   }
 
   @media (min-width: $breakpoint-desktop) {
+    h2, h3{
+      margin-bottom: $spacing-unit-2;
+    }
+
     & > div {
       @include grid(10, 3);
       @include shadow-box();
       background: white;
       grid-column: 3/11;
       padding: $spacing-vertical-section;
+
+      article:first-of-type {
+        box-shadow: none;
+        border: 0;
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 }

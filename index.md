@@ -38,7 +38,7 @@ layout: default
           </li>
         </ul>
       </div>
-      <a class="job-card__button" href="#resume">See resume for more details</a>
+      <!-- <a class="job-card__button" href="#resume">See resume for more details</a> -->
     </article>
     <article class="job-card job-card--two-items">
       <div class="job-card__headline">
