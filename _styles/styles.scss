@@ -102,9 +102,17 @@ section[aria-label="personal summary"] {
       padding: $summary-padding-y $spacing-unit-4;
     }
   }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-top: calc(-#{$summary-padding-y} - (1.5rem / 2));
+
+    & > * {
+      font-size: 1.25rem;
+    }
+  }
 }
 
-// job experience
+// job resume
 section[aria-label="career highlights"] {
   @include row;
   @include grid;
@@ -295,7 +303,6 @@ section[aria-label="resume"] {
 
   .resume__page {
     margin-top: $spacing-vertical-section;
-    // grid-column: 2/12;
 
     article {
       @include shadow-box;
@@ -368,6 +375,12 @@ section[aria-label="resume"] {
       article[aria-label="technical skill"] {
         grid-row: 2/4;
       }
+    }
+  }
+
+  @media (min-width: $breakpoint-widescreen) {
+    .resume__page {
+      grid-column: 3/11;
     }
   }
 }

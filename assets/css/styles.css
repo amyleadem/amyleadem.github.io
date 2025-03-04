@@ -453,6 +453,14 @@ section[aria-label="personal summary"] > * {
     padding: 12px calc(8px * 4);
   }
 }
+@media (min-width: 1200px) {
+  section[aria-label="personal summary"] {
+    margin-top: calc(-12px - 0.75rem);
+  }
+  section[aria-label="personal summary"] > * {
+    font-size: 1.25rem;
+  }
+}
 
 section[aria-label="career highlights"] {
   grid-column: 1/13;
@@ -726,6 +734,11 @@ section[aria-label=resume] h4 {
   }
   section[aria-label=resume] .resume__page article[aria-label="technical skill"] {
     grid-row: 2/4;
+  }
+}
+@media (min-width: 1800px) {
+  section[aria-label=resume] .resume__page {
+    grid-column: 3/11;
   }
 }
 
