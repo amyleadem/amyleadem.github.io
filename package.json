@@ -6,11 +6,11 @@
   "type": "module",
   "scripts": {
     "build": "bundle exec jekyll build",
-    "compile": "npx gulp compile",
+    "compile": "npx gulp compile --quiet-deps",
     "prettier": "npx prettier . --write",
     "serve": "bundle exec jekyll serve",
-    "start": "concurrently 'bundle exec jekyll serve --drafts --future --livereload --incremental --host=localhost' 'npx gulp watch'",
-    "watch": "npx gulp watch"
+    "start": "concurrently 'bundle exec jekyll serve --drafts --future --livereload --incremental --host=localhost' 'npx gulp watch --quiet-deps'",
+    "watch": "npx gulp watch --quiet-deps"
   },
   "devDependencies": {
     "concurrently": "9.1.2",
