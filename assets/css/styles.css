@@ -15,7 +15,9 @@ Use a better box model (opinionated).
 
 html {
   /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family:
+    system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.15; /* 1. Correct the line height in all browsers. */
   -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
   tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
@@ -49,7 +51,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
+  font-family:
+    ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -113,9 +116,9 @@ textarea {
 Correct the inability to style clickable types in iOS and Safari.
 */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -145,7 +148,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -200,7 +203,8 @@ body {
   grid-column: 1/13;
 }
 
-a:visited, a:active {
+a:visited,
+a:active {
   color: #383b85;
 }
 a:hover {
@@ -394,7 +398,7 @@ section[aria-label="page title"] h1 {
   }
 }
 
-section[aria-label=hero] {
+section[aria-label="hero"] {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 8px;
@@ -403,22 +407,22 @@ section[aria-label=hero] {
   background: #1a1b37;
   min-height: 400px;
 }
-section[aria-label=hero] > * {
+section[aria-label="hero"] > * {
   padding-top: calc(8px * 6);
 }
 @media (min-width: 600px) {
-  section[aria-label=hero] {
+  section[aria-label="hero"] {
     height: 70vh;
     min-height: 600px;
   }
 }
 @media (min-width: 900px) {
-  section[aria-label=hero] {
+  section[aria-label="hero"] {
     height: 75vh;
   }
 }
 @media (min-width: 1200px) {
-  section[aria-label=hero] {
+  section[aria-label="hero"] {
     height: 85vh;
   }
 }
@@ -532,11 +536,11 @@ section[aria-label="career highlights"] .job-card--one-item img {
     z-index: 1;
   }
   section[aria-label="career highlights"] .job-card--one-item img {
-    grid-column: 3/span 3;
+    grid-column: 3 / span 3;
     width: 100%;
   }
   section[aria-label="career highlights"] .job-card--one-item .job-card__body {
-    grid-column: 6/span 5;
+    grid-column: 6 / span 5;
     padding-left: calc(8px * 4);
   }
 }
@@ -544,19 +548,33 @@ section[aria-label="career highlights"] .job-card--two-items {
   grid-column: 1/13;
   box-shadow: -10px 10px #fbd59f;
 }
-section[aria-label="career highlights"] .job-card--two-items .job-card__body div {
+section[aria-label="career highlights"]
+  .job-card--two-items
+  .job-card__body
+  div {
   border: 1px solid #424242;
   box-shadow: #424242 6px 6px;
   padding: calc(8px * 4);
 }
-section[aria-label="career highlights"] .job-card--two-items .job-card__body div > *:first-child {
+section[aria-label="career highlights"]
+  .job-card--two-items
+  .job-card__body
+  div
+  > *:first-child {
   margin-top: 0;
 }
-section[aria-label="career highlights"] .job-card--two-items .job-card__body div > *:last-child {
+section[aria-label="career highlights"]
+  .job-card--two-items
+  .job-card__body
+  div
+  > *:last-child {
   margin-bottom: 0;
 }
 @media (max-width: 900px) {
-  section[aria-label="career highlights"] .job-card--two-items .job-card__body div:last-child {
+  section[aria-label="career highlights"]
+    .job-card--two-items
+    .job-card__body
+    div:last-child {
     margin-top: calc(8px * 4);
   }
 }
@@ -571,11 +589,17 @@ section[aria-label="career highlights"] .job-card--two-items .job-card__body div
     grid-column-gap: 24px;
     grid-column: 1/13;
   }
-  section[aria-label="career highlights"] .job-card--two-items:nth-of-type(2) .job-card__body div:first-of-type {
-    grid-column: 2/span 4;
+  section[aria-label="career highlights"]
+    .job-card--two-items:nth-of-type(2)
+    .job-card__body
+    div:first-of-type {
+    grid-column: 2 / span 4;
   }
-  section[aria-label="career highlights"] .job-card--two-items:nth-of-type(2) .job-card__body div:nth-of-type(2) {
-    grid-column: 6/span 4;
+  section[aria-label="career highlights"]
+    .job-card--two-items:nth-of-type(2)
+    .job-card__body
+    div:nth-of-type(2) {
+    grid-column: 6 / span 4;
   }
 }
 
@@ -586,17 +610,17 @@ section[aria-label="breaking down silos"] {
   grid-column-gap: 8px;
 }
 
-section[aria-label=contact] {
+section[aria-label="contact"] {
   grid-column: 1/13;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-section[aria-label=contact] h2 {
+section[aria-label="contact"] h2 {
   text-align: center;
   margin-top: 0;
 }
-section[aria-label=contact] ul {
+section[aria-label="contact"] ul {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -606,7 +630,7 @@ section[aria-label=contact] ul {
   margin-top: calc(8px * 2);
   margin-bottom: calc(8px * 8);
 }
-section[aria-label=contact] a {
+section[aria-label="contact"] a {
   font-family: "Bricolage Grotesque", sans-serif;
   margin-block: 0;
   padding-block: calc(8px * 1);
@@ -618,19 +642,19 @@ section[aria-label=contact] a {
   margin-inline: 8px;
 }
 @media (min-width: 900px) {
-  section[aria-label=contact] a {
+  section[aria-label="contact"] a {
     font-size: 1.125rem;
     padding-block: calc(8px * 2);
     padding-inline: calc(8px * 4);
   }
 }
 @media (min-width: 600px) {
-  section[aria-label=contact] ul {
+  section[aria-label="contact"] ul {
     flex-direction: row;
   }
 }
 
-section[aria-label=resume] {
+section[aria-label="resume"] {
   grid-column: 1/13;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -638,11 +662,11 @@ section[aria-label=resume] {
   background: #e82822;
   margin-top: calc(8px * 8);
 }
-section[aria-label=resume] > div {
+section[aria-label="resume"] > div {
   margin-top: calc(8px * 8);
   grid-column: 2/12;
 }
-section[aria-label=resume] > div article {
+section[aria-label="resume"] > div article {
   border: 1px solid #424242;
   box-shadow: #424242 6px 6px;
   padding: calc(8px * 4);
@@ -650,24 +674,24 @@ section[aria-label=resume] > div article {
   background: white;
   margin-bottom: calc(8px * 4);
 }
-section[aria-label=resume] h2,
-section[aria-label=resume] h3 {
+section[aria-label="resume"] h2,
+section[aria-label="resume"] h3 {
   grid-column: 1/13;
 }
-section[aria-label=resume] h3 {
+section[aria-label="resume"] h3 {
   color: #1a1b37;
   font-family: "Bricolage Grotesque", sans-serif;
   font-size: 1.25rem;
   font-weight: 200;
   line-height: 1.3;
 }
-section[aria-label=resume] h2,
-section[aria-label=resume] h3,
-section[aria-label=resume] h4 {
+section[aria-label="resume"] h2,
+section[aria-label="resume"] h3,
+section[aria-label="resume"] h4 {
   margin-top: 0;
 }
 @media (min-width: 1200px) {
-  section[aria-label=resume] > div {
+  section[aria-label="resume"] > div {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-column-gap: 24px;
@@ -717,11 +741,11 @@ section[aria-label=resume] h4 {
   align-items: center;
   background: white;
   display: flex;
-  grid-column: 2/span 10;
+  grid-column: 2 / span 10;
 }
 @media (min-width: 900px) {
   .practice-area > *:nth-child(2) {
-    grid-column: 7/span 4;
+    grid-column: 7 / span 4;
   }
 }
 
