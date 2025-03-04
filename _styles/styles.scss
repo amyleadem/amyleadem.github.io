@@ -116,11 +116,11 @@ section[aria-label="personal summary"] {
 section[aria-label="career highlights"] {
   @include row;
   @include grid;
-   margin-block: $spacing-vertical-section;
+  margin-block: $spacing-vertical-section;
 
-   @media (max-width: $breakpoint-mobile) {
+  @media (max-width: $breakpoint-mobile) {
     margin-top: 0;
-   }
+  }
 
   .job-card {
     @include grid(12);
@@ -378,7 +378,7 @@ section[aria-label="resume"] {
     }
   }
 
-  @media (min-width: $breakpoint-widescreen) {
+  @media (min-width: $breakpoint-desktop-lg) {
     .resume__page {
       grid-column: 3/11;
     }

@@ -736,7 +736,7 @@ section[aria-label=resume] h4 {
     grid-row: 2/4;
   }
 }
-@media (min-width: 1800px) {
+@media (min-width: 1500px) {
   section[aria-label=resume] .resume__page {
     grid-column: 3/11;
   }

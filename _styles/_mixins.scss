@@ -96,7 +96,7 @@
     font-size: 6.5vw;
   }
 
-  @media (min-width: $breakpoint-xwidescreen) {
+  @media (min-width: $breakpoint-widescreen-lg) {
     font-size: 8rem;
     grid-column: 4/10;
   }

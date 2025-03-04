@@ -18,7 +18,7 @@ layout: default
 
   <section aria-label="career highlights">
     <h2>Experience highlights</h2>
-    <article class="job-card job-card--one-item">
+    <article class="job-card job-card--one-item" aria-label="Featured experience: U.S. Web design system">
       <img src="./assets/img/uswds.png" alt="United States Web Design System logo">
       <div class="job-card__body">
         <p class="tag">2021-2025</p>
@@ -43,7 +43,7 @@ layout: default
         </p>
       </div>
     </article>
-    <article class="job-card job-card--two-items">
+    <article class="job-card job-card--two-items" aria-label="Featured experience: Fortune 50 design systems">
       <div class="job-card__headline">
         <p class="tag">2019-2021</p>
         <h3>Led design and development of two Fortune 50 design systems</h3>
@@ -61,7 +61,7 @@ layout: default
         </div>
       </div>
       <div class="job-card__cta">
-        <a class="button" href="#raytheon">Learn more about my roles at Raytheon in my resume</a>
+        <a class="button" href="#raytheon">Learn more about these Raytheon roles in my resume</a>
       </div>
     </article>
   </section>
@@ -138,8 +138,7 @@ layout: default
           <h3>Education</h3>
           <p>B.S. Journalism and Advertising, <br/>Arkansas State University</p>
         </article>
-
-        <article id="uswds">
+        <article id="uswds" aria-label="Experience on U.S. Web design system">
           <h3>Experience</h3>
           <h4>Senior Software Engineer</h4>
           <h5>Bixal / November 2021 - Present</h5>
@@ -154,7 +153,7 @@ layout: default
             <li><strong>Support customers:</strong> Answer technical support questions from the public across multiple channels, including GitHub, Slack, and ZenDesk.</li>
           </ul>
         </article>
-        <article id="raytheon">
+        <article id="raytheon" aria-label="Experience at Raytheon">
           <h3>Experience</h3>
           <h4>Principal front-end web developer</h4>
           <h5>Raytheon Technologies / January 2020 - November 2021</h5>
@@ -168,7 +167,7 @@ layout: default
           </ul>
           <p><strong>The result:</strong> A streamlined system that makes page design and development much easier, faster, and more consistent than it had ever been before.</p>
         </article>
-        <article id="raytheon-2">
+        <article id="raytheon-2" aria-label="Experience at Amy Leadem Web development">
           <h3>Experience</h3>
           <h4>Owner and front-end developer</h4>
           <h5>Amy Leadem Web Development / January 2019 - January 2020</h5>
@@ -181,19 +180,19 @@ layout: default
           </ul>
           <p><strong>The result:</strong> A CMS experience that makes it easy for even non-technical users to safely create accessible, performant, and branded pages in minutes rather than hours.</p>
         </article>
-        <article>
+        <article aria-label="Experience at Amy Arnold web development">
           <h3>Experience</h3>
           <h4>Front-end designer and developer</h4>
           <h5>Amy Arnold Web Development / 2012-2016</h5>
           <p>Front-end web developer responsible for responsive web design and development on various platforms, including Wordpress, Jekyll, and custom-coded static websites.</p>
         </article>
-        <article>
+        <article aria-label="Experience at Raytheon Missile systems">
           <h3>Experience</h3>
           <h4>Senior designer</h4>
           <h5>Raytheon Missile Systems / 2009-2012</h5>
           <p>Senior web designer, developer, and motion artist responsible for developing internal and external websites, digital signage, and print work.</p>
         </article>
-        <article>
+        <article aria-label="Experience at Occasions publishing group">
           <h3>Experience</h3>
           <h4>Graphic and Web Designer</h4>
           <h5>Occasions Publishing Group / 2006-2009</h5>
