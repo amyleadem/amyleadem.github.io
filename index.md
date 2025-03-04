@@ -200,5 +200,6 @@ layout: default
           <p>Designer and developer for three print publications and their accompanying websites. Daily responsibilities included: ad development, copywriting, magazine layout and design, web design and coding, photography and color correction, and in-house promotion.</p>
         </article>
     </div>
+
   </section>
 </div>

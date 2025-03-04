@@ -329,7 +329,6 @@ section[aria-label="resume"] {
       @include shadow-box;
       background: white;
       margin-bottom: $spacing-unit-4;
-
     }
   }
 
@@ -367,7 +366,7 @@ section[aria-label="resume"] {
       }
 
       article[aria-label="technical skill"] {
-        grid-row: 2/4
+        grid-row: 2/4;
       }
     }
   }

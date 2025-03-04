@@ -68,13 +68,14 @@
   grid-column: 2 / 12;
   max-width: 44ex;
 
-  @media (max-width: $breakpoint-tablet) {
-    font-size: 3rem;
-    text-shadow: $shadow-color $shadow-size / 2 $shadow-size / 2;
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 3.25rem;
+    text-shadow: $shadow-color 3px 3px;
   }
 
   @media (min-width: $breakpoint-mobile) {
-    font-size: 8.5vw;
+    font-size: 10.5vw;
+    text-shadow: $shadow-color 4px 4px;
   }
 
   @media (max-height: $breakpoint-mobile) and (min-width: $breakpoint-tablet) {
@@ -83,6 +84,7 @@
 
   @media (min-width: $breakpoint-tablet) {
     font-size: 8vw;
+    text-shadow: $shadow-color $shadow-size $shadow-size;
   }
 
   @media (min-width: $breakpoint-desktop) {
@@ -92,7 +94,11 @@
 
   @media (min-width: $breakpoint-widescreen) {
     font-size: 6.5vw;
-    grid-column: 3 / 11;
+  }
+
+  @media (min-width: $breakpoint-xwidescreen) {
+    font-size: 8rem;
+    grid-column: 4/10;
   }
 
   // include height media queries

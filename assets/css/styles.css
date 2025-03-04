@@ -297,15 +297,16 @@ h4 {
   grid-column: 2/12;
   max-width: 44ex;
 }
-@media (max-width: 900px) {
+@media (max-width: 600px) {
   .font-size-3xl {
-    font-size: 3rem;
+    font-size: 3.25rem;
     text-shadow: #e82822 3px 3px;
   }
 }
 @media (min-width: 600px) {
   .font-size-3xl {
-    font-size: 8.5vw;
+    font-size: 10.5vw;
+    text-shadow: #e82822 4px 4px;
   }
 }
 @media (max-height: 600px) and (min-width: 900px) {
@@ -316,6 +317,7 @@ h4 {
 @media (min-width: 900px) {
   .font-size-3xl {
     font-size: 8vw;
+    text-shadow: #e82822 6px 6px;
   }
 }
 @media (min-width: 1200px) {
@@ -327,7 +329,12 @@ h4 {
 @media (min-width: 1800px) {
   .font-size-3xl {
     font-size: 6.5vw;
-    grid-column: 3/11;
+  }
+}
+@media (min-width: 2100px) {
+  .font-size-3xl {
+    font-size: 8rem;
+    grid-column: 4/10;
   }
 }
 @media (max-height: 600px) and (min-width: 1200px) {
