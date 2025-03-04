@@ -292,6 +292,7 @@ h4 {
   text-shadow: #e82822 6px 6px;
   font-family: "Rammetto One", sans-serif;
   font-size: 8vw;
+  line-height: 1.2;
   color: #fbd59f;
   grid-column: 2/12;
   max-width: 44ex;

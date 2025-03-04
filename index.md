@@ -5,7 +5,7 @@ layout: default
 
 <div class="grid-container">
   <section aria-label="page title">
-    <h1>AMY_LEADEM / README.md</h1>
+    <h1>AMY_LEADEM / README</h1>
   </section>
 
   <section aria-label="hero">
@@ -102,20 +102,6 @@ layout: default
   </section> -->
 
   <section aria-label="resume" id="resume">
-    <!-- <h2>Amy Leadem resume</h2>
-    <div class="sidebar">
-      <article>
-        <h3>Expertise</h3>
-        <ul>
-          <li>Design systems</li>
-          <li>Web accessibility</li>
-          <li>Technical documentation</li>
-          <li>Content design</li>
-          <li>Process improvement</li>
-          <li>Product delivery</li>
-        </ul>
-      </article>
-    </div> -->
     <div class="main-content">
       <article>
       <h2>Amy Leadem resume</h2>
@@ -174,6 +160,39 @@ layout: default
         <h4>Graphic and Web Designer</h4>
         <h5>Occasions Publishing Group / 2006-2009</h5>
         <p>Designer and developer for three print publications and their accompanying websites. Daily responsibilities included: ad development, copywriting, magazine layout and design, web design and coding, photography and color correction, and in-house promotion.</p>
+      </article>
+      <article aria-label="expertise">
+        <h3>Expertise</h3>
+        <ul>
+          <li>Design systems</li>
+          <li>Web accessibility</li>
+          <li>Technical documentation</li>
+          <li>Content design</li>
+          <li>Process improvement</li>
+          <li>Product delivery</li>
+        </ul>
+      </article>
+      <article aria-label="technical skill">
+        <h3>Technical skills</h3>
+        <ul>
+          <li>HTML/Markdown</li>
+          <li>CSS/Sass</li>
+          <li>JavaScript</li>
+          <li>Web components/Lit</li>
+          <li>Storybook</li>
+          <li>JSON</li>
+          <li>YAML</li>
+          <li>Jekyll</li>
+          <li>Eleventy</li>
+          <li>Liquid</li>
+          <li>Twig</li>
+          <li>VoiceOver</li>
+          <li>Git</li>
+        </ul>
+      </article>
+      <article aria-label="education">
+        <h3>Education</h3>
+        <p>B.S. Journalism and Advertising, Arkansas State University</p>
       </article>
     </div>
   </section>
