@@ -166,8 +166,6 @@ section[aria-label="career highlights"] {
       }
     }
 
-
-
     @media (min-width: $breakpoint-desktop) {
       @include grid(11);
       margin-bottom: $spacing-vertical-section;
@@ -204,7 +202,7 @@ section[aria-label="career highlights"] {
 
         .job-card__body {
           grid-column: 6 / span 5;
-          margin-bottom:0;
+          margin-bottom: 0;
           margin-top: $spacing-unit-05;
           padding-left: $spacing-unit-4;
         }
@@ -230,7 +228,7 @@ section[aria-label="career highlights"] {
           @include row;
 
           div {
-            margin-top:$spacing-unit-2;
+            margin-top: $spacing-unit-2;
           }
 
           div:first-of-type {
@@ -295,9 +293,9 @@ section[aria-label="resume"] {
   background: $color-red;
   margin-top: $spacing-vertical-section;
 
-  & > div {
+  .resume__page {
     margin-top: $spacing-vertical-section;
-    grid-column: 2/12;
+    // grid-column: 2/12;
 
     article {
       @include shadow-box;
@@ -318,7 +316,6 @@ section[aria-label="resume"] {
 
   h3 {
     @include font-size-lg;
-    margin-bottom: 0;
   }
 
   h2,
@@ -327,23 +324,50 @@ section[aria-label="resume"] {
     margin-top: 0;
   }
 
+  @media (max-width: $breakpoint-desktop) {
+    h2 {
+      @include shadow-box;
+      background: white;
+      margin-bottom: $spacing-unit-4;
+
+    }
+  }
+
   @media (min-width: $breakpoint-desktop) {
-    h2, h3{
+    h2 {
+      grid-column: 2/12;
+      padding-top: $spacing-vertical-section;
+    }
+    h2,
+    h3 {
       margin-bottom: $spacing-unit-2;
     }
 
-    & > div {
+    .resume__page {
       @include grid(10, 3);
       @include shadow-box();
       background: white;
-      grid-column: 3/11;
-      padding: $spacing-vertical-section;
+      grid-column: 2/12;
+      padding: 0;
 
-      article:first-of-type {
-        box-shadow: none;
-        border: 0;
-        margin: 0;
-        padding: 0;
+      article {
+        grid-column: 2/10;
+
+        &.left {
+          grid-column: 2/ 6;
+        }
+
+        &.right {
+          grid-column: 6/ 10;
+        }
+
+        & > *:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      article[aria-label="technical skill"] {
+        grid-row: 2/4
       }
     }
   }
