@@ -467,11 +467,11 @@ section[aria-label="career highlights"] {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 8px;
-  margin-bottom: 0;
+  margin-block: calc(8px * 8);
 }
-@media (min-width: 600px) {
+@media (max-width: 600px) {
   section[aria-label="career highlights"] {
-    margin-block: calc(8px * 8);
+    margin-top: 0;
   }
 }
 section[aria-label="career highlights"] .job-card {
