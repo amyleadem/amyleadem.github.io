@@ -146,6 +146,28 @@ section[aria-label="career highlights"] {
       justify-content: center;
     }
 
+    &__cta {
+      margin-top: $spacing-unit-2;
+
+      button {
+        margin-block: 0;
+      }
+    }
+
+    &__body div {
+      @include shadow-box;
+
+      & > *:first-child {
+        margin-top: 0;
+      }
+
+      & > *:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+
+
     @media (min-width: $breakpoint-desktop) {
       @include grid(11);
       margin-bottom: $spacing-vertical-section;
@@ -182,6 +204,8 @@ section[aria-label="career highlights"] {
 
         .job-card__body {
           grid-column: 6 / span 5;
+          margin-bottom:0;
+          margin-top: $spacing-unit-05;
           padding-left: $spacing-unit-4;
         }
       }
@@ -190,18 +214,6 @@ section[aria-label="career highlights"] {
     &--two-items {
       @include row;
       box-shadow: -10px 10px $color-yellow-light;
-
-      .job-card__body div {
-        @include shadow-box;
-
-        & > *:first-child {
-          margin-top: 0;
-        }
-
-        & > *:last-child {
-          margin-bottom: 0;
-        }
-      }
 
       @media (max-width: $breakpoint-tablet) {
         .job-card__body div:last-child {
@@ -214,19 +226,19 @@ section[aria-label="career highlights"] {
         grid-column: 2 / 13;
 
         .job-card__body {
-          @include grid(11, 3);
+          @include grid(11, 4);
           @include row;
-        }
 
-        &:nth-of-type(2) {
-          .job-card__body div {
-            &:first-of-type {
-              grid-column: 2 / span 4;
-            }
+          div {
+            margin-top:$spacing-unit-2;
+          }
 
-            &:nth-of-type(2) {
-              grid-column: 6 / span 4;
-            }
+          div:first-of-type {
+            grid-column: 2 / span 4;
+          }
+
+          div:last-of-type {
+            grid-column: 6 / span 4;
           }
         }
       }

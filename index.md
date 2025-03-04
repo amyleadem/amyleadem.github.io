@@ -23,8 +23,9 @@ layout: default
       <div class="job-card__body">
         <p class="tag">2021-2025</p>
         <h3 class="job-card__headline">Senior developer on the U.S. Web Design System core team</h3>
-        <p>USWDS is the open source design system for the federal government that makes it easier to build accessible, mobile-friendly government websites.</p>
-        <p>See merged contributions on GitHub:</p>
+        <p>USWDS is the open source design system for the federal government. </p>
+        <p>As a senior developer on the USWDS core team, I improved accessibility, performance, and readability in the USWDS code base, coordinated releases, wrote quality documentation, and improved process. </p>
+        <p>See my merged contributions to USWDS on GitHub:</p>
         <ul>
           <li>
             <a href="https://github.com/uswds/uswds/pulls?q=is%3Apr+is%3Amerged+author%3Aamyleadem">
@@ -37,13 +38,15 @@ layout: default
             </a>
           </li>
         </ul>
+        <p class="job-card__cta">
+          <a class="button" href="#uswds">Learn more about my role on USWDS in my resume</a>
+        </p>
       </div>
-      <!-- <a class="job-card__button" href="#resume">See resume for more details</a> -->
     </article>
     <article class="job-card job-card--two-items">
       <div class="job-card__headline">
         <p class="tag">2019-2021</p>
-        <h3>Led design and development of Fortune 50 design systems</h3>
+        <h3>Led design and development of two Fortune 50 design systems</h3>
       </div>
       <div class="job-card__body">
         <div>
@@ -56,6 +59,9 @@ layout: default
           <p>Lead front-end developer for a new design system and component library to be shared across multiple public-facing websites.</p>
           <p>Developed a front-end code base from the ground up. Replaced a layered, cluttered code base with one that was lean and future-friendly.</p>
         </div>
+      </div>
+      <div class="job-card__cta">
+        <a class="button" href="#raytheon">Learn more about my roles at Raytheon in my resume</a>
       </div>
     </article>
   </section>
@@ -96,14 +102,26 @@ layout: default
   </section> -->
 
   <section aria-label="resume" id="resume">
+    <!-- <h2>Amy Leadem resume</h2>
+    <div class="sidebar">
+      <article>
+        <h3>Expertise</h3>
+        <ul>
+          <li>Design systems</li>
+          <li>Web accessibility</li>
+          <li>Technical documentation</li>
+          <li>Content design</li>
+          <li>Process improvement</li>
+          <li>Product delivery</li>
+        </ul>
+      </article>
+    </div> -->
     <div class="main-content">
       <article>
-      <h2>
-        Amy Leadem resume
-      </h2>
+      <h2>Amy Leadem resume</h2>
       <h3>Experience</h3>
       </article>
-      <article>
+      <article id="uswds">
         <h4>Senior Software Engineer</h4>
         <h5>Bixal / November 2021 - Present</h5>
         <p>Senior front-end developer on the U.S. Web Design System (USWDS) core team. Strong focus on accessibility, user experience, and quality documentation. Daily responsibilities include:</p>
@@ -117,7 +135,7 @@ layout: default
           <li><strong>Support customers:</strong> Answer technical support questions from the public across multiple channels, including GitHub, Slack, and ZenDesk.</li>
         </ul>
       </article>
-      <article>
+      <article id="raytheon">
         <h4>Principal front-end web developer</h4>
         <h5>Raytheon Technologies / January 2020 - November 2021</h5>
         <p>Lead front-end developer responsible for designing, developing and maintaining multiple design systems across the company’s internal and external web platforms. Developed design systems to be consumed by Drupal, Oracle, and Sitecore.</p>

@@ -495,6 +495,23 @@ section[aria-label="career highlights"] .job-card__button {
     padding-inline: calc(8px * 4);
   }
 }
+section[aria-label="career highlights"] .job-card__cta {
+  margin-top: calc(8px * 2);
+}
+section[aria-label="career highlights"] .job-card__cta button {
+  margin-block: 0;
+}
+section[aria-label="career highlights"] .job-card__body div {
+  border: 1px solid #424242;
+  box-shadow: #424242 6px 6px;
+  padding: calc(8px * 4);
+}
+section[aria-label="career highlights"] .job-card__body div > *:first-child {
+  margin-top: 0;
+}
+section[aria-label="career highlights"] .job-card__body div > *:last-child {
+  margin-bottom: 0;
+}
 @media (min-width: 1200px) {
   section[aria-label="career highlights"] .job-card {
     display: grid;
@@ -533,23 +550,14 @@ section[aria-label="career highlights"] .job-card--one-item img {
   }
   section[aria-label="career highlights"] .job-card--one-item .job-card__body {
     grid-column: 6/span 5;
+    margin-bottom: 0;
+    margin-top: calc(8px * 0.5);
     padding-left: calc(8px * 4);
   }
 }
 section[aria-label="career highlights"] .job-card--two-items {
   grid-column: 1/13;
   box-shadow: -10px 10px #fbd59f;
-}
-section[aria-label="career highlights"] .job-card--two-items .job-card__body div {
-  border: 1px solid #424242;
-  box-shadow: #424242 6px 6px;
-  padding: calc(8px * 4);
-}
-section[aria-label="career highlights"] .job-card--two-items .job-card__body div > *:first-child {
-  margin-top: 0;
-}
-section[aria-label="career highlights"] .job-card--two-items .job-card__body div > *:last-child {
-  margin-bottom: 0;
 }
 @media (max-width: 900px) {
   section[aria-label="career highlights"] .job-card--two-items .job-card__body div:last-child {
@@ -564,13 +572,16 @@ section[aria-label="career highlights"] .job-card--two-items .job-card__body div
   section[aria-label="career highlights"] .job-card--two-items .job-card__body {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
-    grid-column-gap: 24px;
+    grid-column-gap: 32px;
     grid-column: 1/13;
   }
-  section[aria-label="career highlights"] .job-card--two-items:nth-of-type(2) .job-card__body div:first-of-type {
+  section[aria-label="career highlights"] .job-card--two-items .job-card__body div {
+    margin-top: calc(8px * 2);
+  }
+  section[aria-label="career highlights"] .job-card--two-items .job-card__body div:first-of-type {
     grid-column: 2/span 4;
   }
-  section[aria-label="career highlights"] .job-card--two-items:nth-of-type(2) .job-card__body div:nth-of-type(2) {
+  section[aria-label="career highlights"] .job-card--two-items .job-card__body div:last-of-type {
     grid-column: 6/span 4;
   }
 }
