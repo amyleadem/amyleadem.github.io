@@ -1,6 +1,7 @@
 @use "normalize";
 @use "vars" as *;
 @use "mixins";
+@forward "base";
 
 $spacing-vertical-section: $spacing-unit-8;
 $spacing-vertical-section-small: $spacing-unit-6;
@@ -28,6 +29,7 @@ $spacing-horizontal-section: $spacing-unit-4;
     padding-inline: $spacing-unit-4;
   }
 }
+
 
 @mixin font-size-md($font-color: black, $font-size: 1rem) {
   color: $font-color;
@@ -67,6 +69,7 @@ $spacing-horizontal-section: $spacing-unit-4;
   font-family: $font-headline;
   font-size: $font-size;
   margin-block: $spacing-unit;
+  max-width: 44ex;
   text-shadow: $shadow-color $shadow-size $shadow-size;
 }
 
@@ -81,6 +84,7 @@ $spacing-horizontal-section: $spacing-unit-4;
   font-size: $font-size;
   color: $font-color;
   grid-column: 2 / 12;
+  max-width: 44ex;
 
   @media (max-width: $breakpoint-tablet) {
     font-size: 3rem;
@@ -135,14 +139,12 @@ $spacing-horizontal-section: $spacing-unit-4;
 }
 
 html {
-  html {
-    scroll-behavior: smooth;
-  }
+  scroll-behavior: smooth;
+}
 
-  @media screen and (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
@@ -262,35 +264,68 @@ section[aria-label="career highlights"] {
     margin-bottom: $spacing-unit-6;
     padding-block: $spacing-unit-6;
 
-    &__tag {
+    & > * {
+      grid-column: 2/12;
+    }
+
+    .tag {
       background: $color-blue-medium;
       color: $color-gray-light;
       display: inline-block;
       padding: $spacing-unit-05 $spacing-unit-2;
+      margin-top: 0;
     }
 
-    &__body {
+    div {
       & > * {
         margin-block: $spacing-unit;
       }
     }
 
-    &__image {
-      display: none;
-      width: 100%;
+    &__button {
+      @include banner-base;
+      grid-column: 3 / 11;
+      display: flex;
+      justify-content: center;
     }
 
-    & > * {
-      grid-column: 2/12;
+    @media (min-width: $breakpoint-desktop) {
+      @include grid(11);
+      margin-bottom: $spacing-vertical-section;
+      padding-block: $spacing-vertical-section;
     }
 
     &--one-item {
       @include row;
       box-shadow: 10px 10px $color-yellow-light;
 
-      @media (max-width: $breakpoint-tablet) {
+      img {
+        display: block;
+      }
+
+      @media (max-width: $breakpoint-desktop) {
+        img {
+          display: none;
+        }
+
         .job-card__body {
           @include shadow-box;
+        }
+      }
+
+      @media (min-width: $breakpoint-desktop) {
+        box-shadow: 10px 10px $color-yellow-light;
+        grid-column: 1 / 12;
+        z-index: 1;
+
+        img {
+          grid-column: 3 / span 3;
+          width: 100%;
+        }
+
+        .job-card__body {
+          grid-column: 6 / span 5;
+          padding-left: $spacing-unit-4;
         }
       }
     }
@@ -310,55 +345,18 @@ section[aria-label="career highlights"] {
           margin-bottom: 0;
         }
       }
-    }
 
-    @media (max-width: $breakpoint-tablet) {
-      &--two-items .job-card__body div:last-child {
-        margin-top: $spacing-unit-4;
-      }
-    }
-
-    @media (min-width: $breakpoint-desktop) {
-      @include grid(11);
-      margin-bottom: $spacing-vertical-section;
-      padding-block: $spacing-vertical-section;
-
-      &__image {
-        display: block;
-      }
-
-      &:nth-of-type(1) {
-        box-shadow: 10px 10px $color-yellow-light;
-        grid-column: 1 / 12;
-        z-index: 1;
-
-        .job-card__image {
-          grid-column: 3 / span 3;
-        }
-
-        .job-card__body {
-          grid-column: 6 / span 5;
-          padding-left: $spacing-unit-4;
+      @media (max-width: $breakpoint-tablet) {
+        .job-card__body div:last-child {
+          margin-top: $spacing-unit-4;
         }
       }
 
-      &:nth-of-type(2) {
+      @media (min-width: $breakpoint-desktop) {
         box-shadow: -10px 10px $color-yellow-light;
         grid-column: 2 / 13;
 
-        .job-card__headline {
-          grid-column: 2/10;
 
-          h3 {
-            margin-top: 0;
-            margin-bottom: $spacing-unit;
-          }
-        }
-
-        .job-card__headline,
-        .job-card__subheadline {
-          margin-block: $spacing-unit;
-        }
 
         .job-card__body {
           @include grid(11, 3);
@@ -479,7 +477,16 @@ section > * {
   }
 }
 
+a {
+  &:visited,
+  &:active {
+    color: $color-blue-medium;
+  }
 
+  &:hover {
+    color: black
+  }
+}
 
 p,
 li,
@@ -490,10 +497,10 @@ h6 {
   max-width: 80ex;
 }
 
-h1,
-h2,
-h3 {
-  max-width: 44ex;
+
+p,
+ul li {
+  @include font-size-md;
 }
 
 ul {

@@ -177,15 +177,190 @@ summary {
   display: list-item;
 }
 
-html html {
+html {
   scroll-behavior: smooth;
 }
+
 @media screen and (prefers-reduced-motion: reduce) {
-  html html {
+  html {
     scroll-behavior: auto;
   }
 }
+body {
+  background: #fcf7f3;
+}
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 8px;
+}
+
+.grid-row {
+  grid-column: 1/13;
+}
+
+a:visited, a:active {
+  color: #383b85;
+}
+a:hover {
+  color: black;
+}
+
+p,
+li,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+  max-width: 80ex;
+}
+
+p,
+ul li {
+  color: black;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+ul {
+  padding-left: calc(8px * 3);
+}
+
+ul li {
+  padding-block: calc(8px * 0.5);
+}
+
+h2 {
+  color: #1a1b37;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 200;
+  line-height: 1.3;
+}
+@media (min-width: 600px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+h3 {
+  color: #1a1b37;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 200;
+  line-height: 1.3;
+  color: #1a1b37;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h4 {
+  color: #1a1b37;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.font-size-xl {
+  color: #1a1b37;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 200;
+  line-height: 1.3;
+}
+@media (min-width: 600px) {
+  .font-size-xl {
+    font-size: 1.75rem;
+  }
+}
+
+.font-size-2xl {
+  color: #fbd59f;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 5vw;
+  margin-block: 8px;
+  max-width: 44ex;
+  text-shadow: #1a1b37 6px 6px;
+}
+
+.font-size-3xl {
+  text-shadow: #e82822 6px 6px;
+  font-family: "Rammetto One", sans-serif;
+  font-size: 8vw;
+  color: #fbd59f;
+  grid-column: 2/12;
+  max-width: 44ex;
+}
+@media (max-width: 900px) {
+  .font-size-3xl {
+    font-size: 3rem;
+    text-shadow: #e82822 3px 3px;
+  }
+}
+@media (min-width: 600px) {
+  .font-size-3xl {
+    font-size: 8.5vw;
+  }
+}
+@media (max-height: 600px) and (min-width: 900px) {
+  .font-size-3xl {
+    font-size: 7.5vw;
+  }
+}
+@media (min-width: 900px) {
+  .font-size-3xl {
+    font-size: 8vw;
+  }
+}
+@media (min-width: 1200px) {
+  .font-size-3xl {
+    font-size: 7vw;
+    grid-column: 3/11;
+  }
+}
+@media (min-width: 1800px) {
+  .font-size-3xl {
+    font-size: 6.5vw;
+    grid-column: 3/11;
+  }
+}
+@media (max-height: 600px) and (min-width: 1200px) {
+  .font-size-3xl {
+    font-size: 6vw;
+  }
+}
+
+.button {
+  font-family: "Bricolage Grotesque", sans-serif;
+  margin-block: 0;
+  padding-block: calc(8px * 1);
+  padding-inline: calc(8px * 2);
+  color: white;
+  background-color: #383b85;
+  text-decoration: none;
+}
+@media (min-width: 900px) {
+  .button {
+    font-size: 1.125rem;
+    padding-block: calc(8px * 2);
+    padding-inline: calc(8px * 4);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 body {
   background: #fcf7f3;
 }
@@ -308,31 +483,74 @@ section[aria-label="career highlights"] .job-card {
   margin-bottom: calc(8px * 6);
   padding-block: calc(8px * 6);
 }
-section[aria-label="career highlights"] .job-card__tag {
+section[aria-label="career highlights"] .job-card > * {
+  grid-column: 2/12;
+}
+section[aria-label="career highlights"] .job-card .tag {
   background: #383b85;
   color: #fcf7f3;
   display: inline-block;
   padding: calc(8px * 0.5) calc(8px * 2);
+  margin-top: 0;
 }
-section[aria-label="career highlights"] .job-card__body > * {
+section[aria-label="career highlights"] .job-card div > * {
   margin-block: 8px;
 }
-section[aria-label="career highlights"] .job-card__image {
-  display: none;
-  width: 100%;
+section[aria-label="career highlights"] .job-card__button {
+  font-family: "Bricolage Grotesque", sans-serif;
+  margin-block: 0;
+  padding-block: calc(8px * 1);
+  padding-inline: calc(8px * 2);
+  grid-column: 3/11;
+  display: flex;
+  justify-content: center;
 }
-section[aria-label="career highlights"] .job-card > * {
-  grid-column: 2/12;
+@media (min-width: 900px) {
+  section[aria-label="career highlights"] .job-card__button {
+    font-size: 1.125rem;
+    padding-block: calc(8px * 2);
+    padding-inline: calc(8px * 4);
+  }
+}
+@media (min-width: 1200px) {
+  section[aria-label="career highlights"] .job-card {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-column-gap: 8px;
+    margin-bottom: calc(8px * 8);
+    padding-block: calc(8px * 8);
+  }
 }
 section[aria-label="career highlights"] .job-card--one-item {
   grid-column: 1/13;
   box-shadow: 10px 10px #fbd59f;
 }
-@media (max-width: 900px) {
+section[aria-label="career highlights"] .job-card--one-item img {
+  display: block;
+}
+@media (max-width: 1200px) {
+  section[aria-label="career highlights"] .job-card--one-item img {
+    display: none;
+  }
   section[aria-label="career highlights"] .job-card--one-item .job-card__body {
     border: 1px solid #424242;
     box-shadow: #424242 6px 6px;
     padding: calc(8px * 4);
+  }
+}
+@media (min-width: 1200px) {
+  section[aria-label="career highlights"] .job-card--one-item {
+    box-shadow: 10px 10px #fbd59f;
+    grid-column: 1/12;
+    z-index: 1;
+  }
+  section[aria-label="career highlights"] .job-card--one-item img {
+    grid-column: 3/span 3;
+    width: 100%;
+  }
+  section[aria-label="career highlights"] .job-card--one-item .job-card__body {
+    grid-column: 6/span 5;
+    padding-left: calc(8px * 4);
   }
 }
 section[aria-label="career highlights"] .job-card--two-items {
@@ -356,53 +574,20 @@ section[aria-label="career highlights"] .job-card--two-items .job-card__body div
   }
 }
 @media (min-width: 1200px) {
-  section[aria-label="career highlights"] .job-card {
-    display: grid;
-    grid-template-columns: repeat(11, 1fr);
-    grid-column-gap: 8px;
-    margin-bottom: calc(8px * 8);
-    padding-block: calc(8px * 8);
-  }
-  section[aria-label="career highlights"] .job-card__image {
-    display: block;
-  }
-  section[aria-label="career highlights"] .job-card:nth-of-type(1) {
-    box-shadow: 10px 10px #fbd59f;
-    grid-column: 1/12;
-    z-index: 1;
-  }
-  section[aria-label="career highlights"] .job-card:nth-of-type(1) .job-card__image {
-    grid-column: 3/span 3;
-  }
-  section[aria-label="career highlights"] .job-card:nth-of-type(1) .job-card__body {
-    grid-column: 6/span 5;
-    padding-left: calc(8px * 4);
-  }
-  section[aria-label="career highlights"] .job-card:nth-of-type(2) {
+  section[aria-label="career highlights"] .job-card--two-items {
     box-shadow: -10px 10px #fbd59f;
     grid-column: 2/13;
   }
-  section[aria-label="career highlights"] .job-card:nth-of-type(2) .job-card__headline {
-    grid-column: 2/10;
-  }
-  section[aria-label="career highlights"] .job-card:nth-of-type(2) .job-card__headline h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-  }
-  section[aria-label="career highlights"] .job-card:nth-of-type(2) .job-card__headline,
-  section[aria-label="career highlights"] .job-card:nth-of-type(2) .job-card__subheadline {
-    margin-block: 8px;
-  }
-  section[aria-label="career highlights"] .job-card:nth-of-type(2) .job-card__body {
+  section[aria-label="career highlights"] .job-card--two-items .job-card__body {
     display: grid;
     grid-template-columns: repeat(11, 1fr);
     grid-column-gap: 24px;
     grid-column: 1/13;
   }
-  section[aria-label="career highlights"] .job-card:nth-of-type(2):nth-of-type(2) .job-card__body div:first-of-type {
+  section[aria-label="career highlights"] .job-card--two-items:nth-of-type(2) .job-card__body div:first-of-type {
     grid-column: 2/span 4;
   }
-  section[aria-label="career highlights"] .job-card:nth-of-type(2):nth-of-type(2) .job-card__body div:nth-of-type(2) {
+  section[aria-label="career highlights"] .job-card--two-items:nth-of-type(2) .job-card__body div:nth-of-type(2) {
     grid-column: 6/span 4;
   }
 }
@@ -522,6 +707,13 @@ section > * {
   }
 }
 
+a:visited, a:active {
+  color: #383b85;
+}
+a:hover {
+  color: black;
+}
+
 p,
 li,
 h4,
@@ -531,10 +723,13 @@ h6 {
   max-width: 80ex;
 }
 
-h1,
-h2,
-h3 {
-  max-width: 44ex;
+p,
+ul li {
+  color: black;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
 }
 
 ul {
@@ -596,6 +791,7 @@ h4 {
   font-family: "Rammetto One", sans-serif;
   font-size: 5vw;
   margin-block: 8px;
+  max-width: 44ex;
   text-shadow: #1a1b37 6px 6px;
 }
 
@@ -605,6 +801,7 @@ h4 {
   font-size: 8vw;
   color: #fbd59f;
   grid-column: 2/12;
+  max-width: 44ex;
 }
 @media (max-width: 900px) {
   .font-size-3xl {

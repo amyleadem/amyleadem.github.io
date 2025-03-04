@@ -4,11 +4,11 @@ layout: default
 ---
 
 <div class="grid-container">
-   <section aria-label="page title">
+  <section aria-label="page title">
     <h1>AMY_LEADEM / README.md</h1>
   </section>
 
-   <section aria-label="hero">
+  <section aria-label="hero">
     <h2 class="font-size-3xl">Delivering <br/>front-end code at scale</h2>
   </section>
 
@@ -19,9 +19,9 @@ layout: default
   <section aria-label="career highlights">
     <h2>Experience highlights</h2>
     <article class="job-card job-card--one-item">
-      <img class="job-card__image" src="./assets/img/uswds.png" alt="United States Web Design System logo">
+      <img src="./assets/img/uswds.png" alt="United States Web Design System logo">
       <div class="job-card__body">
-        <p class="job-card__tag">2021-2025</p>
+        <p class="tag">2021-2025</p>
         <h3 class="job-card__headline">Senior developer on the U.S. Web Design System core team</h3>
         <p>USWDS is the open source design system for the federal government that makes it easier to build accessible, mobile-friendly government websites.</p>
         <p>See merged contributions on GitHub:</p>
@@ -37,12 +37,12 @@ layout: default
             </a>
           </li>
         </ul>
-        <a href="#resume">See resume for more details</a>
       </div>
+      <a class="job-card__button" href="#resume">See resume for more details</a>
     </article>
     <article class="job-card job-card--two-items">
       <div class="job-card__headline">
-        <p class="job-card__tag">2019-2021</p>
+        <p class="tag">2019-2021</p>
         <h3>Led design and development of Fortune 50 design systems</h3>
       </div>
       <div class="job-card__body">
