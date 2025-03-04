@@ -4,20 +4,16 @@ layout: default
 ---
 
 <div class="grid-container">
-  <section aria-label="page title">
-    <p class="sticky-banner">
-      AMY_LEADEM/ README.md
-    </p>
+   <section aria-label="page title">
+    <h1>AMY_LEADEM / README.md</h1>
   </section>
 
-  <section aria-label="hero">
-    <h1 class="font-size-3xl">Delivering <br/>front-end code at scale</h1>
+   <section aria-label="hero">
+    <h2 class="font-size-3xl">Delivering <br/>front-end code at scale</h2>
   </section>
 
   <section aria-label="personal summary">
-    <p class="summary-banner">
-      Senior front-end developer specializing in design systems and accessibility
-    </p>
+    <p>Senior front-end developer specializing in design systems and accessibility</p>
   </section>
 
   <section aria-label="career highlights">
