@@ -18,6 +18,10 @@ section > * {
   @media (min-width: $breakpoint-desktop) {
     grid-column: 3 / 11;
   }
+
+  @media (min-width: $breakpoint-widescreen) {
+    grid-column: 4 / 10;
+  }
 }
 
 // sticky banner
@@ -215,6 +219,18 @@ section[aria-label="career highlights"] {
           padding-left: $spacing-unit-4;
         }
       }
+      @media (min-width: $breakpoint-widescreen) {
+        @include grid(10);
+        grid-column: 1/11;
+
+        img {
+          grid-column: 4/ span 2;
+        }
+
+        .job-card__body {
+          grid-column: 6/ span 4;
+        }
+      }
     }
 
     &--two-items {
@@ -245,6 +261,27 @@ section[aria-label="career highlights"] {
 
           div:last-of-type {
             grid-column: 6 / span 4;
+          }
+        }
+      }
+      @media (min-width: $breakpoint-widescreen) {
+        @include grid(10);
+        grid-column: 3 / 13;
+
+        .job-card__body {
+          @include grid(10, 4);
+          @include row;
+
+          div {
+            margin-top: $spacing-unit-2;
+          }
+
+          div:first-of-type {
+            grid-column: 2 / span 3;
+          }
+
+          div:last-of-type {
+            grid-column: 5 / span 3;
           }
         }
       }
