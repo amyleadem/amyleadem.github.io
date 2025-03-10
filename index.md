@@ -141,16 +141,17 @@ layout: default
         <article id="uswds" aria-label="Experience on U.S. Web design system">
           <h3>Experience</h3>
           <h4>Senior Software Engineer</h4>
-          <h5>Bixal / November 2021 - Present</h5>
-          <p>Senior front-end developer on the U.S. Web Design System (USWDS) core team. Strong focus on accessibility, user experience, and quality documentation. Daily responsibilities include:</p>
+          <h5>Bixal / November 2021 - March 2025</h5>
+          <p>Senior front-end developer on the U.S. Web Design System (USWDS) core team. Strong focus on accessibility, user experience, and quality documentation. Daily responsibilities included:</p>
           <ul>
-            <li><strong>Write well-documented open source front-end code:</strong> Build accessible, reusable, and readable front-end code for the open source USWDS component library and its accompanying documentation website.</li>
-            <li><strong>Manage product delivery:</strong> Plan and prioritize release items with the product owner. Check on status of release items with the development team to ensure timely delivery. Coordinate release items and deliver to product owner for release.</li>
-            <li><strong>Improve accessibility across the design system:</strong> Write code that meets strict WCAG 2.1 AA and Section 508 standards. Perform automated and manual accessibility testing to ensure compliance with WCAG. Work closely with the accessibility team to draft manual testing checklists for USWDS components.</li>
-            <li><strong>Write plain language technical documentation:</strong> Use plain language practices to write documentation for the design system website, GitHub repositories, and internal team. Write human-readable changelog entries and release notes.</li>
-            <li><strong>Create data-driven prototypes:</strong> Create YAML-based data structures to drive rapid prototyping for USWDS’ Jekyll-based documentation website. Collaborate closely with the content team to create layouts that meet communication goals.</li>
-            <li><strong>Improve process:</strong> Assess and improve development processes. Organize the project board and its metadata to improve velocity. Create component lifecycle and define software development lifecycle.</li>
-            <li><strong>Support customers:</strong> Answer technical support questions from the public across multiple channels, including GitHub, Slack, and ZenDesk.</li>
+            <li><strong>Writing well-documented open source front-end code:</strong> Built accessible, reusable, and readable front-end code for the open source USWDS component library and its accompanying documentation website.</li>
+            <li><strong>Managing product delivery:</strong> Planned and prioritized release items with the development and product teams. Coordinated release items and delivered them to the product team for release.</li>
+            <li><strong>Designing component APIs:</strong> Created the process and template for drafting code requirements for USWDS web components. Designed the prop, slot, and variable structure for multiple commonly-used components.</li>
+            <li><strong>Improving accessibility across the design system: </strong> Wrote code that met strict WCAG 2.1 AA and Section 508 standards. Performed automated and manual accessibility testing to ensure compliance with WCAG. Worked closely with the accessibility team to draft manual testing checklists for USWDS components.</li>
+            <li><strong>Writing plain language technical documentation:</strong> Used plain language practices to write documentation for the design system website, GitHub repositories, and internal team. Wrote human-readable changelog entries and release notes.</li>
+            <li><strong>Creating data-driven prototypes:</strong> Created YAML-based data structures to drive rapid prototyping for USWDS’ Jekyll-based documentation website. Collaborated closely with the content team to create layouts that met communication goals.</li>
+            <li><strong>Improving process:</strong> Assessed and improved development processes to reduce friction across practice areas. Organized the project board and its metadata to improve velocity. Created component lifecycle and defined the software development lifecycle.</li>
+            <li><strong>Supporting customers:</strong> Answered technical support questions from the public across multiple channels, including GitHub, Slack, and ZenDesk.</li>
           </ul>
         </article>
         <article id="raytheon" aria-label="Experience at Raytheon">
