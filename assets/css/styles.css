@@ -310,7 +310,7 @@ h4 {
 }
 @media (max-width: 600px) {
   .font-size-3xl {
-    font-size: 12vw;
+    font-size: 3.25rem;
   }
 }
 @media (min-width: 600px) {

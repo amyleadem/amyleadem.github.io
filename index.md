@@ -11,7 +11,7 @@ layout: default
   </div>
   <div class="grid-column">
     <div>
-      <section aria-label="personal summary">
+      <section aria-label="personal introduction">
         <h2>Hello!</h2>
         <p>My name is Amy Leadem and I am a senior front-end developer with 15 years of experience in design and development.</p>
         <p>I am a systems thinker who is especially passionate about working in design systems, building well-documented and accessible code, and building thoughtful products for downstream teams.</p>
