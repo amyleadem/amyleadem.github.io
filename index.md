@@ -4,9 +4,9 @@ layout: default
 ---
 <div id="intro-screen">
   <div class="grid-column">
-    <section aria-label="hero">
-      <h1 class="font-size-3xl">Delivering <br/>front-end code at scale</h1>
-    </section>
+    <header aria-labelledby="title">
+      <h1 class="font-size-3xl" id="title">Delivering <br/>front-end<br/> code at scale</h1>
+    </header>
   </div>
   <div class="grid-column">
     <div>
@@ -86,11 +86,11 @@ layout: default
   <div class="background-offset"></div>
 </section>
 
-<section id="contact" aria-labelledby="find-me">
+<footer id="contact" aria-labelledby="find-me">
   <h2 id="find-me">Find me on the web</h2>
   <ul>
     <li><a href="https://github.com/amyleadem">Find me on GitHub</a></li>
     <li><a href="http://www.linkedin.com/in/amyleadem">Find me on LinkedIn</a></li>
     <li><a href="mailto:amyleadem@gmail.com">Email me</a></li>
   </ul>
-</section>
+</footer>
