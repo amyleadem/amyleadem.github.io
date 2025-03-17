@@ -15,7 +15,9 @@ Use a better box model (opinionated).
 
 html {
   /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family:
+    system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.15; /* 1. Correct the line height in all browsers. */
   -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
   tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
@@ -49,7 +51,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
+  font-family:
+    ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -113,9 +116,9 @@ textarea {
 Correct the inability to style clickable types in iOS and Safari.
 */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -145,7 +148,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -198,7 +201,8 @@ body {
 a {
   color: #1b1b1b;
 }
-a:visited, a:active {
+a:visited,
+a:active {
   color: #1b1b1b;
 }
 a:hover {
@@ -353,7 +357,9 @@ h4 {
   padding: calc(8px * 1) calc(8px * 3);
   text-decoration: none;
 }
-.button, .button:visited, .button:active {
+.button,
+.button:visited,
+.button:active {
   color: #1a1b37;
 }
 
@@ -407,7 +413,9 @@ section > h2 {
   grid-column: 2/12;
   margin-block: calc(8px * 6);
 }
-#intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] {
+#intro-screen
+  .grid-column:nth-of-type(2)
+  section[aria-label="find me on the web"] {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 0px;
@@ -416,28 +424,46 @@ section > h2 {
   background: #f4dfb8;
   border-bottom: calc(8px * 1.5) solid #383b85;
 }
-#intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] ul {
+#intro-screen
+  .grid-column:nth-of-type(2)
+  section[aria-label="find me on the web"]
+  ul {
   padding: 0;
   margin: 0;
   list-style: none;
   grid-column: 2/12;
   padding-block: calc(8px * 3);
 }
-#intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] ul li {
+#intro-screen
+  .grid-column:nth-of-type(2)
+  section[aria-label="find me on the web"]
+  ul
+  li {
   padding-block: calc(8px * 1);
 }
-#intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] ul a {
+#intro-screen
+  .grid-column:nth-of-type(2)
+  section[aria-label="find me on the web"]
+  ul
+  a {
   align-items: center;
   display: flex;
   font-weight: 500;
   margin-right: calc(8px * 6);
 }
-#intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] ul img {
+#intro-screen
+  .grid-column:nth-of-type(2)
+  section[aria-label="find me on the web"]
+  ul
+  img {
   margin-right: calc(8px * 2);
   width: calc(8px * 6);
 }
 @media screen and (min-width: 900px) {
-  #intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] ul {
+  #intro-screen
+    .grid-column:nth-of-type(2)
+    section[aria-label="find me on the web"]
+    ul {
     align-items: center;
     display: flex;
   }
@@ -447,7 +473,7 @@ section > h2 {
     display: grid;
   }
   #intro-screen .grid-column:nth-of-type(1) {
-    grid-column: 1/span 6;
+    grid-column: 1 / span 6;
     height: 100vh;
   }
   #intro-screen .grid-column:nth-of-type(1) header {
@@ -465,7 +491,7 @@ section > h2 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-column-gap: 0px;
-    grid-column: 7/span 6;
+    grid-column: 7 / span 6;
     grid-template-rows: 1fr 128px;
   }
   #intro-screen .grid-column:nth-of-type(2) > * {
@@ -474,19 +500,24 @@ section > h2 {
   #intro-screen .grid-column:nth-of-type(2) > div {
     display: flex;
     flex-direction: column;
-    grid-column: 1/span 5;
+    grid-column: 1 / span 5;
     justify-content: center;
     margin-top: 0;
     padding-top: calc(8px * 6);
     padding-left: calc(8px * 6);
   }
-  #intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] {
+  #intro-screen
+    .grid-column:nth-of-type(2)
+    section[aria-label="find me on the web"] {
     align-items: center;
     border-bottom: calc(8px * 4) solid #e82822;
     display: flex;
-    grid-column: 1/span 6;
+    grid-column: 1 / span 6;
   }
-  #intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] ul {
+  #intro-screen
+    .grid-column:nth-of-type(2)
+    section[aria-label="find me on the web"]
+    ul {
     padding-left: calc(8px * 6);
   }
   #intro-screen nav ul {
@@ -649,7 +680,9 @@ section > h2 {
   padding: calc(8px * 2) calc(8px * 4);
   margin-inline: 8px;
 }
-#contact a, #contact a:visited, #contact a:active {
+#contact a,
+#contact a:visited,
+#contact a:active {
   color: #fff;
 }
 #contact a:first-of-type {
