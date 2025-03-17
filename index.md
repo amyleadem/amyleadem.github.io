@@ -54,10 +54,10 @@ layout: default
         <strong>For the last six years, I’ve worked exclusively in design systems.</strong> I created my first component library and style guide in 2019 and I haven’t looked back since. My experience has shown me that a good design system delivers smart solutions at scale, freeing teams up to focus on the problems that really matter. I have to admit, I’m hooked.
       </li>
       <li>
-        <strong>I’ve led major initiatives in challenging environments.</strong> I successfully advocated for the creation of two design systems at a Fortune 100 company that didn’t yet understand the value of the task. Through teamwork and advocacy, we were able to successfully convey that the product would quickly pay for itself. The end result was a successful component library and design system that improved the experience (and velocity) of content, design, and development teams alike.
+        <strong>I’ve led major initiatives in challenging environments.</strong> II successfully advocated for the creation of these design systems in a risk-averse culture that didn’t yet understand the value of the task. Through teamwork and advocacy, we were able to successfully convey that the product would quickly pay for itself and provide more consistent results than their current disjointed system. From there, we did a full audit of the UI components, defined requirements based on practice area needs, and developed a component library and branding style guide that helped make it faster and easier to build for both the intranet and public-facing websites. 
       </li>
       <li>
-        <strong>I leveled-up on the U.S. Web Design System (USWDS) core team.</strong> On this highly-collaborative and incredibly talented team, I learned how to write code that is self-documenting, readable, and reusable; designed new products and processes; and developed a passion for web accessibility and open source communities. I matured as a developer here, and believe it was one of the greatest teams out there.
+        <strong>I leveled-up on the U.S. Web Design System (USWDS) core team.</strong> On this highly-collaborative and incredibly talented team, I matured as a developer and team member. I learned how to write code that is self-documenting, readable, and reusable; designed new products and processes; triaged bugs and feature requests; and developed a passion for web accessibility and open source communities. 
       </li>
       <li>
        <strong>My work history spans multiple practice areas.</strong> I am a developer, a designer, and a writer. I also have years of experience in web accessibility and product management. This diverse experience gives me the ability to effectively translate needs across functions and build code that meets the needs of everyone on the product team.
@@ -73,7 +73,7 @@ layout: default
   <div class="list-wrapper">
     <ul>
       <li>
-        <strong>I am passionate about the front of the front-end.</strong> Front-end development is a multi-faceted and deep discipline that often gets undervalued.  front-enders are the guardians of the user experience and interface. A good front-ender ensures that the diligent work that comes from usability research, accessibility audits, and content strategies gets translated into product that is accessible and usable for the end user.
+        <strong>I am passionate about the front of the front-end.</strong> Front-end development is a multi-faceted and deep discipline that often gets undervalued. To me, front-enders are the guardians of the user experience and interface. A good front-ender ensures that the diligent work that comes from usability research, accessibility audits, and content strategies gets translated into a product that is accessible and usable for the end user.
       </li>
       <li>
         <strong>I love building code that serves product teams.</strong> Working in design systems has taught me that the end user is not the only consumer we need to consider when writing code. Building smart code systems that anticipate the needs of development, content, and design teams brings business value by reducing friction and minimizing re-work.
