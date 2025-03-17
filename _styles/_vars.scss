@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Rammetto+One&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
 // breakpoints
 $breakpoint-mobile: 600px;
 $breakpoint-tablet: 900px;
@@ -13,15 +12,19 @@ $color-blue-medium: #383b85;
 $color-blue-dark: #1a1b37;
 $color-red: #e82822;
 $color-yellow: #ffbb32;
-$color-yellow-light: #fbd59f;
+$color-yellow-light: #F4DFB8;
 $color-gray: #424242;
+$color-gray-dark: #1b1b1b;
 $color-gray-medium: #686765;
-$color-gray-light: #fcf7f3;
+$color-gray-light: #070605;
 $color-gray-xlight: #faf7f5;
+$color-gray-warm-light: #F8F8F2;
+$color-white: #fff;
 
 // font types
-$font-headline: "Rammetto One", sans-serif;
+$font-headline: "Unbounded", sans-serif;
 $font-subheadline: "Bricolage Grotesque", sans-serif;
+$font-body: "Noto Sans", sans-serif;
 
 // font size
 $font-size-base: 16px;

@@ -12,11 +12,8 @@ html {
 }
 
 body {
-  background: $color-gray-light;
-}
-
-.grid-container {
-  @include grid;
+  background: white;
+  font-family: $font-body;
 }
 
 .grid-row {
@@ -24,13 +21,15 @@ body {
 }
 
 a {
+  color: $color-gray-dark;
+
   &:visited,
   &:active {
-    color: $color-blue-medium;
+    color: $color-gray-dark;
   }
 
   &:hover {
-    color: black;
+    color: $color-blue-medium;
   }
 }
 
@@ -44,16 +43,22 @@ h6 {
 }
 
 p,
+a,
 ul li {
   @include font-size-md;
+  font-family: $font-body;
 }
 
 ul {
   padding-left: $spacing-unit-3;
+
+  li {
+    padding-block: $spacing-unit-05;
+  }
 }
 
-ul li {
-  padding-block: $spacing-unit-05;
+strong {
+  font-weight: 600;
 }
 
 h2 {
@@ -90,4 +95,8 @@ h4 {
 
 .button {
   @include button;
+}
+
+.unstyled-list {
+  @include unstyled-list;
 }

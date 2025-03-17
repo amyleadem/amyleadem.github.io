@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Rammetto+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap");
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -187,24 +187,22 @@ html {
   }
 }
 body {
-  background: #fcf7f3;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 8px;
+  background: white;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .grid-row {
   grid-column: 1/13;
 }
 
+a {
+  color: #1b1b1b;
+}
 a:visited, a:active {
-  color: #383b85;
+  color: #1b1b1b;
 }
 a:hover {
-  color: black;
+  color: #383b85;
 }
 
 p,
@@ -217,32 +215,37 @@ h6 {
 }
 
 p,
+a,
 ul li {
   color: black;
   font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.3;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.5;
+  font-family: "Noto Sans", sans-serif;
 }
 
 ul {
   padding-left: calc(8px * 3);
 }
-
 ul li {
   padding-block: calc(8px * 0.5);
+}
+
+strong {
+  font-weight: 600;
 }
 
 h2 {
   color: #1a1b37;
   font-family: "Bricolage Grotesque", sans-serif;
   font-size: 1.375rem;
-  font-weight: 200;
+  font-weight: 600;
   line-height: 1.3;
 }
 @media (min-width: 600px) {
   h2 {
-    font-size: 1.75rem;
+    font-size: 2.125rem;
   }
 }
 
@@ -270,18 +273,18 @@ h4 {
   color: #1a1b37;
   font-family: "Bricolage Grotesque", sans-serif;
   font-size: 1.375rem;
-  font-weight: 200;
+  font-weight: 600;
   line-height: 1.3;
 }
 @media (min-width: 600px) {
   .font-size-xl {
-    font-size: 1.75rem;
+    font-size: 2.125rem;
   }
 }
 
 .font-size-2xl {
-  color: #fbd59f;
-  font-family: "Rammetto One", sans-serif;
+  color: #F4DFB8;
+  font-family: "Unbounded", sans-serif;
   font-size: 5vw;
   margin-block: 8px;
   max-width: 44ex;
@@ -289,52 +292,22 @@ h4 {
 }
 
 .font-size-3xl {
-  text-shadow: #e82822 6px 6px;
-  font-family: "Rammetto One", sans-serif;
-  font-size: 8vw;
+  font-family: "Unbounded", sans-serif;
+  font-size: 6vw;
   line-height: 1.2;
-  color: #fbd59f;
-  grid-column: 2/12;
+  color: #F4DFB8;
+  margin-block: 0;
   max-width: 44ex;
+  text-align: right;
 }
 @media (max-width: 600px) {
   .font-size-3xl {
     font-size: 3.25rem;
-    text-shadow: #e82822 3px 3px;
-  }
-}
-@media (min-width: 600px) {
-  .font-size-3xl {
-    font-size: 10.5vw;
-    text-shadow: #e82822 4px 4px;
-  }
-}
-@media (max-height: 600px) and (min-width: 900px) {
-  .font-size-3xl {
-    font-size: 7.5vw;
-  }
-}
-@media (min-width: 900px) {
-  .font-size-3xl {
-    font-size: 8vw;
-    text-shadow: #e82822 6px 6px;
-  }
-}
-@media (min-width: 1200px) {
-  .font-size-3xl {
-    font-size: 7vw;
-    grid-column: 3/11;
   }
 }
 @media (min-width: 1800px) {
   .font-size-3xl {
-    font-size: 6.5vw;
-  }
-}
-@media (min-width: 2100px) {
-  .font-size-3xl {
-    font-size: 8rem;
-    grid-column: 4/10;
+    font-size: 3rem;
   }
 }
 @media (max-height: 600px) and (min-width: 1200px) {
@@ -357,312 +330,187 @@ h4 {
   color: #1a1b37;
 }
 
+.unstyled-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 section > h2 {
   margin-bottom: calc(8px * 2);
   margin-top: 0;
 }
 
-section > * {
-  grid-column: 2/12;
+#intro-screen {
+  background: #fff;
 }
-@media (min-width: 1200px) {
-  section > * {
-    grid-column: 3/11;
-  }
+#intro-screen .grid-column:nth-of-type(1) {
+  height: 80vh;
 }
-@media (min-width: 1800px) {
-  section > * {
-    grid-column: 4/10;
-  }
+#intro-screen .grid-column:nth-of-type(2) {
+  grid-template-rows: 1fr 128px;
 }
-
-section[aria-label="page title"] {
-  grid-column: 1/13;
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  z-index: 2;
+#intro-screen .grid-column:nth-of-type(2) > div {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/span 5;
+  justify-content: center;
+  padding-top: calc(8px * 6);
+  padding-left: calc(8px * 6);
 }
-section[aria-label="page title"] > * {
-  background: #e82822;
-  box-shadow: 3px 3px #424242;
-  display: inline-block;
-  line-height: 1.2;
+#intro-screen .grid-column:nth-of-type(2) nav ul {
   margin-block: 0;
-  padding: calc(8px * 1) calc(8px * 2);
 }
-section[aria-label="page title"] h1 {
-  color: black;
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.3;
-}
-@media (min-width: 900px) {
-  section[aria-label="page title"] > * {
-    max-width: 18ex;
+@media screen and (min-width: 600px) {
+  #intro-screen {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 0px;
+    grid-column: 1/13;
+    height: 100vh;
+  }
+  #intro-screen .grid-column:nth-of-type(1) {
+    grid-column: 1/span 6;
+  }
+  #intro-screen .grid-column:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-column: 7/span 6;
   }
 }
 
 section[aria-label=hero] {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 8px;
-  grid-column: 1/13;
-  align-items: center;
   background: #1a1b37;
-  min-height: 400px;
-}
-section[aria-label=hero] > * {
-  padding-top: calc(8px * 6);
-}
-@media (min-width: 600px) {
-  section[aria-label=hero] {
-    height: 70vh;
-    min-height: 600px;
-  }
-}
-@media (min-width: 900px) {
-  section[aria-label=hero] {
-    height: 75vh;
-  }
-}
-@media (min-width: 1200px) {
-  section[aria-label=hero] {
-    height: 85vh;
-  }
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: calc(8px * 6);
+  padding-bottom: 128px;
 }
 
-section[aria-label="personal summary"] {
+section[aria-label="find me on the web"] {
+  align-items: center;
+  background: #F4DFB8;
+  border-bottom: calc(8px * 4) solid #e82822;
   display: flex;
-  grid-column: 2/12;
-  justify-content: center;
+  grid-column: 1/span 6;
+  padding: calc(8px * 6);
+  width: 100%;
+}
+section[aria-label="find me on the web"] ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  align-items: center;
+  display: flex;
+}
+section[aria-label="find me on the web"] ul a {
+  align-items: center;
+  display: flex;
+  margin-right: calc(8px * 6);
+}
+section[aria-label="find me on the web"] ul img {
+  margin-right: calc(8px * 2);
+  width: calc(8px * 6);
+}
+
+#work-highlights,
+#work-excite {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 0px;
+  grid-column: 1/13;
+  margin-top: calc(8px * 8);
+}
+#work-highlights h2,
+#work-excite h2 {
+  grid-column: 3/9;
+  padding-left: calc(8px * 6);
+  padding-top: calc(8px * 8 * 1.5);
+  padding-bottom: calc(8px * 2);
+}
+#work-highlights ul,
+#work-excite ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  grid-column: 4/10;
   margin-block: calc(8px * 6);
 }
-section[aria-label="personal summary"] > * {
-  background: #ffbb32;
-  box-shadow: 3px 3px #424242;
-  display: inline;
-  margin-block: 0;
-  padding-block: 12px;
-  padding-inline: calc(8px * 2);
-  text-align: center;
-}
-@media (min-width: 600px) {
-  section[aria-label="personal summary"] {
-    margin-top: calc(-12px - 1.125rem / 2);
-  }
-  section[aria-label="personal summary"] > * {
-    box-shadow: 3px 3px #fbd59f;
-    font-size: 1.125rem;
-    padding: 12px calc(8px * 4);
-  }
-}
-@media (min-width: 1200px) {
-  section[aria-label="personal summary"] {
-    margin-top: calc(-12px - 0.75rem);
-  }
-  section[aria-label="personal summary"] > * {
-    font-size: 1.25rem;
-  }
+#work-highlights ul li,
+#work-excite ul li {
+  padding-block: calc(8px * 2);
 }
 
-section[aria-label="career highlights"] {
-  grid-column: 1/13;
+#work-highlights {
+  background: #F8F8F2;
+}
+#work-highlights .background-offset {
+  background: #fff;
+  grid-column: 1/2;
+}
+#work-highlights .background-offset:last-child {
+  height: calc(8px * 8 * 1.5);
+}
+#work-highlights .list-wrapper {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 8px;
-  margin-block: calc(8px * 8);
+  grid-template-columns: repeat(10, 1fr);
+  grid-column-gap: 0px;
+  border: 1px solid #686765;
+  border-left: none;
+  grid-column: 1/11;
 }
-@media (max-width: 600px) {
-  section[aria-label="career highlights"] {
-    margin-top: 0;
-  }
-}
-section[aria-label="career highlights"] .job-card {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 8px;
-  background: white;
-  margin-top: calc(8px * 2);
-  margin-bottom: calc(8px * 6);
-  padding-block: calc(8px * 6);
-}
-section[aria-label="career highlights"] .job-card > * {
-  grid-column: 2/12;
-}
-section[aria-label="career highlights"] .job-card .tag {
-  background: #383b85;
-  color: #fcf7f3;
-  display: inline-block;
-  padding: calc(8px * 0.5) calc(8px * 2);
-  margin-top: 0;
-}
-section[aria-label="career highlights"] .job-card div > * {
-  margin-block: 8px;
-}
-section[aria-label="career highlights"] .job-card__button {
-  font-family: "Bricolage Grotesque", sans-serif;
-  margin-block: 0;
-  padding-block: calc(8px * 1);
-  padding-inline: calc(8px * 2);
-  grid-column: 3/11;
-  display: flex;
-  justify-content: center;
-}
-@media (min-width: 900px) {
-  section[aria-label="career highlights"] .job-card__button {
-    font-size: 1.125rem;
-    padding-block: calc(8px * 2);
-    padding-inline: calc(8px * 4);
-  }
-}
-section[aria-label="career highlights"] .job-card__cta {
-  margin-top: calc(8px * 2);
-}
-section[aria-label="career highlights"] .job-card__cta button {
-  margin-block: 0;
-}
-section[aria-label="career highlights"] .job-card__body div {
-  border: 1px solid #424242;
-  box-shadow: #424242 6px 6px;
-  padding: calc(8px * 4);
-}
-section[aria-label="career highlights"] .job-card__body div > *:first-child {
-  margin-top: 0;
-}
-section[aria-label="career highlights"] .job-card__body div > *:last-child {
-  margin-bottom: 0;
-}
-@media (min-width: 1200px) {
-  section[aria-label="career highlights"] .job-card {
-    display: grid;
-    grid-template-columns: repeat(11, 1fr);
-    grid-column-gap: 8px;
-    margin-bottom: calc(8px * 8);
-    padding-block: calc(8px * 8);
-  }
-}
-section[aria-label="career highlights"] .job-card--one-item {
-  grid-column: 1/13;
-  box-shadow: 10px 10px #fbd59f;
-}
-section[aria-label="career highlights"] .job-card--one-item img {
-  display: block;
-}
-@media (max-width: 1200px) {
-  section[aria-label="career highlights"] .job-card--one-item img {
-    display: none;
-  }
-  section[aria-label="career highlights"] .job-card--one-item .job-card__body {
-    border: 1px solid #424242;
-    box-shadow: #424242 6px 6px;
-    padding: calc(8px * 4);
-  }
-}
-@media (min-width: 1200px) {
-  section[aria-label="career highlights"] .job-card--one-item {
-    box-shadow: 10px 10px #fbd59f;
-    grid-column: 1/12;
-    z-index: 1;
-  }
-  section[aria-label="career highlights"] .job-card--one-item img {
-    grid-column: 3/span 3;
-    width: 100%;
-  }
-  section[aria-label="career highlights"] .job-card--one-item .job-card__body {
-    grid-column: 6/span 5;
-    margin-bottom: 0;
-    margin-top: calc(8px * 0.5);
-    padding-left: calc(8px * 4);
-  }
-}
-@media (min-width: 1800px) {
-  section[aria-label="career highlights"] .job-card--one-item {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-column-gap: 8px;
-    grid-column: 1/11;
-  }
-  section[aria-label="career highlights"] .job-card--one-item img {
-    grid-column: 4/span 2;
-  }
-  section[aria-label="career highlights"] .job-card--one-item .job-card__body {
-    grid-column: 6/span 4;
-  }
-}
-section[aria-label="career highlights"] .job-card--two-items {
-  grid-column: 1/13;
-  box-shadow: -10px 10px #fbd59f;
-}
-@media (max-width: 1200px) {
-  section[aria-label="career highlights"] .job-card--two-items .job-card__body div:last-child {
-    margin-top: calc(8px * 4);
-  }
-}
-@media (min-width: 1200px) {
-  section[aria-label="career highlights"] .job-card--two-items {
-    box-shadow: -10px 10px #fbd59f;
-    grid-column: 2/13;
-  }
-  section[aria-label="career highlights"] .job-card--two-items .job-card__body {
-    display: grid;
-    grid-template-columns: repeat(11, 1fr);
-    grid-column-gap: 32px;
-    grid-column: 1/13;
-  }
-  section[aria-label="career highlights"] .job-card--two-items .job-card__body div {
-    margin-top: calc(8px * 2);
-  }
-  section[aria-label="career highlights"] .job-card--two-items .job-card__body div:first-of-type {
-    grid-column: 2/span 4;
-  }
-  section[aria-label="career highlights"] .job-card--two-items .job-card__body div:last-of-type {
-    grid-column: 6/span 4;
-  }
-}
-@media (min-width: 1800px) {
-  section[aria-label="career highlights"] .job-card--two-items {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-column-gap: 8px;
-    grid-column: 3/13;
-  }
-  section[aria-label="career highlights"] .job-card--two-items .job-card__body {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-column-gap: 32px;
-    grid-column: 1/13;
-  }
-  section[aria-label="career highlights"] .job-card--two-items .job-card__body div {
-    margin-top: calc(8px * 2);
-  }
-  section[aria-label="career highlights"] .job-card--two-items .job-card__body div:first-of-type {
-    grid-column: 2/span 3;
-  }
-  section[aria-label="career highlights"] .job-card--two-items .job-card__body div:last-of-type {
-    grid-column: 5/span 3;
-  }
+#work-highlights ul {
+  grid-column: 4/10;
 }
 
-section[aria-label="breaking down silos"] {
-  grid-column: 1/13;
+#work-excite {
+  background: #1a1b37;
+  margin-top: calc(8px * 8 * 1.5);
+  z-index: -1;
+}
+#work-excite h2 {
+  color: #F4DFB8;
+}
+#work-excite .background-offset {
+  background: #fff;
+  grid-column: 12/13;
+}
+#work-excite .background-offset:last-child {
+  height: calc(8px * 8 * 1.5);
+}
+#work-excite .list-wrapper {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 8px;
+  grid-template-columns: repeat(10, 1fr);
+  grid-column-gap: 0px;
+  border: 1px solid #F4DFB8;
+  border-right: none;
+  grid-column: 3/13;
+}
+#work-excite .list-wrapper .background-offset {
+  grid-column: 10/11;
+  height: 100%;
+}
+#work-excite ul {
+  grid-column: 2/9;
+}
+#work-excite ul li {
+  color: #F8F8F2;
 }
 
-section[aria-label=contact] {
+#contact {
   grid-column: 1/13;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: calc(8px * 8);
 }
-section[aria-label=contact] h2 {
-  text-align: center;
+#contact h2 {
   margin-top: 0;
 }
-section[aria-label=contact] ul {
+#contact ul {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -673,7 +521,7 @@ section[aria-label=contact] ul {
   margin-top: calc(8px * 2);
   margin-bottom: calc(8px * 8);
 }
-section[aria-label=contact] a {
+#contact a {
   background-color: #383b85;
   border: 1px solid #424242;
   box-shadow: #424242 3px 3px;
@@ -686,163 +534,11 @@ section[aria-label=contact] a {
   padding: calc(8px * 2) calc(8px * 4);
   margin-inline: 8px;
 }
-section[aria-label=contact] a, section[aria-label=contact] a:visited, section[aria-label=contact] a:active {
-  color: #fcf7f3;
+#contact a, #contact a:visited, #contact a:active {
+  color: #fff;
 }
 @media (min-width: 900px) {
-  section[aria-label=contact] ul {
+  #contact ul {
     flex-direction: row;
   }
-}
-
-section[aria-label=resume] {
-  grid-column: 1/13;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 8px;
-  background: #e82822;
-  margin-top: calc(8px * 8);
-}
-section[aria-label=resume] .resume__page {
-  margin-top: calc(8px * 8);
-}
-section[aria-label=resume] .resume__page article {
-  border: 1px solid #424242;
-  box-shadow: #424242 6px 6px;
-  padding: calc(8px * 4);
-  grid-column: 1/13;
-  background: white;
-  margin-bottom: calc(8px * 4);
-}
-section[aria-label=resume] h2,
-section[aria-label=resume] h3 {
-  grid-column: 1/13;
-}
-section[aria-label=resume] h2 {
-  margin-bottom: calc(8px * 1);
-}
-section[aria-label=resume] h3 {
-  color: #1a1b37;
-  font-family: "Bricolage Grotesque", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 200;
-  line-height: 1.3;
-}
-section[aria-label=resume] h2,
-section[aria-label=resume] h3,
-section[aria-label=resume] h4 {
-  margin-top: 0;
-}
-@media (max-width: 1200px) {
-  section[aria-label=resume] h2 {
-    border: 1px solid #424242;
-    box-shadow: #424242 6px 6px;
-    padding: calc(8px * 4);
-    background: white;
-    margin-bottom: calc(8px * 4);
-  }
-}
-@media (min-width: 1200px) {
-  section[aria-label=resume] h2 {
-    grid-column: 2/12;
-    padding-top: calc(8px * 8);
-  }
-  section[aria-label=resume] h2,
-  section[aria-label=resume] h3 {
-    margin-bottom: calc(8px * 2);
-  }
-  section[aria-label=resume] .resume__page {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-column-gap: 24px;
-    border: 1px solid #424242;
-    box-shadow: #424242 6px 6px;
-    padding: calc(8px * 4);
-    background: white;
-    grid-column: 2/12;
-    padding: 0;
-  }
-  section[aria-label=resume] .resume__page article {
-    grid-column: 2/10;
-  }
-  section[aria-label=resume] .resume__page article.left {
-    grid-column: 2/6;
-  }
-  section[aria-label=resume] .resume__page article.right {
-    grid-column: 6/10;
-  }
-  section[aria-label=resume] .resume__page article > *:last-child {
-    margin-bottom: 0;
-  }
-  section[aria-label=resume] .resume__page article[aria-label="technical skill"] {
-    grid-row: 2/4;
-  }
-}
-@media (min-width: 1500px) {
-  section[aria-label=resume] .resume__page {
-    grid-column: 3/11;
-  }
-}
-
-.practice-area {
-  background: white;
-}
-.practice-area ul {
-  padding-left: 0;
-  margin: 0;
-}
-.practice-area li {
-  align-items: center;
-  color: #1a1b37;
-  display: inline-flex;
-  font-family: "Rammetto One", sans-serif;
-  font-size: 2.25rem;
-  list-style: none;
-  padding-bottom: 0;
-}
-.practice-area li img {
-  height: calc(8px * 7);
-  margin-inline: 8px;
-}
-.practice-area > * {
-  padding-block: calc(8px * 8);
-}
-.practice-area > *:first-child {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 8px;
-  grid-column: 1/13;
-  background: #e82822;
-}
-.practice-area > *:first-child > * {
-  grid-column: 2/12;
-}
-.practice-area > *:nth-child(2) {
-  align-items: center;
-  background: white;
-  display: flex;
-  grid-column: 2/span 10;
-}
-@media (min-width: 900px) {
-  .practice-area > *:nth-child(2) {
-    grid-column: 7/span 4;
-  }
-}
-
-footer {
-  grid-column: 1/13;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 8px;
-  background: #383b85;
-  margin-top: calc(8px * 8);
-  padding-top: calc(8px * 8);
-}
-footer > * {
-  grid-column: 3/11;
-}
-footer ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
 }
