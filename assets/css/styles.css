@@ -293,7 +293,7 @@ h4 {
 }
 
 .font-size-2xl {
-  color: #F4DFB8;
+  color: #f4dfb8;
   font-family: "Unbounded", sans-serif;
   font-size: 5vw;
   margin-block: 8px;
@@ -305,7 +305,7 @@ h4 {
   font-family: "Unbounded", sans-serif;
   font-size: 6vw;
   line-height: 1.2;
-  color: #F4DFB8;
+  color: #f4dfb8;
   max-width: 44ex;
 }
 @media (max-width: 600px) {
@@ -413,7 +413,7 @@ section > h2 {
   grid-column-gap: 0px;
   grid-column: 1/13;
   align-items: center;
-  background: #F4DFB8;
+  background: #f4dfb8;
   border-bottom: calc(8px * 1.5) solid #383b85;
 }
 #intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] ul {
@@ -532,7 +532,7 @@ section > h2 {
 }
 
 #work-highlights {
-  background: #F8F8F2;
+  background: #f8f8f2;
 }
 #work-highlights .background-offset {
   background: #fff;
@@ -570,7 +570,7 @@ section > h2 {
   z-index: -1;
 }
 #work-excite h2 {
-  color: #F4DFB8;
+  color: #f4dfb8;
 }
 #work-excite .background-offset {
   background: #fff;
@@ -583,7 +583,7 @@ section > h2 {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-column-gap: 0px;
-  border: 1px solid #F4DFB8;
+  border: 1px solid #f4dfb8;
   border-right: none;
   grid-column: 2/13;
 }
@@ -595,7 +595,7 @@ section > h2 {
   grid-column: 2/10;
 }
 #work-excite ul li {
-  color: #F8F8F2;
+  color: #f8f8f2;
 }
 @media screen and (min-width: 900px) {
   #work-excite .list-wrapper {

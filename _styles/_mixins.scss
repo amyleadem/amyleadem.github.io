@@ -58,10 +58,7 @@
   text-shadow: $shadow-color $shadow-size $shadow-size;
 }
 
-@mixin font-size-3xl(
-  $font-color: $color-yellow-light,
-  $font-size: 6vw
-) {
+@mixin font-size-3xl($font-color: $color-yellow-light, $font-size: 6vw) {
   font-family: $font-headline;
   font-size: $font-size;
   line-height: 1.2;
@@ -87,7 +84,6 @@
   @media (min-width: $breakpoint-desktop-lg) {
     font-size: 6vw;
   }
-
 
   @media (min-width: $breakpoint-widescreen) {
     font-size: 5vw;

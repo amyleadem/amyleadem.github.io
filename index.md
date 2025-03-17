@@ -2,6 +2,7 @@
 title: Amy Leadem | Senior front-end developer
 layout: default
 ---
+
 <div id="intro-screen">
   <div class="grid-column">
     <header aria-labelledby="title">
