@@ -12,503 +12,318 @@ section > h2 {
   margin-top: 0;
 }
 
-section > * {
-  grid-column: 2 / 12;
+#intro-screen {
+  background: $color-white;
 
-  @media (min-width: $breakpoint-desktop) {
-    grid-column: 3 / 11;
+  .grid-column {
+    @include grid(12, 0);
+    @include row;
   }
 
-  @media (min-width: $breakpoint-widescreen) {
-    grid-column: 4 / 10;
-  }
-}
-
-// sticky banner
-section[aria-label="page title"] {
-  @include row;
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  z-index: 2;
-
-  & > * {
-    background: $color-red;
-    box-shadow: 3px 3px $color-gray;
-    display: inline-block;
-    line-height: 1.2;
-    margin-block: 0;
-    padding: $spacing-unit-1 $spacing-unit-2;
-  }
-
-  h1 {
-    @include font-size-md();
-  }
-
-  @media (min-width: $breakpoint-tablet) {
-    & > * {
-      max-width: 18ex;
-    }
-  }
-}
-
-//hero
-section[aria-label="hero"] {
-  @include grid;
-  @include row;
-  align-items: center;
-  background: $color-blue-dark;
-  min-height: 400px;
-
-  & > * {
-    padding-top: $spacing-vertical-section-small;
-  }
-
-  @media (min-width: $breakpoint-mobile) {
-    height: 70vh;
-    min-height: 600px;
-  }
-
-  @media (min-width: $breakpoint-tablet) {
-    height: 75vh;
-  }
-
-  @media (min-width: $breakpoint-desktop) {
-    height: 85vh;
-  }
-}
-
-// summary banner
-$summary-padding-y: $spacing-unit * 1.5;
-$summary-font-size: 1.125rem;
-section[aria-label="personal summary"] {
-  display: flex;
-  grid-column: 2/12;
-  justify-content: center;
-  margin-block: $spacing-vertical-section-small;
-
-  & > * {
-    background: $color-yellow;
-    box-shadow: 3px 3px $color-gray;
-    display: inline;
-    margin-block: 0;
-    padding-block: $summary-padding-y;
-    padding-inline: $spacing-unit-2;
-    text-align: center;
-  }
-
-  @media (min-width: $breakpoint-mobile) {
-    margin-top: calc(-#{$summary-padding-y} - (#{$summary-font-size} / 2));
+  .grid-column:nth-of-type(1) {
+    height: 60vh;
 
     & > * {
-      box-shadow: 3px 3px $color-yellow-light;
-      font-size: $summary-font-size;
-      padding: $summary-padding-y $spacing-unit-4;
-    }
-  }
-
-  @media (min-width: $breakpoint-desktop) {
-    margin-top: calc(-#{$summary-padding-y} - (1.5rem / 2));
-
-    & > * {
-      font-size: 1.25rem;
-    }
-  }
-}
-
-// job resume
-section[aria-label="career highlights"] {
-  @include row;
-  @include grid;
-  margin-block: $spacing-vertical-section;
-
-  @media (max-width: $breakpoint-mobile) {
-    margin-top: 0;
-  }
-
-  .job-card {
-    @include grid(12);
-    background: white;
-    margin-top: $spacing-unit-2;
-    margin-bottom: $spacing-unit-6;
-    padding-block: $spacing-unit-6;
-
-    & > * {
-      grid-column: 2/12;
+      @include row;
     }
 
-    .tag {
-      background: $color-blue-medium;
-      color: $color-gray-light;
-      display: inline-block;
-      padding: $spacing-unit-05 $spacing-unit-2;
-      margin-top: 0;
-    }
-
-    div {
-      & > * {
-        margin-block: $spacing-unit;
-      }
-    }
-
-    &__button {
-      @include banner-base;
-      grid-column: 3 / 11;
-      display: flex;
+    header {
+      @include grid(12, 0);
+      background: $color-blue-dark;
+      border-bottom: $spacing-unit-2 solid $color-red;
+      height: 100%;
       justify-content: center;
-    }
+      align-items: center;
 
-    &__cta {
-      margin-top: $spacing-unit-2;
-
-      button {
+      h1 {
+        grid-column: 2/12;
         margin-block: 0;
       }
     }
+  }
 
-    &__body div {
-      @include shadow-box;
+  .grid-column:nth-of-type(2) {
+    @include grid(12, 0);
+    @include row;
 
-      & > *:first-child {
-        margin-top: 0;
-      }
-
-      & > *:last-child {
-        margin-bottom: 0;
-      }
+    // wrappoer for intro text and in-page nav
+    > div {
+      grid-column: 2/12;
+      margin-block: $spacing-vertical-section-small;
     }
 
-    @media (min-width: $breakpoint-desktop) {
-      @include grid(11);
-      margin-bottom: $spacing-vertical-section;
-      padding-block: $spacing-vertical-section;
-    }
-
-    &--one-item {
+    section[aria-label="find me on the web"] {
+      @include grid(12, 0);
       @include row;
-      box-shadow: 10px 10px $color-yellow-light;
+      align-items: center;
+      background: $color-yellow-light;
+      border-bottom: $spacing-unit-105 solid $color-blue-medium;
 
-      img {
-        display: block;
-      }
+      ul {
+        @include unstyled-list;
+        grid-column: 2/12;
+        padding-block: $spacing-unit-3;
 
-      @media (max-width: $breakpoint-desktop) {
-        img {
-          display: none;
+        li {
+          padding-block: $spacing-unit-1;
         }
 
-        .job-card__body {
-          @include shadow-box;
+        a {
+          align-items: center;
+          display: flex;
+          font-weight: 500;
+          margin-right: $spacing-unit-6;
         }
-      }
-
-      @media (min-width: $breakpoint-desktop) {
-        box-shadow: 10px 10px $color-yellow-light;
-        grid-column: 1 / 12;
-        z-index: 1;
-
-        img {
-          grid-column: 3 / span 3;
-          width: 100%;
-        }
-
-        .job-card__body {
-          grid-column: 6 / span 5;
-          margin-bottom: 0;
-          margin-top: $spacing-unit-05;
-          padding-left: $spacing-unit-4;
-        }
-      }
-      @media (min-width: $breakpoint-widescreen) {
-        @include grid(10);
-        grid-column: 1/11;
 
         img {
-          grid-column: 4/ span 2;
-        }
-
-        .job-card__body {
-          grid-column: 6/ span 4;
-        }
-      }
-    }
-
-    &--two-items {
-      @include row;
-      box-shadow: -10px 10px $color-yellow-light;
-
-      @media (max-width: $breakpoint-desktop) {
-        .job-card__body div:last-child {
-          margin-top: $spacing-unit-4;
-        }
-      }
-
-      @media (min-width: $breakpoint-desktop) {
-        box-shadow: -10px 10px $color-yellow-light;
-        grid-column: 2 / 13;
-
-        .job-card__body {
-          @include grid(11, 4);
-          @include row;
-
-          div {
-            margin-top: $spacing-unit-2;
-          }
-
-          div:first-of-type {
-            grid-column: 2 / span 4;
-          }
-
-          div:last-of-type {
-            grid-column: 6 / span 4;
-          }
-        }
-      }
-      @media (min-width: $breakpoint-widescreen) {
-        @include grid(10);
-        grid-column: 3 / 13;
-
-        .job-card__body {
-          @include grid(10, 4);
-          @include row;
-
-          div {
-            margin-top: $spacing-unit-2;
-          }
-
-          div:first-of-type {
-            grid-column: 2 / span 3;
-          }
-
-          div:last-of-type {
-            grid-column: 5 / span 3;
-          }
+          margin-right: $spacing-unit-2;
+          width: $spacing-unit-6;
         }
       }
     }
   }
+  @media screen and (min-width: $breakpoint-tablet) {
+    .grid-column:nth-of-type(2) {
+      section[aria-label="find me on the web"] {
+        ul {
+          align-items: center;
+          display: flex;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-desktop) {
+    display: grid;
+    .grid-column:nth-of-type(1) {
+      grid-column: 1 / span 6;
+      height: 100vh;
+
+      header {
+        @include grid(6, 0);
+        border: none;
+        padding-bottom: 128px;
+        text-align: right;
+
+        h1 {
+          padding-right: $spacing-vertical-section-small;
+        }
+      }
+    }
+
+    .grid-column:nth-of-type(2) {
+      @include grid(6, 0);
+      grid-column: 7 / span 6;
+      grid-template-rows: 1fr 128px;
+
+      > * {
+        margin-block: 0;
+      }
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        grid-column: 1 / span 5;
+        justify-content: center;
+        margin-top: 0;
+        padding-top: $spacing-vertical-section-small;
+        padding-left: $spacing-vertical-section-small;
+      }
+
+      section[aria-label="find me on the web"] {
+        align-items: center;
+        border-bottom: $spacing-unit-4 solid $color-red;
+        display: flex;
+        grid-column: 1 / span 6;
+
+        ul {
+          padding-left: $spacing-vertical-section-small;
+        }
+      }
+    }
+
+    nav ul {
+      margin-block: 0;
+    }
+  }
 }
 
-// connecting practice areas
-section[aria-label="breaking down silos"] {
+#work-highlights,
+#work-excite {
+  @include grid(12, 0);
   @include row;
-  @include grid;
+  margin-top: $spacing-vertical-section;
+
+  h2 {
+    grid-column: 2 / 11;
+    padding-left: $spacing-unit-6;
+    padding-top: $spacing-vertical-section;
+    padding-bottom: $spacing-unit-2;
+  }
+
+  ul {
+    @include unstyled-list;
+    grid-column: 4/10;
+    margin-block: $spacing-vertical-section-small;
+
+    li {
+      padding-block: $spacing-unit-2;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    h2 {
+      grid-column: 3 / 9;
+      padding-left: $spacing-unit-6;
+      padding-top: calc($spacing-vertical-section * 1.5);
+      padding-bottom: $spacing-unit-2;
+    }
+  }
 }
 
-section[aria-label="contact"] {
+#work-highlights {
+  background: $color-gray-warm-light;
+
+  .background-offset {
+    background: $color-white;
+    grid-column: 1/2;
+
+    &:last-child {
+      height: calc($spacing-vertical-section * 1.5);
+    }
+  }
+
+  .list-wrapper {
+    @include grid(11, 0);
+    border: 1px solid $color-gray-medium;
+    border-left: none;
+    grid-column: 1/12;
+  }
+
+  ul {
+    grid-column: 3/11;
+  }
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    .list-wrapper {
+      @include grid(10, 0);
+      grid-column: 1/11;
+    }
+
+    ul {
+      grid-column: 4/10;
+    }
+  }
+}
+
+#work-excite {
+  background: $color-blue-dark;
+  margin-top: calc($spacing-vertical-section * 1.5);
+  z-index: -1;
+
+  h2 {
+    color: $color-yellow-light;
+  }
+
+  .background-offset {
+    background: $color-white;
+    grid-column: 12/13;
+
+    &:last-child {
+      height: calc($spacing-vertical-section * 1.5);
+    }
+  }
+
+  .list-wrapper {
+    @include grid(11, 0);
+    border: 1px solid $color-yellow-light;
+    border-right: none;
+    grid-column: 2/13;
+
+    .background-offset {
+      grid-column: 11/12;
+      height: 100%;
+    }
+  }
+
+  ul {
+    grid-column: 2/10;
+
+    li {
+      color: $color-gray-warm-light;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-tablet) {
+    .list-wrapper {
+      @include grid(10, 0);
+      grid-column: 3/13;
+
+      .background-offset {
+        grid-column: 10/12;
+        height: 100%;
+      }
+    }
+
+    ul {
+      grid-column: 2/8;
+    }
+
+    .background-offset {
+      grid-column: 12/13;
+      height: 100%;
+    }
+  }
+}
+
+#contact {
   @include row;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 0;
 
   h2 {
-    text-align: center;
-    margin-top: 0;
+    padding-top: $spacing-vertical-section;
+    padding-bottom: $spacing-unit-2;
   }
 
   ul {
     @include unstyled-list;
-    display: flex;
     align-items: center;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-top: $spacing-unit-2;
     margin-bottom: $spacing-vertical-section;
   }
 
   a {
-    @include button($color-blue-medium, $color-gray-light, $color-gray);
-    font-size: 1.25rem;
+    @include button($color-blue-medium, $color-white, $color-gray);
+    font-size: 1.125rem;
     padding: $spacing-unit-2 $spacing-unit-4;
     margin-inline: $spacing-unit;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    @include grid(12, 0);
+    @include row;
+
+    h2 {
+      grid-column: 3/11;
+    }
+
+    ul {
+      flex-direction: row;
+      grid-column: 3/11;
+    }
   }
 
   @media (min-width: $breakpoint-tablet) {
     ul {
-      flex-direction: row;
+      grid-column: 4/10;
     }
-  }
-}
-
-// full resume
-section[aria-label="resume"] {
-  @include row;
-  @include grid;
-
-  background: $color-red;
-  margin-top: $spacing-vertical-section;
-
-  .resume__page {
-    margin-top: $spacing-vertical-section;
-
-    article {
-      @include shadow-box;
-      @include row;
-      background: white;
-      margin-bottom: $spacing-unit-4;
-    }
-  }
-
-  h2,
-  h3 {
-    @include row;
-  }
-
-  h2 {
-    margin-bottom: $spacing-unit-1;
-  }
-
-  h3 {
-    @include font-size-lg;
-  }
-
-  h2,
-  h3,
-  h4 {
-    margin-top: 0;
-  }
-
-  @media (max-width: $breakpoint-desktop) {
-    h2 {
-      @include shadow-box;
-      background: white;
-      margin-bottom: $spacing-unit-4;
-    }
-  }
-
-  @media (min-width: $breakpoint-desktop) {
-    h2 {
-      grid-column: 2/12;
-      padding-top: $spacing-vertical-section;
-    }
-    h2,
-    h3 {
-      margin-bottom: $spacing-unit-2;
-    }
-
-    .resume__page {
-      @include grid(10, 3);
-      @include shadow-box();
-      background: white;
-      grid-column: 2/12;
-      padding: 0;
-
-      article {
-        grid-column: 2/10;
-
-        &.left {
-          grid-column: 2/ 6;
-        }
-
-        &.right {
-          grid-column: 6/ 10;
-        }
-
-        & > *:last-child {
-          margin-bottom: 0;
-        }
-      }
-
-      article[aria-label="technical skill"] {
-        grid-row: 2/4;
-      }
-    }
-  }
-
-  @media (min-width: $breakpoint-desktop-lg) {
-    .resume__page {
-      grid-column: 3/11;
-    }
-  }
-}
-
-.practice-area {
-  background: white;
-
-  ul {
-    padding-left: 0;
-    margin: 0;
-  }
-
-  li {
-    align-items: center;
-    color: $color-blue-dark;
-    display: inline-flex;
-    font-family: $font-headline;
-    font-size: 2.25rem;
-    list-style: none;
-    padding-bottom: 0;
-  }
-
-  li img {
-    height: $spacing-unit-7;
-    margin-inline: $spacing-unit;
-  }
-
-  & > * {
-    padding-block: $spacing-vertical-section;
-  }
-
-  & > *:first-child {
-    @include grid;
-    @include row;
-    background: $color-red;
-
-    & > * {
-      grid-column: 2/12;
-    }
-  }
-
-  & > *:nth-child(2) {
-    align-items: center;
-    background: white;
-    display: flex;
-    grid-column: 2 / span 10;
-
-    @media (min-width: $breakpoint-tablet) {
-      grid-column: 7 / span 4;
-    }
-  }
-
-  // @media (min-width: $breakpoint-tablet) {
-  //   li {
-  //     display: list-item;
-  //     padding-left: $spacing-unit-4;
-  //   }
-
-  //   li img {
-  //     display: block;
-  //   }
-
-  //   & > *:first-child {
-  //     @include grid(6);
-  //     grid-column: 1 / span 6;
-  //     text-align: right;
-
-  //     & > * {
-  //       grid-column: 2 / span 6;
-  //       padding-right: $spacing-unit-4;
-  //     }
-  //   }
-
-  //   & > *:nth-child(2) {
-  //     grid-column: 7 / span 4;
-  //   }
-  // }
-}
-
-footer {
-  @include row;
-  @include grid;
-  background: $color-blue-medium;
-  margin-top: $spacing-vertical-section;
-  padding-top: $spacing-vertical-section;
-
-  & > * {
-    grid-column: 3/11;
-  }
-
-  ul {
-    @include unstyled-list;
   }
 }

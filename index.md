@@ -3,203 +3,95 @@ title: Amy Leadem | Senior front-end developer
 layout: default
 ---
 
-<div class="grid-container">
-  <section aria-label="page title">
-    <h1>AMY_LEADEM / README</h1>
-  </section>
-
-  <section aria-label="hero">
-    <h2 class="font-size-3xl">Delivering <br/>front-end code at scale</h2>
-  </section>
-
-  <section aria-label="personal summary">
-    <p>Senior front-end developer specializing in design systems and accessibility</p>
-  </section>
-
-  <section aria-label="career highlights">
-    <h2>Experience highlights</h2>
-    <article class="job-card job-card--one-item" aria-label="Featured experience: U.S. Web design system">
-      <img src="./assets/img/uswds.png" alt="United States Web Design System logo">
-      <div class="job-card__body">
-        <p class="tag">2021-2025</p>
-        <h3 class="job-card__headline">Senior developer on the U.S. Web Design System core team</h3>
-        <p>USWDS is the open source design system for the federal government. </p>
-        <p>As a senior developer on the USWDS core team, I improved accessibility, performance, and readability in the USWDS code base, coordinated releases, wrote quality documentation, and improved process. </p>
-        <p>See my merged contributions to USWDS on GitHub:</p>
+<div id="intro-screen">
+  <div class="grid-column">
+    <header aria-labelledby="title">
+      <h1 class="font-size-3xl" id="title">Delivering <br/>front-end<br/> code at scale</h1>
+    </header>
+  </div>
+  <div class="grid-column">
+    <div>
+      <section aria-label="personal introduction">
+        <h2>Hello!</h2>
+        <p>My name is Amy Leadem and I am a senior front-end developer with 15 years of experience in design and development.</p>
+        <p>I am a systems thinker who is especially passionate about working in design systems, building well-documented and accessible code, and building thoughtful products for downstream teams.</p>
+      </section>
+      <nav aria-labelledby="in-page-nav">
+        <h3 id="in-page-nav">On this page</h3>
         <ul>
-          <li>
-            <a href="https://github.com/uswds/uswds/pulls?q=is%3Apr+is%3Amerged+author%3Aamyleadem">
-              USWDS component library contributions
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/uswds/uswds-site/pulls?q=is%3Apr+is%3Amerged+author%3Aamyleadem">
-              USWDS documentation website contributions
-            </a>
-          </li>
+          <li><a href="#highlights">Highlights from my work history</a></li>
+          <li><a href="#excited">What excites me at work</a></li>
+          <li><a href="#find-me">Find me online</a></li>
         </ul>
-        <p class="job-card__cta">
-          <a class="button" href="#uswds">Learn more about my role on USWDS in my resume</a>
-        </p>
-      </div>
-    </article>
-    <article class="job-card job-card--two-items" aria-label="Featured experience: Fortune 50 design systems">
-      <div class="job-card__headline">
-        <p class="tag">2019-2021</p>
-        <h3>Led design and development of two Fortune 50 design systems</h3>
-      </div>
-      <div class="job-card__body">
-        <div>
-          <h4 class="job-card__subheadline">Created Raytheon Technologies' intranet design system</h4>
-          <p>Served as project lead and primary front-end developer for the redesign of Raytheon’s intranet system reaching 60,000 end users daily. </p>
-          <p>This new design was developed to streamline hundreds of one-off designs into a single system reflecting the new company brand. </p>
-        </div>
-        <div>
-          <h4 class="job-card__subheadline">Created a design system for Raytheon's public-facing websites</h4>
-          <p>Lead front-end developer for a new design system and component library to be shared across multiple public-facing websites.</p>
-          <p>Developed a front-end code base from the ground up. Replaced a layered, cluttered code base with one that was lean and future-friendly.</p>
-        </div>
-      </div>
-      <div class="job-card__cta">
-        <a class="button" href="#raytheon">Learn more about these Raytheon roles in my resume</a>
-      </div>
-    </article>
-  </section>
-
-  <section aria-label="contact">
-    <h2>Find me in the wild</h2>
-    <ul>
-      <li><a href="https://github.com/amyleadem">Find me on GitHub</a></li>
-      <li><a href="http://www.linkedin.com/in/amyleadem">Find me on LinkedIn</a></li>
-      <li><a href="mailto:amyleadem@gmail.com">Email me</a></li>
-    </ul>
-  </section>
-
-  <!-- <section class="practice-area" aria-label="breaking down silos">
-    <div>
-      <h2 class="font-size-2xl">Translating practice area needs into code</h2>
-      <p>All web project work eventually finds its way into code. Having the ability to speak the language of content strategy, accessibility, and UX/UI makes for faster process and higher quality results.</p>
+      </nav>
     </div>
-    <div>
+    <section aria-label="find me on the web">
       <ul>
         <li>
-          Accessibility
-          <img src="./assets/img/handshake.png" alt="handshake emoji">
+          <a href="https://github.com/amyleadem">
+            <img src="./assets/img/logo-github.svg" alt="">
+            Find me on GitHub
+          </a>
         </li>
         <li>
-          Content
-           <img src="./assets/img/handshake.png" alt="handshake emoji">
-        </li>
-        <li>
-          Development
-          <img src="./assets/img/handshake.png" alt="handshake emoji">
-        </li>
-        <li>
-          UX/UI
+          <a href="https://www.linkedin.com/in/amyleadem/">
+            <img src="./assets/img/logo-linkedin.png" alt="">
+            Find me on LinkedIn
+          </a>
         </li>
       </ul>
-    </div>
-  </section> -->
-
-  <section aria-label="resume" id="resume">
-    <div class="resume__page">
-      <h2>Amy Leadem resume</h2>
-       <article class="left" aria-label="expertise">
-          <h3>Expertise</h3>
-          <ul>
-            <li>Design systems</li>
-            <li>Web accessibility</li>
-            <li>Technical documentation</li>
-            <li>Content design</li>
-            <li>Process improvement</li>
-            <li>Product delivery</li>
-          </ul>
-        </article>
-        <article class="right" aria-label="technical skill">
-          <h3>Technical skills</h3>
-          <ul>
-            <li>HTML/Markdown</li>
-            <li>CSS/Sass</li>
-            <li>JavaScript</li>
-            <li>Web components/Lit</li>
-            <li>Storybook</li>
-            <li>JSON</li>
-            <li>YAML</li>
-            <li>Jekyll</li>
-            <li>Eleventy</li>
-            <li>Liquid</li>
-            <li>Twig</li>
-            <li>VoiceOver</li>
-            <li>Git</li>
-            <li>Figma</li>
-          </ul>
-        </article>
-        <article class="left" aria-label="education">
-          <h3>Education</h3>
-          <p>B.S. Journalism and Advertising, <br/>Arkansas State University</p>
-        </article>
-        <article id="uswds" aria-label="Experience on U.S. Web design system">
-          <h3>Experience</h3>
-          <h4>Senior Software Engineer</h4>
-          <h5>Bixal / November 2021 - March 2025</h5>
-          <p>Senior front-end developer on the U.S. Web Design System (USWDS) core team. Strong focus on accessibility, user experience, and quality documentation. Daily responsibilities included:</p>
-          <ul>
-            <li><strong>Writing well-documented open source front-end code:</strong> Built accessible, reusable, and readable front-end code for the open source USWDS component library and its accompanying documentation website.</li>
-            <li><strong>Managing product delivery:</strong> Planned and prioritized release items with the development and product teams. Coordinated release items and delivered them to the product team for release.</li>
-            <li><strong>Designing component APIs:</strong> Created the process and template for drafting code requirements for USWDS web components. Designed the prop, slot, and variable structure for multiple commonly-used components.</li>
-            <li><strong>Improving accessibility across the design system: </strong> Wrote code that met strict WCAG 2.1 AA and Section 508 standards. Performed automated and manual accessibility testing to ensure compliance with WCAG. Worked closely with the accessibility team to draft manual testing checklists for USWDS components.</li>
-            <li><strong>Writing plain language technical documentation:</strong> Used plain language practices to write documentation for the design system website, GitHub repositories, and internal team. Wrote human-readable changelog entries and release notes.</li>
-            <li><strong>Creating data-driven prototypes:</strong> Created YAML-based data structures to drive rapid prototyping for USWDS’ Jekyll-based documentation website. Collaborated closely with the content team to create layouts that met communication goals.</li>
-            <li><strong>Improving process:</strong> Assessed and improved development processes to reduce friction across practice areas. Organized the project board and its metadata to improve velocity. Created component lifecycle and defined the software development lifecycle.</li>
-            <li><strong>Supporting customers:</strong> Answered technical support questions from the public across multiple channels, including GitHub, Slack, and ZenDesk.</li>
-          </ul>
-        </article>
-        <article id="raytheon" aria-label="Experience at Raytheon">
-          <h3>Experience</h3>
-          <h4>Principal front-end web developer</h4>
-          <h5>Raytheon Technologies / January 2020 - November 2021</h5>
-          <p>Lead front-end developer responsible for designing, developing and maintaining multiple design systems across the company’s internal and external web platforms. Developed design systems to be consumed by Drupal, Oracle, and Sitecore.</p>
-          <p><strong>Key achievement:</strong> Created a new design system for Raytheon’s intranet system</p>
-          <p>Project lead and primary front-end developer for the redesign of Raytheon’s intranet system reaching 60,000 end users daily. This new design was developed to streamline hundreds of one-off designs into a single system reflecting the new company brand.</p>
-          <p>We focused on creating a well-documented, modular component library that would enable rapid page development, regardless of the content author’s technical skill.</p>
-          <ul>
-            <li>Lead the UX/UI analysis of the existing 13,000 page site. This involved developing user personas, conducting user interviews, and performing an audit of existing UI elements. Made recommendations for a library of common UI elements, page types, and design patterns.</li>
-            <li>Developed a system of performant and accessible HTML, CSS, and JS for an entirely new component library.</li>
-          </ul>
-          <p><strong>The result:</strong> A streamlined system that makes page design and development much easier, faster, and more consistent than it had ever been before.</p>
-        </article>
-        <article id="raytheon-2" aria-label="Experience at Amy Leadem Web development">
-          <h3>Experience</h3>
-          <h4>Owner and front-end developer</h4>
-          <h5>Amy Leadem Web Development / January 2019 - January 2020</h5>
-          <p>Front-end developer and web designer specializing in building accessible and performant websites for companies of all sizes.</p>
-          <p><strong>Key achievement:</strong> Created a new design system for two Raytheon companies.</p>
-          <p>Lead front-end developer for a new design system and component library to be shared across two public-facing websites.</p>
-          <ul>
-            <li>Developed a front-end code base from the ground up. Replaced a layered, cluttered code base with one that was lean and future-friendly.</li>
-            <li>Designed and built a comprehensive living style guide for a cross-disciplinary audience. This documentation gave writers, designers, developers, and content authors the resources they need to create a consistent user experience across sites.</li>
-          </ul>
-          <p><strong>The result:</strong> A CMS experience that makes it easy for even non-technical users to safely create accessible, performant, and branded pages in minutes rather than hours.</p>
-        </article>
-        <article aria-label="Experience at Amy Arnold web development">
-          <h3>Experience</h3>
-          <h4>Front-end designer and developer</h4>
-          <h5>Amy Arnold Web Development / 2012-2016</h5>
-          <p>Front-end web developer responsible for responsive web design and development on various platforms, including Wordpress, Jekyll, and custom-coded static websites.</p>
-        </article>
-        <article aria-label="Experience at Raytheon Missile systems">
-          <h3>Experience</h3>
-          <h4>Senior designer</h4>
-          <h5>Raytheon Missile Systems / 2009-2012</h5>
-          <p>Senior web designer, developer, and motion artist responsible for developing internal and external websites, digital signage, and print work.</p>
-        </article>
-        <article aria-label="Experience at Occasions publishing group">
-          <h3>Experience</h3>
-          <h4>Graphic and Web Designer</h4>
-          <h5>Occasions Publishing Group / 2006-2009</h5>
-          <p>Designer and developer for three print publications and their accompanying websites. Daily responsibilities included: ad development, copywriting, magazine layout and design, web design and coding, photography and color correction, and in-house promotion.</p>
-        </article>
-    </div>
-
-  </section>
+    </section>
+  </div>
 </div>
+
+<section id="work-highlights" aria-labelledby="highlights">
+  <div class="background-offset"></div>
+  <h2 id="highlights">Some highlights from my work history</h2>
+  <div class="list-wrapper">
+    <div class="background-offset"></div>
+    <ul>
+      <li>
+        <strong>For the last six years, I’ve worked exclusively in design systems.</strong> I created my first component library and style guide in 2019 and I haven’t looked back since. My experience has shown me that a good design system delivers smart solutions at scale, freeing teams up to focus on the problems that really matter. I have to admit, I’m hooked.
+      </li>
+      <li>
+        <strong>I’ve led major initiatives in challenging environments.</strong> II successfully advocated for the creation of these design systems in a risk-averse culture that didn’t yet understand the value of the task. Through teamwork and advocacy, we were able to successfully convey that the product would quickly pay for itself and provide more consistent results than their current disjointed system. From there, we did a full audit of the UI components, defined requirements based on practice area needs, and developed a component library and branding style guide that helped make it faster and easier to build for both the intranet and public-facing websites. 
+      </li>
+      <li>
+        <strong>I leveled-up on the U.S. Web Design System (USWDS) core team.</strong> On this highly-collaborative and incredibly talented team, I matured as a developer and team member. I learned how to write code that is self-documenting, readable, and reusable; designed new products and processes; triaged bugs and feature requests; and developed a passion for web accessibility and open source communities. 
+      </li>
+      <li>
+       <strong>My work history spans multiple practice areas.</strong> I am a developer, a designer, and a writer. I also have years of experience in web accessibility and product management. This diverse experience gives me the ability to effectively translate needs across functions and build code that meets the needs of everyone on the product team.
+      </li>
+    </ul>
+  </div>
+  <div class="background-offset"></div>
+</section>
+
+<section class="readme" id="work-excite" aria-labelledby="excited">
+  <h2 id="excited">What excites me at work</h2>
+  <div class="background-offset"></div>
+  <div class="list-wrapper">
+    <ul>
+      <li>
+        <strong>I am passionate about the front of the front-end.</strong> Front-end development is a multi-faceted and deep discipline that often gets undervalued. To me, front-enders are the guardians of the user experience and interface. A good front-ender ensures that the diligent work that comes from usability research, accessibility audits, and content strategies gets translated into a product that is accessible and usable for the end user.
+      </li>
+      <li>
+        <strong>I love building code that serves product teams.</strong> Working in design systems has taught me that the end user is not the only consumer we need to consider when writing code. Building smart code systems that anticipate the needs of development, content, and design teams brings business value by reducing friction and minimizing re-work.
+      </li>
+      <li>
+        <strong>I care deeply about the developer experience. </strong> My time working in open source has taught me the value of creating self-documenting, readable code. writing high-quality pull request descriptions, release notes, and architectural decision records (ADRs) creates a living history as we build. This gives teams have an easy reference to better understand our decisions from the past, and not waste effort pursuing solutions that have already been ruled out.
+      </li>
+    </ul>
+    <div class="background-offset"></div>
+  </div>
+  <div class="background-offset"></div>
+</section>
+
+<footer id="contact" aria-labelledby="find-me">
+  <h2 id="find-me">Find me on the web</h2>
+  <ul>
+    <li><a href="https://github.com/amyleadem">Find me on GitHub</a></li>
+    <li><a href="http://www.linkedin.com/in/amyleadem">Find me on LinkedIn</a></li>
+    <li><a href="mailto:amyleadem@gmail.com">Email me</a></li>
+  </ul>
+</footer>
