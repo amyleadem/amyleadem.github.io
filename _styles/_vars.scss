@@ -8,7 +8,7 @@ $breakpoint-desktop-lg: 1500px;
 $breakpoint-widescreen: 1800px;
 $breakpoint-widescreen-lg: 2100px;
 
-// colors
+// system colors
 $color-blue-medium: #383b85;
 $color-blue-dark: #1a1b37;
 $color-red: #e82822;
@@ -22,6 +22,9 @@ $color-gray-light: #070605;
 $color-gray-xlight: #faf7f5;
 $color-gray-warm-light: #f8f8f2;
 $color-white: #fff;
+
+// theme colors
+$color-site-background: $color-white;
 
 // font types
 $font-headline: "Unbounded", sans-serif;
@@ -43,3 +46,7 @@ $spacing-unit-5: calc(#{$spacing-unit} * 5);
 $spacing-unit-6: calc(#{$spacing-unit} * 6);
 $spacing-unit-7: calc(#{$spacing-unit} * 7);
 $spacing-unit-8: calc(#{$spacing-unit} * 8);
+$spacing-unit-9: calc(#{$spacing-unit} * 9);
+$spacing-unit-10: calc(#{$spacing-unit} * 10);
+$spacing-unit-11: calc(#{$spacing-unit} * 11);
+$spacing-unit-12: calc(#{$spacing-unit} * 12);

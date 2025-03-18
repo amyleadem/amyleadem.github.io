@@ -21,7 +21,7 @@ layout: default
         <ul>
           <li><a href="#highlights">Highlights from my work history</a></li>
           <li><a href="#excited">What excites me at work</a></li>
-          <li><a href="#find-me">Find me online</a></li>
+          <li><a href="#find-me">Find me on the web</a></li>
         </ul>
       </nav>
     </div>
@@ -44,9 +44,9 @@ layout: default
   </div>
 </div>
 
-<section id="work-highlights" aria-labelledby="highlights">
+<section id="work-highlights" class="highlight-section right-section" aria-labelledby="highlights-description">
   <div class="background-offset"></div>
-  <h2 id="highlights">Some highlights from my work history</h2>
+  <h2 id="highlights-description">Some highlights from my work history</h2>
   <div class="list-wrapper">
     <div class="background-offset"></div>
     <ul>
@@ -67,7 +67,7 @@ layout: default
   <div class="background-offset"></div>
 </section>
 
-<section id="work-excite" aria-labelledby="excited">
+<section id="work-excite" class="highlight-section left-section" aria-labelledby="excited">
   <h2 id="excited">What excites me at work</h2>
   <div class="background-offset"></div>
   <div class="list-wrapper">
@@ -87,11 +87,12 @@ layout: default
   <div class="background-offset"></div>
 </section>
 
-<footer id="contact" aria-labelledby="find-me">
+<footer class="highlight-section" id="contact" aria-labelledby="find-me">
   <h2 id="find-me">Find me on the web</h2>
-  <ul>
-    <li><a href="https://github.com/amyleadem">Find me on GitHub</a></li>
-    <li><a href="http://www.linkedin.com/in/amyleadem">Find me on LinkedIn</a></li>
-    <li><a href="mailto:amyleadem@gmail.com">Email me</a></li>
-  </ul>
+    <ul>
+      <li><a href="https://github.com/amyleadem">Download my resume</a></li>
+      <li><a href="https://github.com/amyleadem">Find me on GitHub</a></li>
+      <li><a href="http://www.linkedin.com/in/amyleadem">Find me on LinkedIn</a></li>
+      <li><a href="mailto:amyleadem@gmail.com">Email me</a></li>
+    </ul>
 </footer>
