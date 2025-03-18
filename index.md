@@ -6,7 +6,7 @@ layout: default
 <div id="intro-screen">
   <div class="grid-column">
     <header aria-labelledby="title">
-      <h1 class="font-size-3xl" id="title">Delivering <br/>front-end<br/> code at scale</h1>
+      <h1 class="font-size-3xl" id="title">Delivering front-end code at scale</h1>
     </header>
   </div>
   <div class="grid-column">
@@ -44,9 +44,9 @@ layout: default
   </div>
 </div>
 
-<section id="work-highlights" class="highlight-section right-section" aria-labelledby="highlights-description">
+<section id="highlights" class="highlight-section right-section" aria-labelledby="highlights-description">
   <div class="background-offset"></div>
-  <h2 id="highlights-description">Some highlights from my work history</h2>
+  <h2 id="highlights-description">Highlights from my work history</h2>
   <div class="list-wrapper">
     <div class="background-offset"></div>
     <ul>
