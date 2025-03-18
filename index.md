@@ -90,7 +90,7 @@ layout: default
 <footer class="highlight-section" id="contact" aria-labelledby="find-me">
   <h2 id="find-me">Find me on the web</h2>
     <ul>
-      <li><a href="https://github.com/amyleadem">Download my resume</a></li>
+      <li><a href="https://docs.google.com/document/d/1CeEc1fyeFPyXYsz4cEE-IWk_OOMJKXIVE-H0_ZGXjWk/edit?usp=sharing">View my resume</a></li>
       <li><a href="https://github.com/amyleadem">Find me on GitHub</a></li>
       <li><a href="http://www.linkedin.com/in/amyleadem">Find me on LinkedIn</a></li>
       <li><a href="mailto:amyleadem@gmail.com">Email me</a></li>
