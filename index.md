@@ -13,8 +13,8 @@ layout: default
     <div>
       <section aria-label="personal introduction">
         <h2>Hello!</h2>
-        <p>My name is Amy Leadem and I am a senior front-end developer with 15 years of experience in design and development.</p>
-        <p>I am a systems thinker who is especially passionate about working in design systems, building well-documented and accessible code, and building thoughtful products for downstream teams.</p>
+        <p>My name is Amy Leadem and I am a senior front-end developer with 15 years of experience in UI design and development, including six years in design systems.</p>
+        <p>I am a systems thinker who is passionate about working in design systems, building well-documented and accessible code, and building thoughtful products for downstream teams.</p>
       </section>
       <nav aria-labelledby="in-page-nav">
         <h3 id="in-page-nav">On this page</h3>
@@ -51,10 +51,10 @@ layout: default
     <div class="background-offset"></div>
     <ul>
       <li>
-        <strong>For the last six years, I’ve worked exclusively in design systems.</strong> I created my first component library and style guide in 2019 and I haven’t looked back since. My experience has shown me that a good design system delivers smart solutions at scale, freeing teams up to focus on the problems that really matter. I have to admit, I’m hooked.
+        <strong>For the last six years, I’ve worked exclusively in design systems.</strong> I created my first component library and style guide in 2019 and I haven’t looked back since. My experience has shown me that a good design system delivers smart solutions at scale, freeing up downstream teams to focus on the problems that really matter to them. I have to admit, I’m hooked.
       </li>
       <li>
-        <strong>I’ve led major initiatives in challenging environments.</strong> II successfully advocated for the creation of these design systems in a risk-averse culture that didn’t yet understand the value of the task. Through teamwork and advocacy, we were able to successfully convey that the product would quickly pay for itself and provide more consistent results than their current disjointed system. From there, we did a full audit of the UI components, defined requirements based on practice area needs, and developed a component library and branding style guide that helped make it faster and easier to build for both the intranet and public-facing websites. 
+        <strong>I’ve led major initiatives in challenging environments.</strong> I successfully advocated for the creation of design systems in a risk-averse culture that didn’t yet understand the value of the task. Through teamwork and advocacy, we were able to successfully convey that the product would quickly pay for itself and provide more consistent results than their current disjointed system. From there, we did a full audit of the UI components, defined requirements based on practice area needs, and developed a component library and branding style guide that helped make it faster and easier to build for both the intranet and public-facing websites. 
       </li>
       <li>
         <strong>I leveled-up on the U.S. Web Design System (USWDS) core team.</strong> On this highly-collaborative and incredibly talented team, I matured as a developer and team member. I learned how to write code that is self-documenting, readable, and reusable; designed new products and processes; triaged bugs and feature requests; and developed a passion for web accessibility and open source communities. 
@@ -67,7 +67,7 @@ layout: default
   <div class="background-offset"></div>
 </section>
 
-<section class="readme" id="work-excite" aria-labelledby="excited">
+<section id="work-excite" aria-labelledby="excited">
   <h2 id="excited">What excites me at work</h2>
   <div class="background-offset"></div>
   <div class="list-wrapper">
@@ -76,10 +76,10 @@ layout: default
         <strong>I am passionate about the front of the front-end.</strong> Front-end development is a multi-faceted and deep discipline that often gets undervalued. To me, front-enders are the guardians of the user experience and interface. A good front-ender ensures that the diligent work that comes from usability research, accessibility audits, and content strategies gets translated into a product that is accessible and usable for the end user.
       </li>
       <li>
-        <strong>I love building code that serves product teams.</strong> Working in design systems has taught me that the end user is not the only consumer we need to consider when writing code. Building smart code systems that anticipate the needs of development, content, and design teams brings business value by reducing friction and minimizing re-work.
+        <strong>I love building code that serves product teams.</strong> Working in design systems has taught me that the end user is not the only consumer we need to consider when writing code. Building smart code systems that anticipate the needs of development, content, and design teams brings business value by reducing friction during handoff and minimizing re-work.
       </li>
       <li>
-        <strong>I care deeply about the developer experience. </strong> My time working in open source has taught me the value of creating self-documenting, readable code. writing high-quality pull request descriptions, release notes, and architectural decision records (ADRs) creates a living history as we build. This gives teams have an easy reference to better understand our decisions from the past, and not waste effort pursuing solutions that have already been ruled out.
+        <strong>I care deeply about the developer experience.</strong> My time working in open source has taught me the value of creating self-documenting, readable code. Writing high-quality pull request descriptions, release notes, and architectural decision records (ADRs) creates a living history as we build. This gives teams have an easy reference to better understand our decisions from the past, and not waste effort pursuing solutions that have already been ruled out.
       </li>
     </ul>
     <div class="background-offset"></div>
