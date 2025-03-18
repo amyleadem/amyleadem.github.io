@@ -22,6 +22,7 @@ body {
 
 a {
   color: $color-gray-dark;
+  transition: all 0.3s ease 0s; 
 
   &:visited,
   &:active {
@@ -67,14 +68,14 @@ h2 {
 
 h3 {
   @include font-size-lg;
-  color: $color-blue-dark;
+  color: $color-blue-darker;
   font-family: $font-subheadline;
   font-weight: 600;
   line-height: 1.3;
 }
 
 h4 {
-  color: $color-blue-dark;
+  color: $color-blue-darker;
   font-family: $font-subheadline;
   font-size: 1.125rem;
   font-weight: 600;

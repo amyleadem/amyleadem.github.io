@@ -79,7 +79,7 @@ $spacing-horizontal-section-small: $spacing-unit-4;
 }
 
 .left-section {
-  background: $color-blue-dark;
+  background: $color-blue-darker;
 
   h2 {
     color: $color-yellow-light;
@@ -148,7 +148,7 @@ $spacing-horizontal-section-small: $spacing-unit-4;
 
     header {
       @include grid(12, 0);
-      background: $color-blue-dark;
+      background: $color-blue-darker;
       border-bottom: $spacing-unit-2 solid $color-red;
       height: 100%;
       justify-content: center;

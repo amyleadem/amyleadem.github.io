@@ -198,6 +198,7 @@ body {
 
 a {
   color: #1b1b1b;
+  transition: all 0.3s ease 0s;
 }
 a:visited, a:active {
   color: #1b1b1b;
@@ -347,14 +348,36 @@ h4 {
 
 .button {
   background-color: #383b85;
+  border: 2px solid #383b85;
   display: inline-block;
   font-size: 1.125rem;
   font-weight: 500;
   padding: calc(8px * 2) calc(8px * 4);
   text-decoration: none;
+  position: relative;
+  z-index: 2;
 }
 .button, .button:visited, .button:active {
   color: #f8f8f2;
+}
+.button:hover {
+  color: #ffce5b;
+  transition: all 0.2s ease-in-out 0s;
+}
+.button::after {
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+  position: absolute;
+  transition: all 0.5s ease 0s;
+  z-index: -1;
+}
+.button:hover::after {
+  width: 100%;
+  background: #272962;
+  transition: all 0.5s ease 0s;
 }
 
 .unstyled-list {
@@ -637,15 +660,37 @@ h4 {
 }
 #contact a {
   background-color: #383b85;
+  border: 2px solid #383b85;
   display: inline-block;
   font-size: 1.125rem;
   font-weight: 500;
   padding: calc(8px * 2) calc(8px * 4);
   text-decoration: none;
+  position: relative;
+  z-index: 2;
   margin-inline: 8px;
 }
 #contact a, #contact a:visited, #contact a:active {
   color: #fff;
+}
+#contact a:hover {
+  color: #ffce5b;
+  transition: all 0.2s ease-in-out 0s;
+}
+#contact a::after {
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+  position: absolute;
+  transition: all 0.5s ease 0s;
+  z-index: -1;
+}
+#contact a:hover::after {
+  width: 100%;
+  background: #272962;
+  transition: all 0.5s ease 0s;
 }
 #contact a:first-of-type {
   margin-left: 0;
