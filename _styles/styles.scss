@@ -272,13 +272,42 @@ $spacing-horizontal-section-small: $spacing-unit-4;
       position: relative;
 
       li {
-        margin-left: $spacing-unit-3;
+        padding-block: $spacing-unit-1;
       }
 
-      li::before {
-        content: "\2193";
-        left: 0;
-        position: absolute;
+      a {
+        padding-block: $spacing-unit-1;
+        padding-inline: $spacing-unit-4 $spacing-unit-2;
+        position: relative;
+        z-index: 2;
+
+        &:hover {
+          color: $color-gray-dark;
+          transition: all 0.2s ease-in-out 0s; 
+        }
+
+        &::before {
+          content: "\2193";
+          left: $spacing-unit-1;
+          position: absolute;
+        }
+
+        &::after {
+          content: "";
+          height: 100%; 
+          left: 0; 
+          top: 0; 
+          width: 0;  
+          position: absolute; 
+          transition: all 0.5s ease 0s; 
+          z-index: -1;
+        }
+
+        &:hover::after {
+          width: 100%;
+          background: $color-gray-warm;
+          transition: all 0.4s ease 0s; 
+        }
       }
     }
   }

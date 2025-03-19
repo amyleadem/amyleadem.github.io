@@ -295,7 +295,7 @@ h4 {
 }
 
 .font-size-2xl {
-  color: #f4dfb8;
+  color: #f9ebcf;
   font-family: "Unbounded", sans-serif;
   font-size: 5vw;
   margin-block: 8px;
@@ -307,7 +307,7 @@ h4 {
   font-family: "Unbounded", sans-serif;
   font-size: 6vw;
   line-height: 1.2;
-  color: #f4dfb8;
+  color: #f9ebcf;
   max-width: 44ex;
 }
 @media (max-width: 600px) {
@@ -457,7 +457,7 @@ h4 {
   background: #1a1b37;
 }
 .left-section h2 {
-  color: #f4dfb8;
+  color: #f9ebcf;
 }
 .left-section .background-offset {
   grid-column: 12/13;
@@ -466,7 +466,7 @@ h4 {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
   grid-column-gap: 0px;
-  border: 1px solid #f4dfb8;
+  border: 1px solid #f9ebcf;
   border-right: none;
   grid-column: 2/13;
 }
@@ -545,7 +545,7 @@ h4 {
   grid-column-gap: 0px;
   grid-column: 1/13;
   align-items: center;
-  background: #f4dfb8;
+  background: #f9ebcf;
   border-bottom: calc(8px * 1.5) solid #383b85;
 }
 #intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] ul {
@@ -631,12 +631,37 @@ h4 {
     position: relative;
   }
   #intro-screen nav ul li {
-    margin-left: calc(8px * 3);
+    padding-block: calc(8px * 1);
   }
-  #intro-screen nav ul li::before {
+  #intro-screen nav ul a {
+    padding-block: calc(8px * 1);
+    padding-inline: calc(8px * 4) calc(8px * 2);
+    position: relative;
+    z-index: 2;
+  }
+  #intro-screen nav ul a:hover {
+    color: #1b1b1b;
+    transition: all 0.2s ease-in-out 0s;
+  }
+  #intro-screen nav ul a::before {
     content: "↓";
-    left: 0;
+    left: calc(8px * 1);
     position: absolute;
+  }
+  #intro-screen nav ul a::after {
+    content: "";
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 0;
+    position: absolute;
+    transition: all 0.5s ease 0s;
+    z-index: -1;
+  }
+  #intro-screen nav ul a:hover::after {
+    width: 100%;
+    background: #ebebe5;
+    transition: all 0.4s ease 0s;
   }
 }
 
