@@ -13,15 +13,15 @@ layout: default
     <div>
       <section aria-label="personal introduction">
         <h2>Hello!</h2>
-        <p>My name is Amy Leadem and I am a senior front-end developer with 15 years of experience in UI design and development, including six years in design systems.</p>
+        <p>My name is Amy Leadem and I am a senior front-end developer with 15 years of experience in design and development, including six years in design systems.</p>
         <p>I am a systems thinker who is passionate about working in design systems, building well-documented and accessible code, and building thoughtful products for downstream teams.</p>
       </section>
       <nav aria-labelledby="in-page-nav">
         <h3 id="in-page-nav">On this page</h3>
         <ul>
-          <li><a href="#highlights">Highlights from my work history</a></li>
-          <li><a href="#excited">What excites me at work</a></li>
-          <li><a href="#find-me">Find me on the web</a></li>
+          <li><a href="#highlights"><span>Highlights from my work history</span></a></li>
+          <li><a href="#excited"><span>What excites me at work</span></a></li>
+          <li><a href="#find-me"><span>Find me on the web</span></a></li>
         </ul>
       </nav>
     </div>
@@ -30,13 +30,13 @@ layout: default
         <li>
           <a href="https://github.com/amyleadem">
             <img src="./assets/img/logo-github.svg" alt="">
-            Find me on GitHub
+            <span>Find me on GitHub</span>
           </a>
         </li>
         <li>
           <a href="https://www.linkedin.com/in/amyleadem/">
             <img src="./assets/img/logo-linkedin.png" alt="">
-            Find me on LinkedIn
+            <span>Find me on LinkedIn</span>
           </a>
         </li>
       </ul>

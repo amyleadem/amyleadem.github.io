@@ -22,15 +22,40 @@ body {
 
 a {
   color: $color-gray-dark;
-  transition: all 0.3s ease 0s; 
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease 0s;
+  z-index: 2;
+
+  span {
+    border-bottom: 2px solid $color-gray-dark;
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 100%;
+      left: 0;
+      top: 0;
+      width: 0;
+      position: absolute;
+      transition: all 0.4s ease 0s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $color-gray-dark;
+      transition: all 0.4s ease-in-out 0s;
+    }
+  }
+
+  &:hover span::after {
+    width: 100%;
+    transition: all 0.3s ease 0s;
+  }
 
   &:visited,
   &:active {
     color: $color-gray-dark;
-  }
-
-  &:hover {
-    color: $color-blue-medium;
   }
 }
 

@@ -198,13 +198,35 @@ body {
 
 a {
   color: #1b1b1b;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease 0s;
+  z-index: 2;
+}
+a span {
+  border-bottom: 2px solid #1b1b1b;
+  position: relative;
+}
+a span::after {
+  content: "";
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 0;
+  position: absolute;
+  transition: all 0.4s ease 0s;
+  z-index: -1;
+}
+a span:hover {
+  color: #1b1b1b;
+  transition: all 0.4s ease-in-out 0s;
+}
+a:hover span::after {
+  width: 100%;
   transition: all 0.3s ease 0s;
 }
 a:visited, a:active {
   color: #1b1b1b;
-}
-a:hover {
-  color: #383b85;
 }
 
 p,
@@ -361,7 +383,7 @@ h4 {
   color: #f8f8f2;
 }
 .button:hover {
-  color: #ffce5b;
+  color: #fbdd2f;
   transition: all 0.2s ease-in-out 0s;
 }
 .button::after {
@@ -539,6 +561,27 @@ h4 {
   grid-column: 2/12;
   margin-block: calc(8px * 6);
 }
+#intro-screen .grid-column:nth-of-type(2) nav ul {
+  list-style: none;
+  margin-block: 0;
+  padding-left: 0;
+  position: relative;
+}
+#intro-screen .grid-column:nth-of-type(2) nav ul li {
+  padding-block: calc(8px * 1);
+}
+#intro-screen .grid-column:nth-of-type(2) nav ul a {
+  padding-block: calc(8px * 1) 0;
+  padding-inline: calc(8px * 4) calc(8px * 2);
+}
+#intro-screen .grid-column:nth-of-type(2) nav ul a::before {
+  content: "↓";
+  left: calc(8px * 1);
+  position: absolute;
+}
+#intro-screen .grid-column:nth-of-type(2) nav ul a:hover span::after {
+  background: #ebebe5;
+}
 #intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -568,7 +611,7 @@ h4 {
   margin-right: calc(8px * 2);
   width: calc(8px * 5);
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 900px) {
   #intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] ul {
     align-items: center;
     display: flex;
@@ -624,45 +667,6 @@ h4 {
   #intro-screen .grid-column:nth-of-type(2) section[aria-label="find me on the web"] ul {
     padding-left: calc(8px * 6);
   }
-  #intro-screen nav ul {
-    list-style: none;
-    margin-block: 0;
-    padding-left: 0;
-    position: relative;
-  }
-  #intro-screen nav ul li {
-    padding-block: calc(8px * 1);
-  }
-  #intro-screen nav ul a {
-    padding-block: calc(8px * 1);
-    padding-inline: calc(8px * 4) calc(8px * 2);
-    position: relative;
-    z-index: 2;
-  }
-  #intro-screen nav ul a:hover {
-    color: #1b1b1b;
-    transition: all 0.2s ease-in-out 0s;
-  }
-  #intro-screen nav ul a::before {
-    content: "↓";
-    left: calc(8px * 1);
-    position: absolute;
-  }
-  #intro-screen nav ul a::after {
-    content: "";
-    height: 100%;
-    left: 0;
-    top: 0;
-    width: 0;
-    position: absolute;
-    transition: all 0.5s ease 0s;
-    z-index: -1;
-  }
-  #intro-screen nav ul a:hover::after {
-    width: 100%;
-    background: #ebebe5;
-    transition: all 0.4s ease 0s;
-  }
 }
 
 #contact {
@@ -699,7 +703,7 @@ h4 {
   color: #fff;
 }
 #contact a:hover {
-  color: #ffce5b;
+  color: #fbdd2f;
   transition: all 0.2s ease-in-out 0s;
 }
 #contact a::after {

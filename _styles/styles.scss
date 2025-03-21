@@ -171,6 +171,32 @@ $spacing-horizontal-section-small: $spacing-unit-4;
       margin-block: $spacing-vertical-section-small;
     }
 
+    nav ul {
+      list-style: none;
+      margin-block: 0;
+      padding-left: 0;
+      position: relative;
+
+      li {
+        padding-block: $spacing-unit-1;
+      }
+
+      a {
+        padding-block: $spacing-unit-1 0;
+        padding-inline: $spacing-unit-4 $spacing-unit-2;
+
+        &::before {
+          content: "\2193";
+          left: $spacing-unit-1;
+          position: absolute;
+        }
+
+        &:hover span::after {
+          background: $color-gray-warm;
+        }
+      }
+    }
+
     section[aria-label="find me on the web"] {
       @include grid(12, 0);
       @include row;
@@ -201,7 +227,7 @@ $spacing-horizontal-section-small: $spacing-unit-4;
       }
     }
   }
-  @media screen and (min-width: $breakpoint-mobile) {
+  @media screen and (min-width: $breakpoint-tablet) {
     .grid-column:nth-of-type(2) {
       section[aria-label="find me on the web"] {
         ul {
@@ -261,52 +287,6 @@ $spacing-horizontal-section-small: $spacing-unit-4;
 
         ul {
           padding-left: $spacing-vertical-section-small;
-        }
-      }
-    }
-
-    nav ul {
-      list-style: none;
-      margin-block: 0;
-      padding-left: 0;
-      position: relative;
-
-      li {
-        padding-block: $spacing-unit-1;
-      }
-
-      a {
-        padding-block: $spacing-unit-1;
-        padding-inline: $spacing-unit-4 $spacing-unit-2;
-        position: relative;
-        z-index: 2;
-
-        &:hover {
-          color: $color-gray-dark;
-          transition: all 0.2s ease-in-out 0s; 
-        }
-
-        &::before {
-          content: "\2193";
-          left: $spacing-unit-1;
-          position: absolute;
-        }
-
-        &::after {
-          content: "";
-          height: 100%; 
-          left: 0; 
-          top: 0; 
-          width: 0;  
-          position: absolute; 
-          transition: all 0.5s ease 0s; 
-          z-index: -1;
-        }
-
-        &:hover::after {
-          width: 100%;
-          background: $color-gray-warm;
-          transition: all 0.4s ease 0s; 
         }
       }
     }
