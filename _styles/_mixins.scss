@@ -7,6 +7,12 @@
   grid-column-gap: $spacing-unit * $col-gap;
 }
 
+@mixin subgrid ($span: 2) {
+  display: grid;
+  grid-column: span $span;
+  grid-template-columns: subgrid;
+}
+
 @mixin row {
   grid-column: 1 / 13;
 }
@@ -65,6 +71,8 @@
   color: $font-color;
   max-width: 44ex;
 
+
+
   @media (max-width: $breakpoint-mobile) {
     font-size: 3.25rem;
   }
@@ -92,6 +100,31 @@
   @media (min-width: $breakpoint-widescreen-lg) {
     font-size: 6rem;
   }
+
+  @media (max-height: 800px) {
+    font-size: 3.5rem;
+  }
+
+  @media (max-height: 800px) and (min-width: $breakpoint-tablet) {
+    font-size: 4.5rem;
+  }
+
+  @media (max-height: 800px) and  (min-width: $breakpoint-desktop) {
+    font-size: 5rem;
+  }
+
+  @media (max-height: 600px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-height: 600px) and  (min-width: $breakpoint-tablet) {
+    font-size: 3.5rem;
+  }
+
+  @media (max-height: 600px) and  (min-width: $breakpoint-desktop) {
+    font-size: 4rem;
+  }
+
 }
 
 @mixin button(
