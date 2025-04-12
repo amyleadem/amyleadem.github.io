@@ -7,7 +7,7 @@
   grid-column-gap: $spacing-unit * $col-gap;
 }
 
-@mixin subgrid ($span: 2) {
+@mixin subgrid($span: 2) {
   display: grid;
   grid-column: span $span;
   grid-template-columns: subgrid;
@@ -71,8 +71,6 @@
   color: $font-color;
   max-width: 44ex;
 
-
-
   @media (max-width: $breakpoint-mobile) {
     font-size: 3.25rem;
   }
@@ -109,7 +107,7 @@
     font-size: 4.5rem;
   }
 
-  @media (max-height: 800px) and  (min-width: $breakpoint-desktop) {
+  @media (max-height: 800px) and (min-width: $breakpoint-desktop) {
     font-size: 5rem;
   }
 
@@ -117,14 +115,13 @@
     font-size: 2.5rem;
   }
 
-  @media (max-height: 600px) and  (min-width: $breakpoint-tablet) {
+  @media (max-height: 600px) and (min-width: $breakpoint-tablet) {
     font-size: 3.5rem;
   }
 
-  @media (max-height: 600px) and  (min-width: $breakpoint-desktop) {
+  @media (max-height: 600px) and (min-width: $breakpoint-desktop) {
     font-size: 4rem;
   }
-
 }
 
 @mixin button(

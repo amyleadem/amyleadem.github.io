@@ -12,9 +12,8 @@ layout: default
   <div class="grid-column">
     <div>
       <section aria-label="personal introduction">
-        <h2>Hello!</h2>
-        <p>My name is Amy Leadem and I am a senior front-end developer with 15 years of experience in design and development, including six years in design systems.</p>
-        <p>I am a systems thinker who is passionate about working in design systems, building well-documented and accessible code, and building thoughtful products for downstream teams.</p>
+        <h2>Hello! I’m Amy. </h2>
+        <p>I am an frontend developer and designer with more than 15 years of experience building inclusive, user-friendly digital experiences. These days, I’m especially interested in design systems, web accessibility, and product design.</p>
       </section>
       <nav aria-labelledby="in-page-nav">
         <h3 id="in-page-nav">On this page</h3>
@@ -61,6 +60,10 @@ layout: default
       </li>
       <li>
        <strong>My work history spans multiple practice areas.</strong> I am a developer, a designer, and a writer. I also have years of experience in web accessibility and product management. This diverse experience gives me the ability to effectively translate needs across functions and build code that meets the needs of everyone on the product team.
+      </li>
+      <li>
+        <strong>Related link:</strong>
+        <a href="https://github.com/uswds/uswds/pulls?q=is%3Apr+is%3Amerged+author%3Aamyleadem">My contributions to USWDS on GitHub</a>
       </li>
     </ul>
   </div>

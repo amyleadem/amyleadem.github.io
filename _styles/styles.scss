@@ -132,7 +132,7 @@ $spacing-horizontal-section-small: $spacing-unit-4;
 }
 
 #intro-screen {
-  @include grid(12,0);
+  @include grid(12, 0);
   background: $color-site-background;
 
   .grid-column {
@@ -147,22 +147,22 @@ $spacing-horizontal-section-small: $spacing-unit-4;
     }
   }
 
+  li a {
+    text-decoration: none;
+  }
 
-    header {
-      background: $color-blue-darker;
-      border-bottom: $spacing-unit-2 solid $color-red;
+  header {
+    background: $color-blue-darker;
+    border-bottom: $spacing-unit-2 solid $color-red;
 
-      height: 60vh;
-      justify-content: center;
-      align-items: center;
-  
-      h1 {
-        margin-block: 0;
-      }
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
 
-      
-      
+    h1 {
+      margin-block: 0;
     }
+  }
 
   .grid-column:nth-of-type(2) {
     // wrappoer for intro text and in-page nav
@@ -239,14 +239,14 @@ $spacing-horizontal-section-small: $spacing-unit-4;
   }
 
   @media screen and (min-width: $breakpoint-desktop) {
-      .grid-column {
-        @include subgrid(6);
+    .grid-column {
+      @include subgrid(6);
 
-        > *,
-        > * > *  {
-          grid-column: span 6;
-        }
+      > *,
+      > * > * {
+        grid-column: span 6;
       }
+    }
 
     .grid-column:nth-of-type(1) {
       header {
@@ -254,7 +254,8 @@ $spacing-horizontal-section-small: $spacing-unit-4;
         height: 100vh;
         padding-bottom: 128px;
         text-align: right;
-        padding-inline: $spacing-vertical-section $spacing-vertical-section-small;
+        padding-inline: $spacing-vertical-section
+          $spacing-vertical-section-small;
       }
     }
 
@@ -271,7 +272,8 @@ $spacing-horizontal-section-small: $spacing-unit-4;
         justify-content: center;
         margin-top: 0;
         padding-top: $spacing-vertical-section-small;
-        padding-inline: $spacing-vertical-section-small $spacing-vertical-section;
+        padding-inline: $spacing-vertical-section-small
+          $spacing-vertical-section;
       }
 
       section[aria-label="find me on the web"] {

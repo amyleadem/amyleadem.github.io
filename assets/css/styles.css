@@ -198,7 +198,6 @@ body {
 
 a {
   color: #1b1b1b;
-  text-decoration: none;
   position: relative;
   transition: all 0.3s ease 0s;
   z-index: 2;
@@ -570,6 +569,9 @@ h4 {
 }
 #intro-screen .grid-column > * > * {
   grid-column: 2/12;
+}
+#intro-screen li a {
+  text-decoration: none;
 }
 #intro-screen header {
   background: #1a1b37;
